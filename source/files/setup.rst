@@ -9,3 +9,4 @@ There are two setup tutorials that will guide you through setting up your PC to 
 
   setup_robot_pc.rst
   setup_pc_only.rst
+  setup_docker.rst

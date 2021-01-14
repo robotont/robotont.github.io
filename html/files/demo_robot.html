@@ -1,11 +1,11 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Demos on Robotont &mdash; Robotont 0.0.1 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -26,10 +29,9 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Robotont
+            <a href="../index.html" class="icon icon-home"> Robotont
           
 
           
@@ -141,6 +143,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -154,7 +158,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/files/demo_robot.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -174,7 +178,7 @@
 <p>Note that some of the commands will run on Robotont on-board computer and some on user PC.</p>
 <p>The following packages are needed to run the demos:</p>
 <ol class="arabic">
-<li><p class="first">For 2D mapping:</p>
+<li><p>For 2D mapping:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt install ros-melodic-depthimage-to-laserscan
 sudo apt install ros-melodic-cartographer-ros
@@ -182,12 +186,12 @@ sudo apt install ros-melodic-move-base
 </pre></div>
 </div>
 </li>
-<li><p class="first">For 3D mapping:</p>
+<li><p>For 3D mapping:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-rtabmap-ros
 </pre></div>
 </div>
 </li>
-<li><p class="first">For AR tracking:</p>
+<li><p>For AR tracking:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-ar-track-alvar
 </pre></div>
 </div>
@@ -197,38 +201,36 @@ sudo apt install ros-melodic-move-base
 <h2>2D mapping<a class="headerlink" href="#d-mapping" title="Permalink to this headline">¶</a></h2>
 <p>Uses Cartographer to create a 2D map of the robot’s surroundings.</p>
 <ol class="arabic">
-<li><p class="first"><strong>On Robotont on-board computer or on PC</strong> launch 2d_slam.launch</p>
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch 2d_slam.launch</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>On PC</strong> launch 2d_slam_display.launch to visualize the result</p>
+<li><p><strong>On PC</strong> launch 2d_slam_display.launch to visualize the result</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam_display.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first">To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard</p>
+<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last">Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+<p class="admonition-title">Hint</p>
+<p>Notice that the teleop node only receives keypresses when the terminal window is active.</p>
 </div>
 </li>
 </ol>
 <div class="section" id="setting-2d-navigation-goals">
 <h3>Setting 2D navigation goals<a class="headerlink" href="#setting-2d-navigation-goals" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.</p>
-</li>
-<li><p class="first">For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.</p>
+<li><p>Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.</p></li>
+<li><p>For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.</p>
 <a class="reference internal image-reference" href="../_images/poseestimatearrow.png"><img alt="../_images/poseestimatearrow.png" src="../_images/poseestimatearrow.png" style="width: 400px;" /></a>
 </li>
-<li><p class="first">To tell the robot where to go, click on 2D Nav Goal
+<li><p>To tell the robot where to go, click on 2D Nav Goal
 and drag the arrow to where you want the robot to go
-and which way does it have to face.</p>
-</li>
+and which way does it have to face.</p></li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/2dnavgoalarrow.png"><img alt="../_images/2dnavgoalarrow.png" src="../_images/2dnavgoalarrow.png" style="width: 400px;" /></a>
@@ -239,23 +241,23 @@ and which way does it have to face.</p>
 <h2>3D mapping<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Creates a 3D map of the robot’s surroundings.</p>
 <ol class="arabic">
-<li><p class="first"><strong>On Robotont on-board computer or on PC</strong> launch 3d_mapping.launch</p>
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch 3d_mapping.launch</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 3d_mapping.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>On PC</strong> launch 3d_mapping_display.launch to visualize the result</p>
+<li><p><strong>On PC</strong> launch 3d_mapping_display.launch to visualize the result</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 3d_mapping_display.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first">To move the robot open another terminal window <strong>on robotont on-board computer or on user PC</strong> and run teleop twist keyboard</p>
+<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on user PC</strong> and run teleop twist keyboard</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last">Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+<p class="admonition-title">Hint</p>
+<p>Notice that the teleop node only receives keypresses when the terminal window is active.</p>
 </div>
 </li>
 </ol>
@@ -267,23 +269,23 @@ and which way does it have to face.</p>
 <h2>AR tracking<a class="headerlink" href="#ar-tracking" title="Permalink to this headline">¶</a></h2>
 <p>The robot identifies and tracks the pose of the provided AR tag and acts accordingly.</p>
 <ol class="arabic">
-<li><p class="first"><strong>On Robotont on-board computer or on PC</strong> launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)</p>
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch roslaunch robotont_demos ar_follow_the_leader.launch marker_id:<span class="o">=</span>tag_nr
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>On PC</strong> launch ar_marker_display.launch to visualize the result</p>
+<li><p><strong>On PC</strong> launch ar_marker_display.launch to visualize the result</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos ar_marker_display.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first">To move the robot open another terminal window <strong>on Robotont on-board computer or on PC</strong> and run teleop twist keyboard</p>
+<li><p>To move the robot open another terminal window <strong>on Robotont on-board computer or on PC</strong> and run teleop twist keyboard</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last">Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+<p class="admonition-title">Hint</p>
+<p>Notice that the teleop node only receives keypresses when the terminal window is active.</p>
 </div>
 </li>
 </ol>
@@ -295,37 +297,29 @@ and which way does it have to face.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="demo_gazebo.html" class="btn btn-neutral float-right" title="Demos on Gazebo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="demos_before_starting.html" class="btn btn-neutral float-left" title="Before starting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="demo_gazebo.html" class="btn btn-neutral float-right" title="Demos on Gazebo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="demos_before_starting.html" class="btn btn-neutral float-left" title="Before starting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, M
+        &#169; Copyright 2020, M.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Using only the simulated robot &mdash; Robotont 0.0.1 documentation</title>
+  <title>Simulated robot on docker with X11 forwarding &mdash; Robotont 0.0.1 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sensors" href="sensors.html" />
-    <link rel="prev" title="Using the robot with a user PC" href="setup_robot_pc.html" /> 
+    <link rel="prev" title="Using only the simulated robot" href="setup_pc_only.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,11 +88,14 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="setup.html">Setup</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup_robot_pc.html">Using the robot with a user PC</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Using only the simulated robot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installing-ubuntu">Installing Ubuntu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installing-ros">Installing ROS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-catkin-workspace">Creating a catkin workspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html">Using only the simulated robot</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Simulated robot on docker with X11 forwarding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-docker">Installing Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cloning-robotont-s-packages">Cloning Robotont’s packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instructions-when-using-an-nvidia-gpu">Instructions when using an nvidia GPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instructions-for-everyone-else">Instructions for everyone else</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging-into-your-ros-image">Logging into your ros image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-missing-dependancies">Installing missing dependancies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-the-catkin-workspace">Building the catkin workspace</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sourcing-the-workspace">Sourcing the workspace</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
@@ -153,13 +156,13 @@
         
           <li><a href="setup.html">Setup</a> &raquo;</li>
         
-      <li>Using only the simulated robot</li>
+      <li>Simulated robot on docker with X11 forwarding</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/files/setup_pc_only.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/files/setup_docker.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -172,21 +175,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-only-the-simulated-robot">
-<span id="setup-pc-only"></span><h1>Using only the simulated robot<a class="headerlink" href="#using-only-the-simulated-robot" title="Permalink to this headline">¶</a></h1>
-<p>This setup tutorial will guide you through setting up your PC to run the simulated robot with the demos.</p>
-<div class="section" id="installing-ubuntu">
-<h2>Installing Ubuntu<a class="headerlink" href="#installing-ubuntu" title="Permalink to this headline">¶</a></h2>
-<p>Download and install Ubuntu Linux on your PC from the following link: <a class="reference external" href="http://releases.ubuntu.com/18.04.4/?_ga=2.170843936.1678816316.1594710587-1973467440.1591964081">Ubuntu 18.04.4 LTS (Bionic Beaver)</a>.</p>
-<p>The guide to install Ubuntu on your PC can be found <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview">here</a>.</p>
+  <div class="section" id="simulated-robot-on-docker-with-x11-forwarding">
+<span id="setup-docker"></span><h1>Simulated robot on docker with X11 forwarding<a class="headerlink" href="#simulated-robot-on-docker-with-x11-forwarding" title="Permalink to this headline">¶</a></h1>
+<p>This setup tutorial will guide you through setting up your PC to run the simulated robot with the demos.
+This assumes that you have a linux machine. Tested on ubuntu 20, but should work on any linux.</p>
+<div class="section" id="installing-docker">
+<h2>Installing Docker<a class="headerlink" href="#installing-docker" title="Permalink to this headline">¶</a></h2>
+<p>Quick version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install curl
+<span class="nb">echo</span> <span class="s2">&quot;Installing docker&quot;</span>
+curl -fsSL https://get.docker.com <span class="p">|</span> sudo sh
+
+groupadd docker
+usermod -aG docker <span class="k">$(</span>whoami<span class="k">)</span>
+</pre></div>
 </div>
-<div class="section" id="installing-ros">
-<h2>Installing ROS<a class="headerlink" href="#installing-ros" title="Permalink to this headline">¶</a></h2>
-<p>Install Ros Melodic by following the guide: <a class="reference external" href="http://wiki.ros.org/melodic/Installation/Ubuntu">Ros Melodic</a>.</p>
-</div>
-<div class="section" id="creating-a-catkin-workspace">
-<h2>Creating a catkin workspace<a class="headerlink" href="#creating-a-catkin-workspace" title="Permalink to this headline">¶</a></h2>
-<p>Create a workspace for catkin as shown <a class="reference external" href="http://wiki.ros.org/catkin/Tutorials/create_a_workspace">here</a>.</p>
+<p>Slow version is to follow the instructions <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">here</a>.</p>
 </div>
 <div class="section" id="cloning-robotont-s-packages">
 <h2>Cloning Robotont’s packages<a class="headerlink" href="#cloning-robotont-s-packages" title="Permalink to this headline">¶</a></h2>
@@ -200,8 +204,59 @@
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_demos">robotont_demos</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_msgs.git">robotont_msgs</a></p></li>
 </ol>
-<p>To clone the packages, for example, robotont_description:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont/robotont_description.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p robotont/src
+<span class="nb">cd</span> robotont/src
+
+git clone https://github.com/robotont/robotont_description.git
+git clone https://github.com/robotont/robotont_demos.git
+git clone https://github.com/robotont/robotont_gazebo.git
+git clone https://github.com/robotont/robotont_msgs.git
+git clone https://github.com/robotont/robotont_navigation.git
+git clone https://github.com/robotont/robotont_nuc_description.git
+
+<span class="nb">cd</span> ..
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="instructions-when-using-an-nvidia-gpu">
+<h2>Instructions when using an nvidia GPU<a class="headerlink" href="#instructions-when-using-an-nvidia-gpu" title="Permalink to this headline">¶</a></h2>
+<p>Install nvidia-docker 2 <a class="reference external" href="https://github.com/nvidia/nvidia-docker/wiki/Frequently-Asked-Questions#setting-up">here</a>.</p>
+<p>Use docker-ros-box to setup ros</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/KingBoomie/docker-ros-box.git
+<span class="nb">cd</span> docker-ros-box
+./init-ros-box.sh melodic &lt;PATH_RETURNED_BY_PWD_ABOVE&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="instructions-for-everyone-else">
+<h2>Instructions for everyone else<a class="headerlink" href="#instructions-for-everyone-else" title="Permalink to this headline">¶</a></h2>
+<p>Use docker-ros-box to setup ros</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/pierrekilly/docker-ros-box
+<span class="nb">cd</span> docker-ros-box
+./init-ros-box.sh melodic &lt;PATH_RETURNED_BY_PWD_ABOVE&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="logging-into-your-ros-image">
+<h2>Logging into your ros image<a class="headerlink" href="#logging-into-your-ros-image" title="Permalink to this headline">¶</a></h2>
+<p>In the robotont folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./go.sh
+<span class="nb">cd</span> /home/melodic-dev/catkin_ws
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-missing-dependancies">
+<h2>Installing missing dependancies<a class="headerlink" href="#installing-missing-dependancies" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install -y ros-melodic-depthimage-to-laserscan <span class="se">\</span>
+    ros-melodic-cartographer-ros <span class="se">\</span>
+    ros-melodic-move-base <span class="se">\</span>
+    ros-melodic-rtabmap-ros <span class="se">\</span>
+    ros-melodic-ar-track-alvar <span class="se">\</span>
+    ros-melodic-realsense2-description <span class="se">\</span>
+    ros-melodic-realsense2-camera <span class="se">\</span>
+    ros-melodic-joy <span class="se">\</span>
+    ros-melodic-teleop-twist-keyboard
 </pre></div>
 </div>
 </div>
@@ -236,7 +291,7 @@ catkin build
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="sensors.html" class="btn btn-neutral float-right" title="Sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="setup_robot_pc.html" class="btn btn-neutral float-left" title="Using the robot with a user PC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="setup_pc_only.html" class="btn btn-neutral float-left" title="Using only the simulated robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

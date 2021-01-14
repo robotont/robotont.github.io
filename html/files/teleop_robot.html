@@ -1,11 +1,11 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Controlling the robot &mdash; Robotont 0.0.1 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -26,10 +29,9 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Robotont
+            <a href="../index.html" class="icon icon-home"> Robotont
           
 
           
@@ -136,6 +138,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -149,7 +153,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/files/teleop_robot.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -169,24 +173,22 @@
 <div><a class="reference internal image-reference" href="../_images/coord.png"><img alt="../_images/coord.png" src="../_images/coord.png" style="width: 400px;" /></a>
 </div></blockquote>
 <ol class="arabic simple">
-<li>The robot driver subscribes to a specific type of messages called <em>velocity commands</em>. The standard name for this topic is <code class="code docutils literal notranslate"><span class="pre">/cmd_vel</span></code> or <code class="code docutils literal notranslate"><span class="pre">/robotont/cmd_vel</span></code> when in robot namespace.</li>
-<li>The message is of type <code class="code docutils literal notranslate"><span class="pre">geometry_msgs/Twist</span></code> and it’s structure can be found from <a class="reference external" href="https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html">ROS wiki</a>.</li>
-<li>To set and control the robot speed, the velocity commands need to be published continuously.</li>
+<li><p>The robot driver subscribes to a specific type of messages called <em>velocity commands</em>. The standard name for this topic is <code class="code docutils literal notranslate"><span class="pre">/cmd_vel</span></code> or <code class="code docutils literal notranslate"><span class="pre">/robotont/cmd_vel</span></code> when in robot namespace.</p></li>
+<li><p>The message is of type <code class="code docutils literal notranslate"><span class="pre">geometry_msgs/Twist</span></code> and it’s structure can be found from <a class="reference external" href="https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html">ROS wiki</a>.</p></li>
+<li><p>To set and control the robot speed, the velocity commands need to be published continuously.</p></li>
 </ol>
 <div class="section" id="controlling-the-robot-using-teleop-twist-keyboard">
 <h2>Controlling the robot using teleop twist keyboard<a class="headerlink" href="#controlling-the-robot-using-teleop-twist-keyboard" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">If teleop twist keyboard is not installed</p>
+<li><p>If teleop twist keyboard is not installed</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt install ros-melodic-teleop-twist-keyboard
 </pre></div>
 </div>
 </li>
-<li><p class="first">Open a new terminal window</p>
-</li>
-<li><p class="first">Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a>.</p>
-</li>
-<li><p class="first"><strong>On ROBOTONT on-board computer</strong> or on <strong>on PC</strong> run the following command:</p>
+<li><p>Open a new terminal window</p></li>
+<li><p>Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a>.</p></li>
+<li><p><strong>On ROBOTONT on-board computer</strong> or on <strong>on PC</strong> run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:<span class="o">=</span>/robotont
 </pre></div>
 </div>
@@ -195,23 +197,23 @@ sudo apt install ros-melodic-teleop-twist-keyboard
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the following keys to move the robot:</p>
+<li><p>Use the following keys to move the robot:</p>
 <a class="reference internal image-reference" href="../_images/twist_keys.png"><img alt="../_images/twist_keys.png" src="../_images/twist_keys.png" style="width: 400px;" /></a>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="admonition-title">Warning</p>
 <p>From this point beyond, you are able to drive the robot with a keyboard. Should you loose control over the robot, do one of the following</p>
-<ul class="last simple">
-<li>PRESS “k” TO STOP THE ROBOT!</li>
-<li>PRESS THE EMERGENCY SWITCH ON THE ROBOT.</li>
+<ul class="simple">
+<li><p>PRESS “k” TO STOP THE ROBOT!</p></li>
+<li><p>PRESS THE EMERGENCY SWITCH ON THE ROBOT.</p></li>
 </ul>
 </div>
 <div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last">Notice that the teleop node receives keypresses only when the terminal window is active.</p>
+<p class="admonition-title">Hint</p>
+<p>Notice that the teleop node receives keypresses only when the terminal window is active.</p>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Use <code class="code docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">C</span></code> to stop the node.</p>
+<p class="admonition-title">Tip</p>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">C</span></code> to stop the node.</p>
 </div>
 </li>
 </ol>
@@ -219,25 +221,18 @@ sudo apt install ros-melodic-teleop-twist-keyboard
 <div class="section" id="controlling-the-robot-using-an-android-device">
 <h2>Controlling the robot using an Android device<a class="headerlink" href="#controlling-the-robot-using-an-android-device" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Turn on robotont</p>
-</li>
-<li><p class="first">From your Android device, go to Google Play Store and install the <a class="reference external" href="https://play.google.com/store/apps/details?id=com.robotca.ControlApp&amp;hl=en">ROS Control app</a>.</p>
-</li>
-<li><p class="first">Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router</p>
-</li>
-<li><p class="first">Open the ROS Control app on your phone</p>
-</li>
-<li><p class="first">Insert the ROBOTONT’s IP address into Master URI field by entering the following:</p>
+<li><p>Turn on robotont</p></li>
+<li><p>From your Android device, go to Google Play Store and install the <a class="reference external" href="https://play.google.com/store/apps/details?id=com.robotca.ControlApp&amp;hl=en">ROS Control app</a>.</p></li>
+<li><p>Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router</p></li>
+<li><p>Open the ROS Control app on your phone</p></li>
+<li><p>Insert the ROBOTONT’s IP address into Master URI field by entering the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://robotont_IP_address:11311
 </pre></div>
 </div>
 </li>
-<li><p class="first">Click on “Show advanced options” in the prompted window and fill in “Joystick” and “Odometry” topic names with “robotont/cmd_vel” and “robotont/odom”, respectively</p>
-</li>
-<li><p class="first">Click OK to add the robot</p>
-</li>
-<li><p class="first">Now you can select the robot from the list and teleoperate it using the touch joystick button</p>
-</li>
+<li><p>Click on “Show advanced options” in the prompted window and fill in “Joystick” and “Odometry” topic names with “robotont/cmd_vel” and “robotont/odom”, respectively</p></li>
+<li><p>Click OK to add the robot</p></li>
+<li><p>Now you can select the robot from the list and teleoperate it using the touch joystick button</p></li>
 </ol>
 </div>
 </div>
@@ -247,37 +242,29 @@ sudo apt install ros-melodic-teleop-twist-keyboard
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="teleop_simu.html" class="btn btn-neutral float-right" title="Controlling the simulated robot on RViz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="teleop.html" class="btn btn-neutral float-left" title="Teleoperation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="teleop_simu.html" class="btn btn-neutral float-right" title="Controlling the simulated robot on RViz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="teleop.html" class="btn btn-neutral float-left" title="Teleoperation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, M
+        &#169; Copyright 2020, M.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
