@@ -190,6 +190,7 @@ groupadd docker
 usermod -aG docker <span class="k">$(</span>whoami<span class="k">)</span>
 </pre></div>
 </div>
+<p>Restart user session.</p>
 <p>Slow version is to follow the instructions <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">here</a>.</p>
 </div>
 <div class="section" id="cloning-robotont-s-packages">
@@ -215,7 +216,7 @@ git clone https://github.com/robotont/robotont_navigation.git
 git clone https://github.com/robotont/robotont_nuc_description.git
 
 <span class="nb">cd</span> ..
-<span class="nb">pwd</span>
+<span class="nb">echo</span> <span class="s2">&quot;Path to robotont workspace: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -225,7 +226,7 @@ git clone https://github.com/robotont/robotont_nuc_description.git
 <p>Use docker-ros-box to setup ros</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/KingBoomie/docker-ros-box.git
 <span class="nb">cd</span> docker-ros-box
-./init-ros-box.sh melodic &lt;PATH_RETURNED_BY_PWD_ABOVE&gt;
+./init-ros-box.sh melodic &lt;PATH_TO_ROBOTONT_WORKSPACE&gt;
 </pre></div>
 </div>
 </div>
@@ -234,7 +235,7 @@ git clone https://github.com/robotont/robotont_nuc_description.git
 <p>Use docker-ros-box to setup ros</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/pierrekilly/docker-ros-box
 <span class="nb">cd</span> docker-ros-box
-./init-ros-box.sh melodic &lt;PATH_RETURNED_BY_PWD_ABOVE&gt;
+./init-ros-box.sh melodic &lt;PATH_TO_ROBOTONT_WORKSPACE&gt;
 </pre></div>
 </div>
 </div>

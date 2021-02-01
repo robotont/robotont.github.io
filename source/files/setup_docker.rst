@@ -21,6 +21,8 @@ Quick version:
     groupadd docker
     usermod -aG docker $(whoami)
 
+Restart user session.
+
 Slow version is to follow the instructions `here <https://docs.docker.com/engine/install/ubuntu/>`__.
 
 Cloning Robotont's packages
@@ -55,7 +57,7 @@ Packages necessary to run the Gazebo simulation with Robotont's demos are follow
     git clone https://github.com/robotont/robotont_nuc_description.git
 
     cd ..
-    pwd
+    echo "Path to robotont workspace: $(pwd)""
 
 
 Instructions when using an nvidia GPU
@@ -68,7 +70,7 @@ Use docker-ros-box to setup ros
 
     git clone https://github.com/KingBoomie/docker-ros-box.git
     cd docker-ros-box
-    ./init-ros-box.sh melodic <PATH_RETURNED_BY_PWD_ABOVE>
+    ./init-ros-box.sh melodic <PATH_TO_ROBOTONT_WORKSPACE>
 
 Instructions for everyone else
 ------------------------------
@@ -78,7 +80,7 @@ Use docker-ros-box to setup ros
 
     git clone https://github.com/pierrekilly/docker-ros-box
     cd docker-ros-box
-    ./init-ros-box.sh melodic <PATH_RETURNED_BY_PWD_ABOVE>
+    ./init-ros-box.sh melodic <PATH_TO_ROBOTONT_WORKSPACE>
 
 
 Logging into your ros image
