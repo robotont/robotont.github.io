@@ -10,14 +10,14 @@ This setup tutorial will guide you through setting up your PC to run the simulat
 Installing Ubuntu
 -----------------
 
-Download and install Ubuntu Linux on your PC from the following link: `Ubuntu 18.04.4 LTS (Bionic Beaver) <http://releases.ubuntu.com/18.04.4/?_ga=2.170843936.1678816316.1594710587-1973467440.1591964081>`__.
+Download and install Ubuntu Linux on your PC from the following link: `Ubuntu 20.04.6 LTS (Focal Fossa) <https://releases.ubuntu.com/focal/>`__.
 
 The guide to install Ubuntu on your PC can be found `here <https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview>`__.
 
 Installing ROS
 --------------
 
-Install Ros Melodic by following the guide: `Ros Melodic <http://wiki.ros.org/melodic/Installation/Ubuntu>`__.
+Install Ros Melodic by following the guide: `Ros Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`__.
 
 Creating a catkin workspace
 ----------------------------
