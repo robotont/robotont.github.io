@@ -3,6 +3,12 @@
 
 ## Updating docs
 
+##### Update apt and pip
+```
+sudo apt update
+pip3 install --upgrade pip
+```
+
 ##### Getting dependencies
 ```
 sudo apt install python3-sphinx
