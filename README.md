@@ -1,5 +1,5 @@
 # robotont.github.io
-[Documentation](robotont.github.io) for robotont
+[Documentation](https://robotont.github.io) for robotont
 
 ## Updating docs
 
