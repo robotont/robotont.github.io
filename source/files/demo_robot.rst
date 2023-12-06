@@ -15,23 +15,41 @@ The following packages are needed to run the demos:
    .. code-block:: bash
       
       sudo apt update
-      sudo apt install ros-melodic-depthimage-to-laserscan
-      sudo apt install ros-melodic-cartographer-ros
-      sudo apt install ros-melodic-move-base
+      sudo apt install ros-noetic-depthimage-to-laserscan
+      sudo apt install ros-noetic-cartographer-ros
+      sudo apt install ros-noetic-move-base
+
+and clone the following package
+
+   .. code-block:: bash
+      
+      git clone https://github.com/robotont-demos/2d_slam.git
 
 #. For 3D mapping:
 
    .. code-block:: bash
       
-      sudo apt install ros-melodic-rtabmap-ros
+      sudo apt install ros-noetic-rtabmap-ros
+
+and clone the following package: 
+      
+   .. code-block:: bash
+      
+      git clone https://github.com/robotont-demos/mapping_3d.git
 
 #. For AR tracking:
 
    .. code-block:: bash
       
-      sudo apt install ros-melodic-ar-track-alvar
+      sudo apt install ros-melodic-ar-track-alvar ** 
  
+You can find different demos in the following sections:
 
+
+   .. code-block:: bash
+      
+      git clone https://github.com/robotont-demos/ar_steering.git
+      git clone https://github.com/robotont-demos/ar_follow_the_leader.git
 
 2D mapping
 ----------
@@ -42,19 +60,19 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 2d_slam.launch
+      roslaunch slam_2d 2d_slam.launch
 
 #. **On PC** launch 2d_slam_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 2d_slam_display.launch
+      roslaunch slam_2d 2d_slam_display.launch
 
 #. To move the robot open another terminal window **on robotont on-board computer or on the PC** and run teleop twist keyboard
 
    .. code-block:: bash
       
-      roslaunch robotont_demos teleop_keyboard.launch
+      roslaunch robotont_demos teleop_keyboard.launch **
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
@@ -86,19 +104,19 @@ Creates a 3D map of the robot's surroundings.
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 3d_mapping.launch
+      roslaunch mapping_3d 3d_mapping.launch
 
 #. **On PC** launch 3d_mapping_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 3d_mapping_display.launch
+      roslaunch mapping_3d 3d_mapping_display.launch
 
 #. To move the robot open another terminal window **on robotont on-board computer or on user PC** and run teleop twist keyboard
 
    .. code-block:: bash
       
-      rosrun robotont_demos teleop_keyboard.launch
+      rosrun robotont_demos teleop_keyboard.launch **
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
@@ -114,19 +132,19 @@ The robot identifies and tracks the pose of the provided AR tag and acts accordi
 
    .. code-block:: bash
       
-      roslaunch roslaunch robotont_demos ar_follow_the_leader.launch marker_id:=tag_nr
+      roslaunch ar_follow_the_leader ar_follow_the_leader.launch marker_id:=tag_nr
 
 #. **On PC** launch ar_marker_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch robotont_demos ar_marker_display.launch
+      roslaunch ar_follow_the_leader ar_marker_display.launch
 
 #. To move the robot open another terminal window **on Robotont on-board computer or on PC** and run teleop twist keyboard
 
    .. code-block:: bash
       
-      roslaunch robotont_demos teleop_keyboard.launch
+      roslaunch robotont_demos teleop_keyboard.launch ***
     
     
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.

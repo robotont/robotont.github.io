@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Demos on Gazebo &mdash; Robotont 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f6245a2f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -88,35 +88,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="demos-on-gazebo">
+  <div class="section" id="demos-on-gazebo">
 <span id="id1"></span><h1>Demos on Gazebo<a class="headerlink" href="#demos-on-gazebo" title="Permalink to this heading"></a></h1>
 <p>Before getting started see: <a class="reference internal" href="demos_before_starting.html#before-starting"><span class="std std-ref">Before starting</span></a></p>
 <p>The following packages are needed to run the demos:</p>
 <ol class="arabic">
 <li><p>For 2D mapping:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-melodic-depthimage-to-laserscan
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-melodic-cartographer-ros
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-melodic-move-base
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install ros-noetic-depthimage-to-laserscan
+sudo apt install ros-noetic-cartographer-ros
+sudo apt install ros-noetic-move-base
+
+or
+
+git clone
 </pre></div>
 </div>
 </li>
 <li><p>For 3D mapping:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-melodic-rtabmap-ros
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-noetic-rtabmap-ros
+
+or
+
+git clone
 </pre></div>
 </div>
 </li>
 <li><p>For AR tracking:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-melodic-ar-track-alvar
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-ar-track-alvar ***
 </pre></div>
 </div>
 </li>
 </ol>
-<section id="launching-the-simulation">
+<div class="section" id="launching-the-simulation">
 <h2>Launching the Simulation<a class="headerlink" href="#launching-the-simulation" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>To launch the simulator:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>gazebo.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch
 </pre></div>
 </div>
 </li>
@@ -144,70 +152,70 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <p>For example, the following command will spawn the robot to a world called bangbang.world in position x=2 and
 the model that will be used is robotont_gazebo_nuc.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>gazebo.launch<span class="w"> </span>world:<span class="o">=</span><span class="k">$(</span>rospack<span class="w"> </span>find<span class="w"> </span>robotont_gazebo<span class="k">)</span>/worlds/bangbang.world<span class="w"> </span>model:<span class="o">=</span>robotont_gazebo_nuc<span class="w"> </span>x_pos:<span class="o">=</span><span class="m">2</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch world:<span class="o">=</span><span class="k">$(</span>rospack find robotont_gazebo<span class="k">)</span>/worlds/bangbang.world model:<span class="o">=</span>robotont_gazebo_nuc x_pos:<span class="o">=</span><span class="m">2</span>
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-<section id="worlds">
+</div>
+<div class="section" id="worlds">
 <h2>Worlds<a class="headerlink" href="#worlds" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>minimaze.world</p>
 <a class="reference internal image-reference" href="../_images/maze.png"><img alt="../_images/maze.png" src="../_images/maze.png" style="width: 400px;" /></a>
 <p>To run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>world_minimaze.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze.launch
 </pre></div>
 </div>
 </li>
 <li><p>bangbang.world</p>
 <a class="reference internal image-reference" href="../_images/bangbang.png"><img alt="../_images/bangbang.png" src="../_images/bangbang.png" style="width: 400px;" /></a>
 <p>To run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>world_bangbang.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_bangbang.launch
 </pre></div>
 </div>
 </li>
 <li><p>between.world</p>
 <a class="reference internal image-reference" href="../_images/between.png"><img alt="../_images/between.png" src="../_images/between.png" style="width: 400px;" /></a>
 <p>To run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>world_between.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_between.launch
 </pre></div>
 </div>
 </li>
 <li><p>colors.world</p>
 <a class="reference internal image-reference" href="../_images/colors.png"><img alt="../_images/colors.png" src="../_images/colors.png" style="width: 400px;" /></a>
 <p>To run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>world_colors.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_colors.launch
 </pre></div>
 </div>
 </li>
 </ol>
-</section>
-<section id="d-mapping">
+</div>
+<div class="section" id="d-mapping">
 <h2>2D Mapping<a class="headerlink" href="#d-mapping" title="Permalink to this heading"></a></h2>
 <p>Uses Cartographer to create a 2D map of the robot’s surroundings.</p>
 <ol class="arabic">
 <li><p>Launch the simulator</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>world_minimaze.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze.launch
 </pre></div>
 </div>
 </li>
 <li><p>Launch teleop keyboard</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_demos<span class="w"> </span>teleop_keyboard.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 </li>
 <li><p>Launch 2d_slam.launch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_demos<span class="w"> </span>2d_slam.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch slam_2d 2d_slam.launch
 </pre></div>
 </div>
 </li>
 <li><p>Display the map on RViz</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_demos<span class="w"> </span>2d_slam_display.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch slam_2d 2d_slam_display.launch
 </pre></div>
 </div>
 </li>
 </ol>
-<section id="setting-2d-navigation-goals">
+<div class="section" id="setting-2d-navigation-goals">
 <h3>Setting 2D navigation goals<a class="headerlink" href="#setting-2d-navigation-goals" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.</p></li>
@@ -221,29 +229,29 @@ and which way does it have to face.</p></li>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/2dnavgoalarrow.png"><img alt="../_images/2dnavgoalarrow.png" src="../_images/2dnavgoalarrow.png" style="width: 400px;" /></a>
 </div></blockquote>
-</section>
-</section>
-<section id="id2">
+</div>
+</div>
+<div class="section" id="id2">
 <h2>3D mapping<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>Creates a 3D map of the robot’s surroundings.</p>
 <ol class="arabic">
 <li><p>Launch the simulator</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_gazebo<span class="w"> </span>world_colors.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_colors.launch
 </pre></div>
 </div>
 </li>
 <li><p>Launch 3d_mapping.launch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_demos<span class="w"> </span>3d_mapping.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d 3d_mapping.launch
 </pre></div>
 </div>
 </li>
 <li><p>Launch 3d_mapping_display.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_demos<span class="w"> </span>3d_mapping_display.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d 3d_mapping_display.launch
 </pre></div>
 </div>
 </li>
 <li><p>To move the robot open another terminal window and run teleop twist keyboard</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun<span class="w"> </span>robotont_demos<span class="w"> </span>teleop_keyboard.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun robotont_demos teleop_keyboard.launch **
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -255,8 +263,8 @@ and which way does it have to face.</p></li>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/3d_mapping_gazebo.png"><img alt="../_images/3d_mapping_gazebo.png" src="../_images/3d_mapping_gazebo.png" style="width: 400px;" /></a>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

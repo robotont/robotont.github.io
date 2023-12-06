@@ -13,21 +13,29 @@ The following packages are needed to run the demos:
    .. code-block:: bash
       
       sudo apt update
-      sudo apt install ros-melodic-depthimage-to-laserscan
-      sudo apt install ros-melodic-cartographer-ros
-      sudo apt install ros-melodic-move-base
+      sudo apt install ros-noetic-depthimage-to-laserscan
+      sudo apt install ros-noetic-cartographer-ros
+      sudo apt install ros-noetic-move-base
+
+      or 
+
+      git clone 
 
 #. For 3D mapping:
 
    .. code-block:: bash
       
-      sudo apt install ros-melodic-rtabmap-ros
+      sudo apt install ros-noetic-rtabmap-ros
+
+      or 
+      
+      git clone 
 
 #. For AR tracking:
 
    .. code-block:: bash
       
-      sudo apt install ros-melodic-ar-track-alvar
+      sudo apt install ros-melodic-ar-track-alvar ***
  
 
 
@@ -135,13 +143,13 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 2d_slam.launch
+      roslaunch slam_2d 2d_slam.launch
 
 #. Display the map on RViz
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 2d_slam_display.launch
+      roslaunch slam_2d 2d_slam_display.launch
  
 
 Setting 2D navigation goals
@@ -177,19 +185,19 @@ Creates a 3D map of the robot's surroundings.
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 3d_mapping.launch
+      roslaunch mapping_3d 3d_mapping.launch
 
 #. Launch 3d_mapping_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 3d_mapping_display.launch
+      roslaunch mapping_3d 3d_mapping_display.launch
 
 #. To move the robot open another terminal window and run teleop twist keyboard
 
    .. code-block:: bash
       
-      rosrun robotont_demos teleop_keyboard.launch
+      rosrun robotont_demos teleop_keyboard.launch **
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 

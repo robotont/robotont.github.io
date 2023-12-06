@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Controlling the robot &mdash; Robotont 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f6245a2f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -83,7 +83,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="controlling-the-robot">
+  <div class="section" id="controlling-the-robot">
 <h1>Controlling the robot<a class="headerlink" href="#controlling-the-robot" title="Permalink to this heading"></a></h1>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/coord.png"><img alt="../_images/coord.png" src="../_images/coord.png" style="width: 400px;" /></a>
@@ -93,23 +93,23 @@
 <li><p>The message is of type <code class="code docutils literal notranslate"><span class="pre">geometry_msgs/Twist</span></code> and it’s structure can be found from <a class="reference external" href="https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html">ROS wiki</a>.</p></li>
 <li><p>To set and control the robot speed, the velocity commands need to be published continuously.</p></li>
 </ol>
-<section id="controlling-the-robot-using-teleop-twist-keyboard">
+<div class="section" id="controlling-the-robot-using-teleop-twist-keyboard">
 <h2>Controlling the robot using teleop twist keyboard<a class="headerlink" href="#controlling-the-robot-using-teleop-twist-keyboard" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>If teleop twist keyboard is not installed</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-melodic-teleop-twist-keyboard
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install ros-noetic-teleop-twist-keyboard
 </pre></div>
 </div>
 </li>
 <li><p>Open a new terminal window</p></li>
 <li><p>Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a>.</p></li>
 <li><p><strong>On ROBOTONT on-board computer</strong> or on <strong>on PC</strong> run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_demos<span class="w"> </span>teleop_keyboard.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 </li>
@@ -133,8 +133,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </div>
 </li>
 </ol>
-</section>
-<section id="controlling-the-robot-using-an-android-device">
+</div>
+<div class="section" id="controlling-the-robot-using-an-android-device">
 <h2>Controlling the robot using an Android device<a class="headerlink" href="#controlling-the-robot-using-an-android-device" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Turn on robotont</p></li>
@@ -150,8 +150,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li><p>Click OK to add the robot</p></li>
 <li><p>Now you can select the robot from the list and teleoperate it using the touch joystick button</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

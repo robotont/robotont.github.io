@@ -19,7 +19,7 @@ Controlling the robot using teleop twist keyboard
    .. code-block:: bash
       
       sudo apt update
-      sudo apt install ros-melodic-teleop-twist-keyboard
+      sudo apt install ros-noetic-teleop-twist-keyboard
 
 #. Open a new terminal window
 

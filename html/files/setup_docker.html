@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simulated robot on docker with X11 forwarding &mdash; Robotont 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f6245a2f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -91,25 +91,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="simulated-robot-on-docker-with-x11-forwarding">
+  <div class="section" id="simulated-robot-on-docker-with-x11-forwarding">
 <span id="setup-docker"></span><h1>Simulated robot on docker with X11 forwarding<a class="headerlink" href="#simulated-robot-on-docker-with-x11-forwarding" title="Permalink to this heading"></a></h1>
 <p>This setup tutorial will guide you through setting up your PC to run the simulated robot with the demos.
 This assumes that you have a linux machine. Tested on ubuntu 20, but should work on any linux.</p>
-<section id="installing-docker">
+<div class="section" id="installing-docker">
 <h2>Installing Docker<a class="headerlink" href="#installing-docker" title="Permalink to this heading"></a></h2>
 <p>Quick version:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Installing docker&quot;</span>
-curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install curl
+<span class="nb">echo</span> <span class="s2">&quot;Installing docker&quot;</span>
+curl -fsSL https://get.docker.com <span class="p">|</span> sudo sh
 
-groupadd<span class="w"> </span>docker
-usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span>
+groupadd docker
+usermod -aG docker <span class="k">$(</span>whoami<span class="k">)</span>
 </pre></div>
 </div>
 <p>Restart user session.</p>
 <p>Slow version is to follow the instructions <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">here</a>.</p>
-</section>
-<section id="cloning-robotont-s-packages">
+</div>
+<div class="section" id="cloning-robotont-s-packages">
 <h2>Cloning Robotont’s packages<a class="headerlink" href="#cloning-robotont-s-packages" title="Permalink to this heading"></a></h2>
 <p>All Robotont’s packages can be accessed from <a class="reference external" href="https://github.com/robotont">Robotont’s GitHub</a>.</p>
 <p>Packages necessary to run the Gazebo simulation with Robotont’s demos are following:</p>
@@ -121,85 +121,85 @@ usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w">
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_demos">robotont_demos</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_msgs.git">robotont_msgs</a></p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>robotont/src
-<span class="nb">cd</span><span class="w"> </span>robotont/src
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p robotont/src
+<span class="nb">cd</span> robotont/src
 
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/robotont_description.git
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/robotont_demos.git
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/robotont_gazebo.git
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/robotont_msgs.git
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/robotont_navigation.git
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/robotont_nuc_description.git
+git clone https://github.com/robotont/robotont_description.git
+git clone https://github.com/robotont/robotont_demos.git
+git clone https://github.com/robotont/robotont_gazebo.git
+git clone https://github.com/robotont/robotont_msgs.git
+git clone https://github.com/robotont/robotont_navigation.git
+git clone https://github.com/robotont/robotont_nuc_description.git
 
-<span class="nb">cd</span><span class="w"> </span>..
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Path to robotont workspace: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;&quot;</span>
+<span class="nb">cd</span> ..
+<span class="nb">echo</span> <span class="s2">&quot;Path to robotont workspace: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="instructions-when-using-an-nvidia-gpu">
+</div>
+<div class="section" id="instructions-when-using-an-nvidia-gpu">
 <h2>Instructions when using an nvidia GPU<a class="headerlink" href="#instructions-when-using-an-nvidia-gpu" title="Permalink to this heading"></a></h2>
 <p>Install nvidia-docker 2 <a class="reference external" href="https://github.com/nvidia/nvidia-docker/wiki/Frequently-Asked-Questions#setting-up">here</a>.</p>
 <p>Use docker-ros-box to setup ros</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/KingBoomie/docker-ros-box.git
-<span class="nb">cd</span><span class="w"> </span>docker-ros-box
-./init-ros-box.sh<span class="w"> </span>melodic<span class="w"> </span>&lt;PATH_TO_ROBOTONT_WORKSPACE&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/KingBoomie/docker-ros-box.git
+<span class="nb">cd</span> docker-ros-box
+./init-ros-box.sh melodic &lt;PATH_TO_ROBOTONT_WORKSPACE&gt;
 </pre></div>
 </div>
-</section>
-<section id="instructions-for-everyone-else">
+</div>
+<div class="section" id="instructions-for-everyone-else">
 <h2>Instructions for everyone else<a class="headerlink" href="#instructions-for-everyone-else" title="Permalink to this heading"></a></h2>
 <p>Use docker-ros-box to setup ros</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pierrekilly/docker-ros-box
-<span class="nb">cd</span><span class="w"> </span>docker-ros-box
-./init-ros-box.sh<span class="w"> </span>melodic<span class="w"> </span>&lt;PATH_TO_ROBOTONT_WORKSPACE&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/pierrekilly/docker-ros-box
+<span class="nb">cd</span> docker-ros-box
+./init-ros-box.sh melodic &lt;PATH_TO_ROBOTONT_WORKSPACE&gt;
 </pre></div>
 </div>
-</section>
-<section id="logging-into-your-ros-image">
+</div>
+<div class="section" id="logging-into-your-ros-image">
 <h2>Logging into your ros image<a class="headerlink" href="#logging-into-your-ros-image" title="Permalink to this heading"></a></h2>
 <p>In the robotont folder</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./go.sh
-<span class="nb">cd</span><span class="w"> </span>/home/melodic-dev/catkin_ws
+<span class="nb">cd</span> /home/melodic-dev/catkin_ws
 </pre></div>
 </div>
-</section>
-<section id="installing-missing-dependancies">
+</div>
+<div class="section" id="installing-missing-dependancies">
 <h2>Installing missing dependancies<a class="headerlink" href="#installing-missing-dependancies" title="Permalink to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ros-melodic-depthimage-to-laserscan<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-cartographer-ros<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-move-base<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-rtabmap-ros<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-ar-track-alvar<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-realsense2-description<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-realsense2-camera<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-joy<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ros-melodic-teleop-twist-keyboard
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install -y ros-melodic-depthimage-to-laserscan <span class="se">\</span>
+    ros-melodic-cartographer-ros <span class="se">\</span>
+    ros-melodic-move-base <span class="se">\</span>
+    ros-melodic-rtabmap-ros <span class="se">\</span>
+    ros-melodic-ar-track-alvar <span class="se">\</span>
+    ros-melodic-realsense2-description <span class="se">\</span>
+    ros-melodic-realsense2-camera <span class="se">\</span>
+    ros-melodic-joy <span class="se">\</span>
+    ros-melodic-teleop-twist-keyboard
 </pre></div>
 </div>
-</section>
-<section id="building-the-catkin-workspace">
+</div>
+<div class="section" id="building-the-catkin-workspace">
 <h2>Building the catkin workspace<a class="headerlink" href="#building-the-catkin-workspace" title="Permalink to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>catkin_ws
-catkin<span class="w"> </span>build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> catkin_ws
+catkin build
 </pre></div>
 </div>
-</section>
-<section id="sourcing-the-workspace">
+</div>
+<div class="section" id="sourcing-the-workspace">
 <h2>Sourcing the workspace<a class="headerlink" href="#sourcing-the-workspace" title="Permalink to this heading"></a></h2>
 <p>Make the workspace visible to ROS (must be done for every new terminal)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/catkin_ws/devel/setup.bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
 </pre></div>
 </div>
 <p>For automatic sourcing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
-</section>
-<section id="running-the-demos-with-gazebo">
+</div>
+<div class="section" id="running-the-demos-with-gazebo">
 <h2>Running the demos with Gazebo<a class="headerlink" href="#running-the-demos-with-gazebo" title="Permalink to this heading"></a></h2>
 <p>Tutorial for running the simulation with the demos can be found here: <a class="reference internal" href="demo_gazebo.html#demos-on-gazebo"><span class="std std-ref">Demos on Gazebo</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

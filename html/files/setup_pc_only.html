@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using only the simulated robot &mdash; Robotont 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f6245a2f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -89,23 +89,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="using-only-the-simulated-robot">
+  <div class="section" id="using-only-the-simulated-robot">
 <span id="setup-pc-only"></span><h1>Using only the simulated robot<a class="headerlink" href="#using-only-the-simulated-robot" title="Permalink to this heading"></a></h1>
 <p>This setup tutorial will guide you through setting up your PC to run the simulated robot with the demos.</p>
-<section id="installing-ubuntu">
+<div class="section" id="installing-ubuntu">
 <h2>Installing Ubuntu<a class="headerlink" href="#installing-ubuntu" title="Permalink to this heading"></a></h2>
-<p>Download and install Ubuntu Linux on your PC from the following link: <a class="reference external" href="http://releases.ubuntu.com/18.04.4/?_ga=2.170843936.1678816316.1594710587-1973467440.1591964081">Ubuntu 18.04.4 LTS (Bionic Beaver)</a>.</p>
+<p>Download and install Ubuntu Linux on your PC from the following link: <a class="reference external" href="https://releases.ubuntu.com/focal/">Ubuntu 20.04.6 LTS (Focal Fossa)</a>.</p>
 <p>The guide to install Ubuntu on your PC can be found <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview">here</a>.</p>
-</section>
-<section id="installing-ros">
+</div>
+<div class="section" id="installing-ros">
 <h2>Installing ROS<a class="headerlink" href="#installing-ros" title="Permalink to this heading"></a></h2>
-<p>Install Ros Melodic by following the guide: <a class="reference external" href="http://wiki.ros.org/melodic/Installation/Ubuntu">Ros Melodic</a>.</p>
-</section>
-<section id="creating-a-catkin-workspace">
+<p>Install Ros Noetic by following the guide: <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu">Ros Noetic</a>.</p>
+</div>
+<div class="section" id="creating-a-catkin-workspace">
 <h2>Creating a catkin workspace<a class="headerlink" href="#creating-a-catkin-workspace" title="Permalink to this heading"></a></h2>
 <p>Create a workspace for catkin as shown <a class="reference external" href="http://wiki.ros.org/catkin/Tutorials/create_a_workspace">here</a>.</p>
-</section>
-<section id="cloning-robotont-s-packages">
+</div>
+<div class="section" id="cloning-robotont-s-packages">
 <h2>Cloning Robotont’s packages<a class="headerlink" href="#cloning-robotont-s-packages" title="Permalink to this heading"></a></h2>
 <p>All Robotont’s packages can be accessed from <a class="reference external" href="https://github.com/robotont">Robotont’s GitHub</a>.</p>
 <p>Packages necessary to run the Gazebo simulation with Robotont’s demos are following:</p>
@@ -114,37 +114,37 @@
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_nuc_description">robotont_nuc_description</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_gazebo">robotont_gazebo</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_gazebo">robotont_navigation</a></p></li>
-<li><p><a class="reference external" href="https://github.com/robotont/robotont_demos">robotont_demos</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont/robotont_demos">robotont_demos **remove?**</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_msgs.git">robotont_msgs</a></p></li>
 </ol>
 <p>To clone the packages, for example, robotont_description:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/robotont_description.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont/robotont_description.git
 </pre></div>
 </div>
-</section>
-<section id="building-the-catkin-workspace">
+</div>
+<div class="section" id="building-the-catkin-workspace">
 <h2>Building the catkin workspace<a class="headerlink" href="#building-the-catkin-workspace" title="Permalink to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>catkin_ws
-catkin<span class="w"> </span>build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> catkin_ws
+catkin build
 </pre></div>
 </div>
-</section>
-<section id="sourcing-the-workspace">
+</div>
+<div class="section" id="sourcing-the-workspace">
 <h2>Sourcing the workspace<a class="headerlink" href="#sourcing-the-workspace" title="Permalink to this heading"></a></h2>
 <p>Make the workspace visible to ROS (must be done for every new terminal)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/catkin_ws/devel/setup.bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
 </pre></div>
 </div>
 <p>For automatic sourcing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
-</section>
-<section id="running-the-demos-with-gazebo">
+</div>
+<div class="section" id="running-the-demos-with-gazebo">
 <h2>Running the demos with Gazebo<a class="headerlink" href="#running-the-demos-with-gazebo" title="Permalink to this heading"></a></h2>
 <p>Tutorial for running the simulation with the demos can be found here: <a class="reference internal" href="demo_gazebo.html#demos-on-gazebo"><span class="std std-ref">Demos on Gazebo</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
