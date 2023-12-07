@@ -41,7 +41,8 @@ and clone the following package:
 
    .. code-block:: bash
       
-      sudo apt install ros-melodic-ar-track-alvar ** 
+      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+
  
 You can find different demos in the following sections:
 

@@ -17,9 +17,11 @@ The following packages are needed to run the demos:
       sudo apt install ros-noetic-cartographer-ros
       sudo apt install ros-noetic-move-base
 
-      or 
+and clone the following package
 
-      git clone 
+   .. code-block:: bash
+      
+      git clone https://github.com/robotont-demos/2d_slam.git
 
 #. For 3D mapping:
 
@@ -27,17 +29,17 @@ The following packages are needed to run the demos:
       
       sudo apt install ros-noetic-rtabmap-ros
 
-      or 
+and clone the following package: 
       
-      git clone 
+   .. code-block:: bash
+      
+      git clone https://github.com/robotont-demos/mapping_3d.git
 
 #. For AR tracking:
 
    .. code-block:: bash
       
-      sudo apt install ros-melodic-ar-track-alvar ***
- 
-
+      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
 
 Launching the Simulation
 ------------------------

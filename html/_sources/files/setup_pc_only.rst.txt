@@ -39,8 +39,6 @@ Packages necessary to run the Gazebo simulation with Robotont's demos are follow
 
 #. `robotont_navigation <https://github.com/robotont/robotont_gazebo>`__
 
-#. `robotont_demos **remove?** <https://github.com/robotont/robotont_demos>`__ 
-
 #. `robotont_msgs <https://github.com/robotont/robotont_msgs.git>`__
 
 

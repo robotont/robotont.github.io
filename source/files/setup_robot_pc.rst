@@ -93,13 +93,13 @@ Connecting with the robot remotely
 
    .. code-block:: bash
       
-      ssh kasutaja@robotont-X
+      ssh peko@robotont-X
 
   or 
 
   .. code-block:: bash
       
-      ssh kasutaja@ip_of_the_robot
+      ssh peko@ip_of_the_robot
 
   .. image:: /files/pictures/ssh_nt.png
     :width: 400
@@ -109,7 +109,7 @@ Connecting with the robot remotely
 5. Enter the password
 
 
-6. When logged in successfully, you can see that the terminal prompt has changed to kasutaja@robotont-X. This will be an important reference when trying to figure out which terminal is connected to where.
+6. When logged in successfully, you can see that the terminal prompt has changed to peko@robotont-X. This will be an important reference when trying to figure out which terminal is connected to where.
 
   .. image:: /files/pictures/ssh_nt2.png
     :width: 400
