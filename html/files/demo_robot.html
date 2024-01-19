@@ -282,13 +282,13 @@ and which way does it have to face.</p></li>
 <div class="section" id="id6">
 <h3>Running the demo<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
-<li><p><strong>On Robotont on-board computer or on PC</strong> launch 3d_mapping.launch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d 3d_mapping.launch
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch mapping_3d.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d mapping_3d.launch
 </pre></div>
 </div>
 </li>
-<li><p><strong>On PC</strong> launch 3d_mapping_display.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d 3d_mapping_display.launch
+<li><p><strong>On PC</strong> launch mapping_3d_display.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d mapping_3d_display.launch
 </pre></div>
 </div>
 </li>
@@ -328,12 +328,12 @@ git clone https://github.com/robotont-demos/demo_ar_follow_the_leader.git
 <h4>Running the demo<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
 <ol class="arabic">
 <li><p><strong>On Robotont on-board computer or on PC</strong> launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_follow_the_leader ar_follow_the_leader.launch marker_id:<span class="o">=</span>tag_nr
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_ar_follow_the_leader ar_follow_the_leader.launch marker_id:<span class="o">=</span>tag_nr
 </pre></div>
 </div>
 </li>
 <li><p><strong>On PC</strong> launch ar_marker_display.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_follow_the_leader ar_marker_display.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_ar_follow_the_leader ar_marker_display.launch
 </pre></div>
 </div>
 </li>
@@ -358,13 +358,13 @@ git clone https://github.com/robotont-demos/demo_ar_steering.git
 <h4>Running the demo<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h4>
 <ol class="arabic">
 <li><p><strong>On Robotont on-board computer or on PC</strong> launch ar_steering.launch (change tag_nr with your AR tag number)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_steering ar_steering.launch marker_id:<span class="o">=</span>tag_nr
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_ar_steering ar_steering.launch marker_id:<span class="o">=</span>tag_nr
 </pre></div>
 </div>
 </li>
 <li><p><strong>On PC</strong> launch ar_marker_display.launch to visualize the result</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_steering ar_marker_display.launch
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_ar_steering ar_marker_display.launch
 </pre></div>
 </div>
 </div></blockquote>

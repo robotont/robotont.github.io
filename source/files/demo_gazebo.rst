@@ -17,7 +17,7 @@ Launching the Simulation
       roslaunch robotont_gazebo gazebo.launch
 
 
-The launch file has four arguments:
+The launch file has three arguments:
 
 * model - chooses between a model with NUC and realsense and a model without them
 
@@ -289,17 +289,17 @@ Running the demo
       
       roslaunch robotont_gazebo world_colors.launch
 
-#. Launch 3d_mapping.launch
+#. Launch mapping_3d.launch
 
    .. code-block:: bash
       
-      roslaunch mapping_3d 3d_mapping.launch
+      roslaunch mapping_3d mapping_3d.launch
 
-#. Launch 3d_mapping_display.launch to visualize the result
+#. Launch mapping_3d_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch mapping_3d 3d_mapping_display.launch
+      roslaunch mapping_3d mapping_3d_display.launch
 
 #. To move the robot open another terminal window and run teleop twist keyboard
 

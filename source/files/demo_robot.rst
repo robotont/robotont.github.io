@@ -176,17 +176,17 @@ and clone the following package:
 Running the demo
 ~~~~~~~~~~~~~~~~
 
-#. **On Robotont on-board computer or on PC** launch 3d_mapping.launch
+#. **On Robotont on-board computer or on PC** launch mapping_3d.launch
 
    .. code-block:: bash
       
-      roslaunch mapping_3d 3d_mapping.launch
+      roslaunch mapping_3d mapping_3d.launch
 
-#. **On PC** launch 3d_mapping_display.launch to visualize the result
+#. **On PC** launch mapping_3d_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch mapping_3d 3d_mapping_display.launch
+      roslaunch mapping_3d mapping_3d_display.launch
 
 #. To move the robot open another terminal window **on robotont on-board computer or on user PC** and run teleop twist keyboard
 
@@ -226,13 +226,13 @@ Running the demo
 
    .. code-block:: bash
       
-      roslaunch ar_follow_the_leader ar_follow_the_leader.launch marker_id:=tag_nr
+      roslaunch demo_ar_follow_the_leader ar_follow_the_leader.launch marker_id:=tag_nr
 
 #. **On PC** launch ar_marker_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch ar_follow_the_leader ar_marker_display.launch
+      roslaunch demo_ar_follow_the_leader ar_marker_display.launch
 
 AR steering
 ~~~~~~~~~~~
@@ -256,12 +256,12 @@ Running the demo
 
    .. code-block:: bash
       
-      roslaunch ar_steering ar_steering.launch marker_id:=tag_nr
+      roslaunch demo_ar_steering ar_steering.launch marker_id:=tag_nr
 
 #. **On PC** launch ar_marker_display.launch to visualize the result
    
       .. code-block:: bash
          
-         roslaunch ar_steering ar_marker_display.launch
+         roslaunch demo_ar_steering ar_marker_display.launch
 
 
