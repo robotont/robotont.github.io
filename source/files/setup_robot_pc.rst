@@ -20,7 +20,7 @@ The guide to install Ubuntu on your PC can be found `here <https://ubuntu.com/tu
 Installing ROS
 --------------
 
-Install Ros Noetic by following the guide: `Ros Noetic <http://wiki.ros.org/melodic/Installation/Ubuntu>`__.
+Install ROS Noetic by following the guide: `ROS Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`__.
 
 
 Creating a catkin workspace
@@ -41,12 +41,14 @@ Packages necessary to run the demos from PC's terminal are following:
 
 #. `robotont_navigation <https://github.com/robotont/robotont_gazebo>`__
 
-The necessary packages to run the demos are the following:
+You can find the demos from the following repositories:
 
-#. `AR Follow-the-leader <https://github.com/robotont-demos/ar_follow_the_leader.git>`__
+#. `AR Demo Follow-the-leader <https://github.com/robotont-demos/ar_follow_the_leader.git>`__
 #. `AR Steering <https://github.com/robotont-demos/ar_steering.git>`__
-#. `Slam 2D <https://github.com/robotont-demos/2d_slam.git>`__
+#. `Slam 2D <https://github.com/robotont-demos/demo_slam>`__
 #. `Mapping 3D <https://github.com/robotont-demos/mapping_3d.git>`__
+
+See the :ref:`demos_on_robot` for more information about the demos.
 
 To clone the packages:
 
@@ -124,11 +126,11 @@ Getting the Robotont and PC into the same ROS environment
 There are two approaches to get the Robotont and PC into the same ROS environment. A common prerequisite for both methods is that the hosts are connected to the same network. In the following examples, we assume the Robotont and the PC having the following configuration:
 
 .. csv-table::
-  :header: "Machine", "Hostname", "IP-address"
+  :header: "Machine", "Hostname", "IP-address","Netmask"
   :widths: 40, 40, 40
 
-  "Robotont", "robotont-1", "192.168.1.1"
-  "PC", "laptop-1", "192.168.1.101"
+  "Robotont", "robotont-1", "192.168.200.1", "255.255.255.0"
+  "PC", "laptop-1", "192.168.1.101","255.255.255.0"
 
 Hostname based setup
 --------------------
@@ -140,7 +142,7 @@ In this configuration, the robot and PC query each other via hostnames. It means
 .. code-block:: bash
 
   127.0.1.1 robotont-1
-  192.168.1.101 laptop-1
+  192.168.200/24 laptop-1
 
 
 **/etc/hosts on PC:**
@@ -148,7 +150,7 @@ In this configuration, the robot and PC query each other via hostnames. It means
 .. code-block:: bash
 
   127.0.1.1 laptop-1
-  192.168.1.1 robotont-1
+  192.168.200/24 robotont-1
 
 
 Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named `ROS_MASTER_URI`, which by default points to localhost.
@@ -175,7 +177,7 @@ If you want to configure IP based communication there is no need to edit the hos
 
 .. code-block:: bash
 
-  export ROS_IP=192.168.200.1
+  export ROS_IP=192.168.200/24
 
 
 **on PC:**
@@ -183,12 +185,12 @@ If you want to configure IP based communication there is no need to edit the hos
 .. code-block:: bash
 
   export ROS_MASTER_URI=http://192.168.200.1:11311
-  export ROS_IP=192.168.200.101
+  export ROS_IP=192.168.200/24
 
 
 Similarly to the hostname based setup, append the commands to `.bashrc` to set the variables automatically.
 
-Running the demos with Gazebo
------------------------------
+Running the demos with a physical robot.
+----------------------------------------
 
 Tutorial for running the demos can be found here: :ref:`demos_on_robot`.

@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Simulated robot on docker with X11 forwarding" href="setup_docker.html" />
+    <link rel="next" title="Teleoperation" href="teleop.html" />
     <link rel="prev" title="Using the robot with a user PC" href="setup_robot_pc.html" /> 
 </head>
 
@@ -53,15 +53,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#cloning-robotont-s-packages">Cloning Robotont’s packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-the-catkin-workspace">Building the catkin workspace</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sourcing-the-workspace">Sourcing the workspace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-demos-with-a-physical-robot">Running the demos with a physical robot.</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html">Simulated robot on docker with X11 forwarding</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">Sandbox</a></li>
 </ul>
 
         </div>
@@ -99,7 +100,7 @@
 </div>
 <div class="section" id="installing-ros">
 <h2>Installing ROS<a class="headerlink" href="#installing-ros" title="Permalink to this heading"></a></h2>
-<p>Install Ros Noetic by following the guide: <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu">Ros Noetic</a>.</p>
+<p>Install ROS Noetic by following the guide: <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu">ROS Noetic</a>.</p>
 </div>
 <div class="section" id="creating-a-catkin-workspace">
 <h2>Creating a catkin workspace<a class="headerlink" href="#creating-a-catkin-workspace" title="Permalink to this heading"></a></h2>
@@ -116,6 +117,14 @@
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_gazebo">robotont_navigation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_msgs.git">robotont_msgs</a></p></li>
 </ol>
+<p>You can find the demos from the following repositories:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/robotont-demos/ar_follow_the_leader.git">AR Demo Follow-the-leader</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/ar_steering.git">AR Steering</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/demo_slam">Slam 2D</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/mapping_3d.git">Mapping 3D</a></p></li>
+</ol>
+<p>See the <a class="reference internal" href="demo_gazebo.html#demos-on-gazebo"><span class="std std-ref">Demos on Gazebo</span></a> for more information about the demos.</p>
 <p>To clone the packages, for example, robotont_description:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont/robotont_description.git
 </pre></div>
@@ -139,8 +148,8 @@ catkin build
 </pre></div>
 </div>
 </div>
-<div class="section" id="running-the-demos-with-gazebo">
-<h2>Running the demos with Gazebo<a class="headerlink" href="#running-the-demos-with-gazebo" title="Permalink to this heading"></a></h2>
+<div class="section" id="running-the-demos-with-a-physical-robot">
+<h2>Running the demos with a physical robot.<a class="headerlink" href="#running-the-demos-with-a-physical-robot" title="Permalink to this heading"></a></h2>
 <p>Tutorial for running the simulation with the demos can be found here: <a class="reference internal" href="demo_gazebo.html#demos-on-gazebo"><span class="std std-ref">Demos on Gazebo</span></a>.</p>
 </div>
 </div>
@@ -150,7 +159,7 @@ catkin build
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="setup_robot_pc.html" class="btn btn-neutral float-left" title="Using the robot with a user PC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="setup_docker.html" class="btn btn-neutral float-right" title="Simulated robot on docker with X11 forwarding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="teleop.html" class="btn btn-neutral float-right" title="Teleoperation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

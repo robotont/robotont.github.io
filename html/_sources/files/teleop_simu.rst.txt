@@ -10,9 +10,7 @@ Setup
    .. code-block:: bash
       
       sudo apt update
-      sudo apt install ros-melodic-teleop-twist-keyboard
-
-#. From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__.
+      sudo apt install ros-noetic-teleop-twist-keyboard
 
 #. Start the driver
 
@@ -20,7 +18,10 @@ Setup
       
       roslaunch robotont_driver fake_driver.launch
 
-#. Make sure that fixed frame is set to "odom"!
+#. Set the fixed frame to :code:`odom` in RViz
+
+   .. image:: /files/pictures/frame_odom_img.png
+       :width: 400
 
 Controlling the robot using teleop twist keyboard
 -------------------------------------------------

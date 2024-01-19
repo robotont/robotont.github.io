@@ -45,17 +45,18 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="teleop.html">Teleoperation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Controlling the robot</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-teleop-twist-keyboard">Controlling the robot using teleop twist keyboard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-an-android-device">Controlling the robot using an Android device</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="teleop_simu.html">Controlling the simulated robot on RViz</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">Sandbox</a></li>
 </ul>
 
         </div>
@@ -132,23 +133,6 @@ sudo apt install ros-noetic-teleop-twist-keyboard
 <p>Use <code class="code docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">C</span></code> to stop the node.</p>
 </div>
 </li>
-</ol>
-</div>
-<div class="section" id="controlling-the-robot-using-an-android-device">
-<h2>Controlling the robot using an Android device<a class="headerlink" href="#controlling-the-robot-using-an-android-device" title="Permalink to this heading"></a></h2>
-<ol class="arabic">
-<li><p>Turn on robotont</p></li>
-<li><p>From your Android device, go to Google Play Store and install the <a class="reference external" href="https://play.google.com/store/apps/details?id=com.robotca.ControlApp&amp;hl=en">ROS Control app</a>.</p></li>
-<li><p>Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router</p></li>
-<li><p>Open the ROS Control app on your phone</p></li>
-<li><p>Insert the ROBOTONT’s IP address into Master URI field by entering the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://robotont_IP_address:11311
-</pre></div>
-</div>
-</li>
-<li><p>Click on “Show advanced options” in the prompted window and fill in “Joystick” and “Odometry” topic names with “cmd_vel” and “odom”, respectively</p></li>
-<li><p>Click OK to add the robot</p></li>
-<li><p>Now you can select the robot from the list and teleoperate it using the touch joystick button</p></li>
 </ol>
 </div>
 </div>

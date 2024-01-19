@@ -59,18 +59,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-robotont-and-pc-into-the-same-ros-environment">Getting the Robotont and PC into the same ROS environment</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#hostname-based-setup">Hostname based setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ip-address-based-setup">IP-address based setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-demos-with-a-physical-robot">Running the demos with a physical robot.</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html">Using only the simulated robot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html">Simulated robot on docker with X11 forwarding</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">Sandbox</a></li>
 </ul>
 
         </div>
@@ -110,7 +111,7 @@
 </div>
 <div class="section" id="installing-ros">
 <h3>Installing ROS<a class="headerlink" href="#installing-ros" title="Permalink to this heading"></a></h3>
-<p>Install Ros Noetic by following the guide: <a class="reference external" href="http://wiki.ros.org/melodic/Installation/Ubuntu">Ros Noetic</a>.</p>
+<p>Install ROS Noetic by following the guide: <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu">ROS Noetic</a>.</p>
 </div>
 <div class="section" id="creating-a-catkin-workspace">
 <h3>Creating a catkin workspace<a class="headerlink" href="#creating-a-catkin-workspace" title="Permalink to this heading"></a></h3>
@@ -125,13 +126,14 @@
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_nuc_description">robotont_nuc_description</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_gazebo">robotont_navigation</a></p></li>
 </ol>
-<p>The necessary packages to run the demos are the following:</p>
+<p>You can find the demos from the following repositories:</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/robotont-demos/ar_follow_the_leader.git">AR Follow-the-leader</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/ar_follow_the_leader.git">AR Demo Follow-the-leader</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont-demos/ar_steering.git">AR Steering</a></p></li>
-<li><p><a class="reference external" href="https://github.com/robotont-demos/2d_slam.git">Slam 2D</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/demo_slam">Slam 2D</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont-demos/mapping_3d.git">Mapping 3D</a></p></li>
 </ol>
+<p>See the <a class="reference internal" href="demo_robot.html#demos-on-robot"><span class="std std-ref">Demos on Robotont</span></a> for more information about the demos.</p>
 <p>To clone the packages:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont/package_name.git
 </pre></div>
@@ -194,40 +196,17 @@ catkin build
 <div class="section" id="getting-the-robotont-and-pc-into-the-same-ros-environment">
 <span id="same-env"></span><h2>Getting the Robotont and PC into the same ROS environment<a class="headerlink" href="#getting-the-robotont-and-pc-into-the-same-ros-environment" title="Permalink to this heading"></a></h2>
 <p>There are two approaches to get the Robotont and PC into the same ROS environment. A common prerequisite for both methods is that the hosts are connected to the same network. In the following examples, we assume the Robotont and the PC having the following configuration:</p>
-<table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Machine</p></th>
-<th class="head"><p>Hostname</p></th>
-<th class="head"><p>IP-address</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Robotont</p></td>
-<td><p>robotont-1</p></td>
-<td><p>192.168.1.1</p></td>
-</tr>
-<tr class="row-odd"><td><p>PC</p></td>
-<td><p>laptop-1</p></td>
-<td><p>192.168.1.101</p></td>
-</tr>
-</tbody>
-</table>
 <div class="section" id="hostname-based-setup">
 <h3>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h3>
 <p>In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
 <p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 robotont-1
-<span class="m">192</span>.168.1.101 laptop-1
+<span class="m">192</span>.168.200/24 laptop-1
 </pre></div>
 </div>
 <p><strong>/etc/hosts on PC:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 laptop-1
-<span class="m">192</span>.168.1.1 robotont-1
+<span class="m">192</span>.168.200/24 robotont-1
 </pre></div>
 </div>
 <p>Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
@@ -245,18 +224,18 @@ Note that the environment variable has to be set for each terminal window! To ma
 <h3>IP-address based setup<a class="headerlink" href="#ip-address-based-setup" title="Permalink to this heading"></a></h3>
 <p>If you want to configure IP based communication there is no need to edit the hosts file. Instead, a <cite>ROS_IP</cite> environmental variable has to be set on both sides:</p>
 <p><strong>on Robotont on-board computer:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200/24
 </pre></div>
 </div>
 <p><strong>on PC:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.200.1:11311
-<span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.101
+<span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200/24
 </pre></div>
 </div>
 <p>Similarly to the hostname based setup, append the commands to <cite>.bashrc</cite> to set the variables automatically.</p>
 </div>
-<div class="section" id="running-the-demos-with-gazebo">
-<h3>Running the demos with Gazebo<a class="headerlink" href="#running-the-demos-with-gazebo" title="Permalink to this heading"></a></h3>
+<div class="section" id="running-the-demos-with-a-physical-robot">
+<h3>Running the demos with a physical robot.<a class="headerlink" href="#running-the-demos-with-a-physical-robot" title="Permalink to this heading"></a></h3>
 <p>Tutorial for running the demos can be found here: <a class="reference internal" href="demo_robot.html#demos-on-robot"><span class="std std-ref">Demos on Robotont</span></a>.</p>
 </div>
 </div>

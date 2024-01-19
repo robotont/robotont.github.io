@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Demos on Gazebo" href="demo_gazebo.html" />
-    <link rel="prev" title="Before starting" href="demos_before_starting.html" /> 
+    <link rel="prev" title="Sensors" href="sensors.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,22 +45,50 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="demos.html">Demos</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="demos_before_starting.html">Before starting</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Demos on Robotont</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D mapping</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#setting-2d-navigation-goals">Setting 2D navigation goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Demos on Robotont</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#d-mapping-and-localization">2D Mapping and Localization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmapping-and-amcl">Gmapping and AMCL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-demo">Running the demo</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">3D mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ar-tracking">AR tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cartographer">Cartographer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Running the demo</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hector-slam">Hector SLAM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Running the demo</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-2d-navigation-goals">Setting 2D navigation goals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#d-mapping">3D mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Running the demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ar-tracking">AR tracking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#follow-the-leader">Follow the leader</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Running the demo</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ar-steering">AR steering</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Running the demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">Sandbox</a></li>
 </ul>
 
         </div>
@@ -77,7 +105,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="demos.html">Demos</a></li>
       <li class="breadcrumb-item active">Demos on Robotont</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/files/demo_robot.rst.txt" rel="nofollow"> View page source</a>
@@ -90,68 +117,65 @@
              
   <div class="section" id="demos-on-robotont">
 <span id="demos-on-robot"></span><h1>Demos on Robotont<a class="headerlink" href="#demos-on-robotont" title="Permalink to this heading"></a></h1>
-<p>Before using the demos see: <a class="reference internal" href="demos_before_starting.html#before-starting"><span class="std std-ref">Before starting</span></a></p>
+<p>Before running the demos it is necessary to get acquinted with the setup section of the documentation.</p>
+<p>Before running the demos on the robot read the following instructions:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="setup_robot_pc.html#setting-up-pc"><span class="std std-ref">Setting up the PC</span></a></p></li>
+<li><p><a class="reference internal" href="setup_robot_pc.html#connecting-remotely"><span class="std std-ref">Connecting with the robot remotely</span></a></p></li>
+<li><p><a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a></p></li>
+</ul>
 <p>Note that some of the commands will run on Robotont on-board computer and some on user PC.</p>
-<p>The following packages are needed to run the demos:</p>
-<ol class="arabic">
-<li><p>For 2D mapping:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+<div class="section" id="d-mapping-and-localization">
+<h2>2D Mapping and Localization<a class="headerlink" href="#d-mapping-and-localization" title="Permalink to this heading"></a></h2>
+<p>The following are needed to run the 2D mapping demo:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt install ros-noetic-depthimage-to-laserscan
-sudo apt install ros-noetic-cartographer-ros
 sudo apt install ros-noetic-move-base
 </pre></div>
 </div>
-</li>
-</ol>
-<p>and clone the following package</p>
+</div></blockquote>
+<p>To run the 2D mapping demo, you need to clone the base package:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/2d_slam.git
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam.git
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic">
-<li><p>For 3D mapping:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-noetic-rtabmap-ros
-</pre></div>
-</div>
-</li>
-</ol>
-<p>and clone the following package:</p>
+<p>and choose a mapping method from the following:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/mapping_3d.git
+<div><ol class="arabic simple">
+<li><p>Cartographer</p></li>
+<li><p>Gmapping</p></li>
+<li><p>Hector SLAM</p></li>
+</ol>
+</div></blockquote>
+<div class="section" id="gmapping-and-amcl">
+<h3>Gmapping and AMCL<a class="headerlink" href="#gmapping-and-amcl" title="Permalink to this heading"></a></h3>
+<div class="section" id="installation">
+<h4>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h4>
+<p>You can clone the package for the Gmapping method from <a class="reference external" href="https://github.com/robotont-demos/demo_slam_gmapping">this repository.</a></p>
+<p>To clone the package:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_gmapping.git
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic">
-<li><p>For AR tracking:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
-</pre></div>
 </div>
-</li>
-</ol>
-<p>You can find different demos in the following sections:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/ar_steering.git
-git clone https://github.com/robotont-demos/ar_follow_the_leader.git
-</pre></div>
-</div>
-</div></blockquote>
-<div class="section" id="d-mapping">
-<h2>2D mapping<a class="headerlink" href="#d-mapping" title="Permalink to this heading"></a></h2>
-<p>Uses Cartographer to create a 2D map of the robot’s surroundings.</p>
+<div class="section" id="running-the-demo">
+<h4>Running the demo<a class="headerlink" href="#running-the-demo" title="Permalink to this heading"></a></h4>
 <ol class="arabic">
 <li><p><strong>On Robotont on-board computer or on PC</strong> launch 2d_slam.launch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch slam_2d 2d_slam.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_slam_gmapping 2d_slam.launch
 </pre></div>
 </div>
 </li>
 <li><p><strong>On PC</strong> launch 2d_slam_display.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch slam_2d 2d_slam_display.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_slam 2d_slam_display.launch
 </pre></div>
 </div>
 </li>
-<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch **
+<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard (TBA)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -160,6 +184,66 @@ git clone https://github.com/robotont-demos/ar_follow_the_leader.git
 </div>
 </li>
 </ol>
+</div>
+</div>
+<div class="section" id="cartographer">
+<h3>Cartographer<a class="headerlink" href="#cartographer" title="Permalink to this heading"></a></h3>
+<div class="section" id="id1">
+<h4>Installation<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<p>You can clone the package for the Cartographer method from <a class="reference external" href="https://github.com/robotont-demos/demo_slam_cartographer">this repository.</a></p>
+<p>To clone the package:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_cartographer.git
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h4>Running the demo<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch 2d_slam.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_slam_cartographer 2d_slam.launch
+</pre></div>
+</div>
+</li>
+<li><p><strong>On PC</strong> launch 2d_slam_display.launch to visualize the result</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_slam 2d_slam_display.launch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="hector-slam">
+<h3>Hector SLAM<a class="headerlink" href="#hector-slam" title="Permalink to this heading"></a></h3>
+<div class="section" id="id3">
+<h4>Installation<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<p>You can clone the package for the Hector SLAM method from <a class="reference external" href="https://github.com/robotont-demos/demo_slam_hector">this repository.</a></p>
+<p>To clone the package:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_hector.git
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h4>Running the demo<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch 2d_slam.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_slam_hector 2d_slam.launch
+</pre></div>
+</div>
+</li>
+<li><p><strong>On PC</strong> launch 2d_slam_display.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_slam 2d_slam_display.launch
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
 <div class="section" id="setting-2d-navigation-goals">
 <h3>Setting 2D navigation goals<a class="headerlink" href="#setting-2d-navigation-goals" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
@@ -176,9 +260,27 @@ and which way does it have to face.</p></li>
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>3D mapping<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<div class="section" id="d-mapping">
+<h2>3D mapping<a class="headerlink" href="#d-mapping" title="Permalink to this heading"></a></h2>
 <p>Creates a 3D map of the robot’s surroundings.</p>
+<div class="section" id="id5">
+<h3>Installation<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p>For 3D mapping:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-noetic-rtabmap-ros
+</pre></div>
+</div>
+</li>
+</ol>
+<p>and clone the following package:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/mapping_3d.git
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h3>Running the demo<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
 <li><p><strong>On Robotont on-board computer or on PC</strong> launch 3d_mapping.launch</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d 3d_mapping.launch
@@ -191,7 +293,7 @@ and which way does it have to face.</p></li>
 </div>
 </li>
 <li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on user PC</strong> and run teleop twist keyboard</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun robotont_demos teleop_keyboard.launch **
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -204,9 +306,26 @@ and which way does it have to face.</p></li>
 <div><a class="reference internal image-reference" href="../_images/3dmap.png"><img alt="../_images/3dmap.png" src="../_images/3dmap.png" style="width: 400px;" /></a>
 </div></blockquote>
 </div>
+</div>
 <div class="section" id="ar-tracking">
 <h2>AR tracking<a class="headerlink" href="#ar-tracking" title="Permalink to this heading"></a></h2>
 <p>The robot identifies and tracks the pose of the provided AR tag and acts accordingly.</p>
+<div class="section" id="follow-the-leader">
+<h3>Follow the leader<a class="headerlink" href="#follow-the-leader" title="Permalink to this heading"></a></h3>
+<p>The follow the leader demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.</p>
+<div class="section" id="id7">
+<h4>Installation<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p>For AR tracking:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+git clone https://github.com/robotont-demos/demo_ar_follow_the_leader.git
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h4>Running the demo<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
 <ol class="arabic">
 <li><p><strong>On Robotont on-board computer or on PC</strong> launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_follow_the_leader ar_follow_the_leader.launch marker_id:<span class="o">=</span>tag_nr
@@ -218,16 +337,41 @@ and which way does it have to face.</p></li>
 </pre></div>
 </div>
 </li>
-<li><p>To move the robot open another terminal window <strong>on Robotont on-board computer or on PC</strong> and run teleop twist keyboard</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch ***
-</pre></div>
+</ol>
 </div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+</div>
+<div class="section" id="ar-steering">
+<h3>AR steering<a class="headerlink" href="#ar-steering" title="Permalink to this heading"></a></h3>
+<p>The AR steering demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.</p>
+<div class="section" id="id9">
+<h4>Installation<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p>For AR tracking:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+git clone https://github.com/robotont-demos/demo_ar_steering.git
+</pre></div>
 </div>
 </li>
 </ol>
+</div>
+<div class="section" id="id10">
+<h4>Running the demo<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch ar_steering.launch (change tag_nr with your AR tag number)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_steering ar_steering.launch marker_id:<span class="o">=</span>tag_nr
+</pre></div>
+</div>
+</li>
+<li><p><strong>On PC</strong> launch ar_marker_display.launch to visualize the result</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_steering ar_marker_display.launch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 
@@ -235,7 +379,7 @@ and which way does it have to face.</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="demos_before_starting.html" class="btn btn-neutral float-left" title="Before starting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sensors.html" class="btn btn-neutral float-left" title="Sensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="demo_gazebo.html" class="btn btn-neutral float-right" title="Demos on Gazebo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

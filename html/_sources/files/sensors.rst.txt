@@ -16,7 +16,7 @@ Displaying the camera feed
 
    .. code-block:: bash
       
-      roslaunch robotont_demos display_camera.launch ***
+      roslaunch robotont_demos display_camera.launch 
 
 
 Getting distances from objects

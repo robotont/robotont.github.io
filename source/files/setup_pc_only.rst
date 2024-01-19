@@ -17,7 +17,7 @@ The guide to install Ubuntu on your PC can be found `here <https://ubuntu.com/tu
 Installing ROS
 --------------
 
-Install Ros Noetic by following the guide: `Ros Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`__.
+Install ROS Noetic by following the guide: `ROS Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`__.
 
 Creating a catkin workspace
 ----------------------------
@@ -41,6 +41,14 @@ Packages necessary to run the Gazebo simulation with Robotont's demos are follow
 
 #. `robotont_msgs <https://github.com/robotont/robotont_msgs.git>`__
 
+You can find the demos from the following repositories:
+
+#. `AR Demo Follow-the-leader <https://github.com/robotont-demos/ar_follow_the_leader.git>`__
+#. `AR Steering <https://github.com/robotont-demos/ar_steering.git>`__
+#. `Slam 2D <https://github.com/robotont-demos/demo_slam>`__
+#. `Mapping 3D <https://github.com/robotont-demos/mapping_3d.git>`__
+
+See the :ref:`demos_on_gazebo` for more information about the demos.
 
 To clone the packages, for example, robotont_description:
 
@@ -71,8 +79,8 @@ For automatic sourcing:
 
       echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-Running the demos with Gazebo
------------------------------
+Running the demos with a physical robot.
+----------------------------------------
 
 Tutorial for running the simulation with the demos can be found here: :ref:`demos_on_gazebo`.
 
