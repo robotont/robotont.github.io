@@ -55,8 +55,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#sourcing-the-workspace">Sourcing the workspace</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#connecting-with-the-robot-remotely">Connecting with the robot remotely</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-the-robotont-and-pc-into-the-same-ros-environment">Getting the Robotont and PC into the same ROS environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-with-the-robot-remotely">Connecting with the robot remotely</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ssh-connection">SSH Connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#master-slave-connection">Master-slave connection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hostname-based-setup">Hostname based setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ip-address-based-setup">IP-address based setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#running-the-demos-with-a-physical-robot">Running the demos with a physical robot.</a></li>
@@ -160,6 +161,14 @@ catkin build
 </div>
 <div class="section" id="connecting-with-the-robot-remotely">
 <span id="connecting-remotely"></span><h2>Connecting with the robot remotely<a class="headerlink" href="#connecting-with-the-robot-remotely" title="Permalink to this heading"></a></h2>
+<p>There are 3 ways in which you can connect to the robot remotely.</p>
+<ol class="arabic simple">
+<li><p>SSH connection</p></li>
+<li><p>Master-slave connection</p></li>
+<li><p>Remote desktop connection ????</p></li>
+</ol>
+<div class="section" id="ssh-connection">
+<h3>SSH Connection<a class="headerlink" href="#ssh-connection" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Open a new terminal window</p></li>
 <li><p>Connect the user PC to Robotont’s network or make sure that the user PC and Robotont’s on-board computer are connected to the same wifi router</p></li>
@@ -193,9 +202,42 @@ catkin build
 <li><p>After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.</p></li>
 </ol>
 </div>
-<div class="section" id="getting-the-robotont-and-pc-into-the-same-ros-environment">
-<span id="same-env"></span><h2>Getting the Robotont and PC into the same ROS environment<a class="headerlink" href="#getting-the-robotont-and-pc-into-the-same-ros-environment" title="Permalink to this heading"></a></h2>
-<p>There are two approaches to get the Robotont and PC into the same ROS environment. A common prerequisite for both methods is that the hosts are connected to the same network. In the following examples, we assume the Robotont and the PC having the following configuration:</p>
+<div class="section" id="master-slave-connection">
+<span id="same-env"></span><h3>Master-slave connection<a class="headerlink" href="#master-slave-connection" title="Permalink to this heading"></a></h3>
+<p>In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot. There are two ways to achieve this:</p>
+<ol class="arabic simple">
+<li><p>Hostname based setup</p></li>
+<li><p>IP-address based setup</p></li>
+</ol>
+<p>In the following examples, we assume the Robotont and the PC having the following configuration:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Machine</p></th>
+<th class="head"><p>Hostname</p></th>
+<th class="head"><p>IP-address</p></th>
+<th class="head"><p>Netmask</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Robotont</p></td>
+<td><p>robotont-1</p></td>
+<td><p>192.168.200.1</p></td>
+<td><p>255.255.255.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>PC</p></td>
+<td><p>laptop-1</p></td>
+<td><p>192.168.1.101</p></td>
+<td><p>255.255.255.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="hostname-based-setup">
 <h3>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h3>
 <p>In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>

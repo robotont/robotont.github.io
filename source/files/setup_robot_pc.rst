@@ -84,6 +84,16 @@ For automatic sourcing:
 Connecting with the robot remotely
 ===================================
 
+There are 3 ways in which you can connect to the robot remotely.
+
+#. SSH connection
+#. Master-slave connection
+#. Remote desktop connection ????
+
+
+SSH Connection
+----------------
+
 1. Open a new terminal window
 
 2. Connect the user PC to Robotont's network or make sure that the user PC and Robotont's on-board computer are connected to the same wifi router 
@@ -120,14 +130,19 @@ Connecting with the robot remotely
 
 .. _same_env:
 
-Getting the Robotont and PC into the same ROS environment
-=========================================================
+Master-slave connection
+-------------------------
 
-There are two approaches to get the Robotont and PC into the same ROS environment. A common prerequisite for both methods is that the hosts are connected to the same network. In the following examples, we assume the Robotont and the PC having the following configuration:
+In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot. There are two ways to achieve this:
+
+#. Hostname based setup
+#. IP-address based setup
+
+In the following examples, we assume the Robotont and the PC having the following configuration:
 
 .. csv-table::
   :header: "Machine", "Hostname", "IP-address","Netmask"
-  :widths: 40, 40, 40
+  :widths: 40, 40, 40,40 
 
   "Robotont", "robotont-1", "192.168.200.1", "255.255.255.0"
   "PC", "laptop-1", "192.168.1.101","255.255.255.0"
