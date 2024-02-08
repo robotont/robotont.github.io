@@ -157,7 +157,7 @@ In this configuration, the robot and PC query each other via hostnames. It means
 .. code-block:: bash
 
   127.0.1.1 robotont-1
-  192.168.200/24 laptop-1
+  192.168.200.101 laptop-1
 
 
 **/etc/hosts on PC:**
@@ -165,7 +165,7 @@ In this configuration, the robot and PC query each other via hostnames. It means
 .. code-block:: bash
 
   127.0.1.1 laptop-1
-  192.168.200/24 robotont-1
+  192.168.200.1 robotont-1
 
 
 Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named `ROS_MASTER_URI`, which by default points to localhost.
@@ -192,7 +192,7 @@ If you want to configure IP based communication there is no need to edit the hos
 
 .. code-block:: bash
 
-  export ROS_IP=192.168.200/24
+  export ROS_IP=192.168.200.101
 
 
 **on PC:**
@@ -200,12 +200,18 @@ If you want to configure IP based communication there is no need to edit the hos
 .. code-block:: bash
 
   export ROS_MASTER_URI=http://192.168.200.1:11311
-  export ROS_IP=192.168.200/24
+  export ROS_IP=192.168.200.101
 
 
 Similarly to the hostname based setup, append the commands to `.bashrc` to set the variables automatically.
 
-Running the demos with a physical robot.
-----------------------------------------
+Remote desktop connection
+--------------------------
 
-Tutorial for running the demos can be found here: :ref:`demos_on_robot`.
+.. _remote_desktop:
+
+In case you want to use the robot's desktop environment, you can use your own router to connect the robot and the PC. The robot's on-board computer has a VNC server installed, which allows you to connect to the robot's desktop environment.
+You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.
+
+  .. image:: /files/pictures/naming_router.png
+    :width: 400

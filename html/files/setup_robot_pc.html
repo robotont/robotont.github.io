@@ -60,7 +60,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#master-slave-connection">Master-slave connection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hostname-based-setup">Hostname based setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ip-address-based-setup">IP-address based setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-the-demos-with-a-physical-robot">Running the demos with a physical robot.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remote-desktop-connection">Remote desktop connection</a></li>
 </ul>
 </li>
 </ul>
@@ -243,12 +243,12 @@ catkin build
 <p>In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
 <p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 robotont-1
-<span class="m">192</span>.168.200/24 laptop-1
+<span class="m">192</span>.168.200.101 laptop-1
 </pre></div>
 </div>
 <p><strong>/etc/hosts on PC:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 laptop-1
-<span class="m">192</span>.168.200/24 robotont-1
+<span class="m">192</span>.168.200.1 robotont-1
 </pre></div>
 </div>
 <p>Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
@@ -266,19 +266,23 @@ Note that the environment variable has to be set for each terminal window! To ma
 <h3>IP-address based setup<a class="headerlink" href="#ip-address-based-setup" title="Permalink to this heading"></a></h3>
 <p>If you want to configure IP based communication there is no need to edit the hosts file. Instead, a <cite>ROS_IP</cite> environmental variable has to be set on both sides:</p>
 <p><strong>on Robotont on-board computer:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200/24
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.101
 </pre></div>
 </div>
 <p><strong>on PC:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.200.1:11311
-<span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200/24
+<span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.101
 </pre></div>
 </div>
 <p>Similarly to the hostname based setup, append the commands to <cite>.bashrc</cite> to set the variables automatically.</p>
 </div>
-<div class="section" id="running-the-demos-with-a-physical-robot">
-<h3>Running the demos with a physical robot.<a class="headerlink" href="#running-the-demos-with-a-physical-robot" title="Permalink to this heading"></a></h3>
-<p>Tutorial for running the demos can be found here: <a class="reference internal" href="demo_robot.html#demos-on-robot"><span class="std std-ref">Demos on Robotont</span></a>.</p>
+<div class="section" id="remote-desktop-connection">
+<h3>Remote desktop connection<a class="headerlink" href="#remote-desktop-connection" title="Permalink to this heading"></a></h3>
+<p id="remote-desktop">In case you want to use the robot’s desktop environment, you can use your own router to connect the robot and the PC. The robot’s on-board computer has a VNC server installed, which allows you to connect to the robot’s desktop environment.
+You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/naming_router.png"><img alt="../_images/naming_router.png" src="../_images/naming_router.png" style="width: 400px;" /></a>
+</div></blockquote>
 </div>
 </div>
 </div>
