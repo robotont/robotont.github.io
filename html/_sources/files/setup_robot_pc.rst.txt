@@ -208,9 +208,8 @@ Similarly to the hostname based setup, append the commands to `.bashrc` to set t
 Remote desktop connection
 --------------------------
 
-.. _remote_desktop:
+You can use your own router to connect the robot and the PC to get them on the same network.
 
-In case you want to use the robot's desktop environment, you can use your own router to connect the robot and the PC. The robot's on-board computer has a VNC server installed, which allows you to connect to the robot's desktop environment.
 You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.
 
   .. image:: /files/pictures/naming_router.png
