@@ -44,21 +44,17 @@ Controlling the robot using teleop twist keyboard
    .. tip:: Use :code:`CTRL + C` to stop the node.
 
 
-Controlling the robot using an Android device
+Controlling the robot using a mobile device
 ---------------------------------------------
 
-#. Make sure that the user PC and Android device are connected to the same wifi router
+#. Make sure that the user device and Robot device are connected to the same wifi router
 
-#. Open the ROS Control app on your phone
-
-#. Insert your computer's IP address into Master URI field by entering the following:
+#. Open the following URL in the user device browser, replacing the IP address with the robot's IP address:
 
    .. code-block:: bash
       
-         http://IP_address:11311
-
-#. Click on "Show advanced options" in the prompted window and fill in "Joystick" and "Odometry" topic names with "cmd_vel" and "odom", respectively
+     http://Robot-IP:3000/
 
 #. Click OK to add the robot
 
-#. Now you can select the robot from the list and teleoperate it using the touch joystick button
+#. Now you can teleoperate the robot using the touch joystick button

@@ -46,7 +46,7 @@ You can find the demos from the following repositories:
 #. `AR Demo Follow-the-leader <https://github.com/robotont-demos/ar_follow_the_leader.git>`__
 #. `AR Steering <https://github.com/robotont-demos/ar_steering.git>`__
 #. `Slam 2D <https://github.com/robotont-demos/demo_slam>`__
-#. `Mapping 3D <https://github.com/robotont-demos/mapping_3d.git>`__
+#. `Mapping 3D <https://github.com/robotont-demos/demo_mapping_3d.git>`__
 
 See the :ref:`demos_on_robot` for more information about the demos.
 

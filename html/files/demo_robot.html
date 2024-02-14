@@ -122,7 +122,7 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="setup_robot_pc.html#setting-up-pc"><span class="std std-ref">Setting up the PC</span></a></p></li>
 <li><p><a class="reference internal" href="setup_robot_pc.html#connecting-remotely"><span class="std std-ref">Connecting with the robot remotely</span></a></p></li>
-<li><p><a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a></p></li>
+<li><p><a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Master-slave connection</span></a></p></li>
 </ul>
 <p>Note that some of the commands will run on Robotont on-board computer and some on user PC.</p>
 <div class="section" id="d-mapping-and-localization">
@@ -274,7 +274,7 @@ and which way does it have to face.</p></li>
 </ol>
 <p>and clone the following package:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/mapping_3d.git
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_mapping_3d.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -283,12 +283,12 @@ and which way does it have to face.</p></li>
 <h3>Running the demo<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
 <li><p><strong>On Robotont on-board computer or on PC</strong> launch mapping_3d.launch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d mapping_3d.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_mapping_3d mapping_3d.launch
 </pre></div>
 </div>
 </li>
 <li><p><strong>On PC</strong> launch mapping_3d_display.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch mapping_3d mapping_3d_display.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_mapping_3d mapping_3d_display.launch
 </pre></div>
 </div>
 </li>

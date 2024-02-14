@@ -50,7 +50,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Controlling the simulated robot on RViz</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-teleop-twist-keyboard">Controlling the robot using teleop twist keyboard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-an-android-device">Controlling the robot using an Android device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-a-mobile-device">Controlling the robot using a mobile device</a></li>
 </ul>
 </li>
 </ul>
@@ -129,19 +129,17 @@ sudo apt install ros-noetic-teleop-twist-keyboard
 </li>
 </ol>
 </div>
-<div class="section" id="controlling-the-robot-using-an-android-device">
-<h2>Controlling the robot using an Android device<a class="headerlink" href="#controlling-the-robot-using-an-android-device" title="Permalink to this heading"></a></h2>
+<div class="section" id="controlling-the-robot-using-a-mobile-device">
+<h2>Controlling the robot using a mobile device<a class="headerlink" href="#controlling-the-robot-using-a-mobile-device" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
-<li><p>Make sure that the user PC and Android device are connected to the same wifi router</p></li>
-<li><p>Open the ROS Control app on your phone</p></li>
-<li><p>Insert your computer’s IP address into Master URI field by entering the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://IP_address:11311
+<li><p>Make sure that the user device and Robot device are connected to the same wifi router</p></li>
+<li><p>Open the following URL in the user device browser, replacing the IP address with the robot’s IP address:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://Robot-IP:3000/
 </pre></div>
 </div>
 </li>
-<li><p>Click on “Show advanced options” in the prompted window and fill in “Joystick” and “Odometry” topic names with “cmd_vel” and “odom”, respectively</p></li>
 <li><p>Click OK to add the robot</p></li>
-<li><p>Now you can select the robot from the list and teleoperate it using the touch joystick button</p></li>
+<li><p>Now you can teleoperate the robot using the touch joystick button</p></li>
 </ol>
 </div>
 </div>

@@ -1,5 +1,5 @@
 
-Controlling the robot using an Android device
+Controlling the robot using an Android device app
 ----------------------------------------------
 
 #. Turn on robotont
@@ -8,7 +8,7 @@ Controlling the robot using an Android device
 
 #. Connect yout Android device to Roboton's network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router
 
-#. Open the ROS Control app on your phone
+#. Open the ROS Control app on your phone. 
 
 #. Insert the ROBOTONT's IP address into Master URI field by entering the following:
 

@@ -278,7 +278,7 @@ and clone the following package:
       
    .. code-block:: bash
       
-      git clone https://github.com/robotont-demos/mapping_3d.git
+      git clone https://github.com/robotont-demos/demo_mapping_3d.git
 
 Running the demo
 ~~~~~~~~~~~~~~~~
@@ -293,13 +293,13 @@ Running the demo
 
    .. code-block:: bash
       
-      roslaunch mapping_3d mapping_3d.launch
+      roslaunch demo_mapping_3d mapping_3d.launch
 
 #. Launch mapping_3d_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch mapping_3d mapping_3d_display.launch
+      roslaunch demo_mapping_3d mapping_3d_display.launch
 
 #. To move the robot open another terminal window and run teleop twist keyboard
 
@@ -332,21 +332,64 @@ Installation
 Running the demo
 ****************
 
-#. **On Robotont on-board computer or on PC** launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)
-
-   .. code-block:: bash
-      
-      roslaunch ar_follow_the_leader ar_follow_the_leader.launch marker_id:=tag_nr
-
-#. **On PC** launch ar_marker_display.launch to visualize the result
-
-   .. code-block:: bash
-      
-      roslaunch ar_follow_the_leader ar_marker_display.launch
+On the works
 
 AR steering
 -----------
 
 The AR steering demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.
 
-This demo wasn't in the original github page (that is online) so I will confirm over the weekend the correct installation and running instructions.
+Installation
+************
+
+#. For AR tracking:
+
+   .. code-block:: bash
+      
+      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+      git clone https://github.com/robotont-demos/demo_ar_steering.git
+
+Running the demo
+****************
+
+#. Launch ar_steering.launch (change tag_nr with your AR tag number)
+
+   .. code-block:: bash
+      
+      roslaunch demo_ar_steering ar_steering.launch marker_id:=tag_nr
+
+#. Launch the simulator
+
+   .. code-block:: bash
+      
+      roslaunch robotont_gazebo world_colors.launch
+
+AR maze
+-------
+
+The AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.
+
+Installation
+************
+
+#. For AR tracking:
+
+   .. code-block:: bash
+      
+      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+      git clone https://github.com/robotont-demos/demo_ar_maze.git
+
+Running the demo
+****************
+
+#. Launch ar_maze.launch
+
+   .. code-block:: bash
+      
+      roslaunch demo_ar_maze ar_maze.launch 
+
+#. Launch the simulator
+
+   .. code-block:: bash
+      
+      roslaunch robotont_gazebo world_colors.launch

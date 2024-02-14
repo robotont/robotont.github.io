@@ -171,7 +171,7 @@ and clone the following package:
       
    .. code-block:: bash
       
-      git clone https://github.com/robotont-demos/mapping_3d.git
+      git clone https://github.com/robotont-demos/demo_mapping_3d.git
 
 Running the demo
 ~~~~~~~~~~~~~~~~
@@ -180,16 +180,16 @@ Running the demo
 
    .. code-block:: bash
       
-      roslaunch mapping_3d mapping_3d.launch
+      roslaunch demo_mapping_3d mapping_3d.launch
 
 #. **On PC** launch mapping_3d_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch mapping_3d mapping_3d_display.launch
+      roslaunch demo_mapping_3d mapping_3d_display.launch
 
 #. To move the robot open another terminal window **on robotont on-board computer or on user PC** and run teleop twist keyboard
-
+ 
    .. code-block:: bash
       
       rosrun robotont_demos teleop_keyboard.launch 
