@@ -229,6 +229,11 @@ There are two ways to achieve this:</p>
 <h3>SSH<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h3>
 <p>SSH is a secure way to connect to the robot and run commands on it. It is a good way to check the status of the robot and to run commands on it.</p>
 <p>It can be done using the IP address of the robot or the hostname.</p>
+<p>The topology of the network can be seen in the following image:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/ssh_graph.png"><img alt="../_images/ssh_graph.png" src="../_images/ssh_graph.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>You can achieve this by following the steps below:</p>
 <ol class="arabic simple">
 <li><p>Open a new terminal window</p></li>
 <li><p>Connect the user PC to Robotont’s network.</p></li>
@@ -263,7 +268,7 @@ There are two ways to achieve this:</p>
 </ol>
 </div>
 <div class="section" id="distributed-ros">
-<h3>Distributed ROS<a class="headerlink" href="#distributed-ros" title="Permalink to this heading"></a></h3>
+<span id="same-env"></span><h3>Distributed ROS<a class="headerlink" href="#distributed-ros" title="Permalink to this heading"></a></h3>
 <p>The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.</p>
 <p>If you want to configure IP based communication there is no need to edit the hosts file. Instead, a <cite>ROS_IP</cite> environmental variable has to be set on both sides:</p>
 <p><strong>on Robotont on-board computer:</strong></p>
