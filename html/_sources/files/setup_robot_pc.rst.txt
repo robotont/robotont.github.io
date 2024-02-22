@@ -92,6 +92,11 @@ Access Point (AP) connection involves connecting directly to the robotont's own 
 
 This method allows for direct communication with the robot without needing an external network infrastructure and is the easiest way to connect to the robot.
 
+The topology of the network can be seen in the following image:
+
+  .. image:: /files/pictures/apconfig.png
+    :width: 400
+
 
 #. Client connection
 
