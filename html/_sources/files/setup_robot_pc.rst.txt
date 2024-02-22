@@ -97,6 +97,8 @@ This method allows for direct communication with the robot without needing an ex
 
 This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot's IP address or hostname.
 
+Both of these methods can be used with either an IP address or a hostname based setup.
+
 Hostname vs. IP-address based setup
 ------------------------------------
 

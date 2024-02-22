@@ -97,6 +97,8 @@ This method allows for direct communication with the robot without needing an ex
 
 This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot's IP address or hostname.
 
+Both of these methods can be used with either an IP address or a hostname based setup.
+
 Hostname vs. IP-address based setup
 ------------------------------------
 
@@ -148,11 +150,12 @@ SSH is a secure way to connect to the robot and run commands on it. It is a good
 
 It can be done using the IP address of the robot or the hostname.
 
-SSH IP
-^^^^^^
+The topology of the network can be seen in the following image:
 
-SSH Hostname
-^^^^^^^^^^^^^^
+  .. image:: /files/pictures/ssh_graph.png
+    :width: 400
+
+You can achieve this by following the steps below:
 
 1. Open a new terminal window
 
@@ -189,6 +192,7 @@ SSH Hostname
 7. After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.
 
 .. _same_env:
+
 Distributed ROS
 ----------------
 
@@ -226,6 +230,7 @@ You can set up the environment by following the naming conventions for the IP-ad
 
 ROS_MASTER_URI
 ^^^^^^^^^^^^^^
+
 We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named `ROS_MASTER_URI`, which by default points to localhost.
 
 **on PC**, open a terminal and enter:
