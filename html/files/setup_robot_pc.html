@@ -55,12 +55,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#sourcing-the-workspace">Sourcing the workspace</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#connecting-with-the-robot-remotely">Connecting with the robot remotely</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ssh-connection">SSH Connection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#master-slave-connection">Master-slave connection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#hostname-based-setup">Hostname based setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ip-address-based-setup">IP-address based setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#remote-desktop-connection">Remote desktop connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-setup">Network Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hostname-vs-ip-address-based-setup">Hostname vs. IP-address based setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ssh">SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distributed-ros">Distributed ROS</a></li>
 </ul>
 </li>
 </ul>
@@ -159,52 +157,22 @@ catkin build
 </div>
 </div>
 </div>
-<div class="section" id="connecting-with-the-robot-remotely">
-<span id="connecting-remotely"></span><h2>Connecting with the robot remotely<a class="headerlink" href="#connecting-with-the-robot-remotely" title="Permalink to this heading"></a></h2>
-<p>There are 3 ways in which you can connect to the robot remotely.</p>
+<div class="section" id="network-setup">
+<span id="connecting-remotely"></span><h2>Network Setup<a class="headerlink" href="#network-setup" title="Permalink to this heading"></a></h2>
+<p>There are different ways in which you can connect to the robot remotely.</p>
 <ol class="arabic simple">
-<li><p>SSH connection</p></li>
-<li><p>Master-slave connection</p></li>
-<li><p>Remote desktop connection ????</p></li>
+<li><p>AP connection</p></li>
 </ol>
-<div class="section" id="ssh-connection">
-<h3>SSH Connection<a class="headerlink" href="#ssh-connection" title="Permalink to this heading"></a></h3>
+<p>Access Point (AP) connection involves connecting directly to the robotont’s own network.</p>
+<p>This method allows for direct communication with the robot without needing an external network infrastructure and is the easiest way to connect to the robot.</p>
 <ol class="arabic simple">
-<li><p>Open a new terminal window</p></li>
-<li><p>Connect the user PC to Robotont’s network or make sure that the user PC and Robotont’s on-board computer are connected to the same wifi router</p></li>
+<li><p>Client connection</p></li>
 </ol>
-<blockquote>
-<div><a class="reference internal image-reference" href="../_images/wifi_screen.png"><img alt="../_images/wifi_screen.png" src="../_images/wifi_screen.png" style="width: 400px;" /></a>
-</div></blockquote>
-<ol class="arabic" start="3">
-<li><p>Establish an ssh connection (change the X with the ID written on the robot)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@robotont-X
-</pre></div>
-</div>
-</li>
-</ol>
-<blockquote>
-<div><p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@ip_of_the_robot
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="../_images/ssh_nt.png"><img alt="../_images/ssh_nt.png" src="../_images/ssh_nt.png" style="width: 400px;" /></a>
-</div></blockquote>
-<ol class="arabic simple" start="4">
-<li><p>If a yes/no question is asked, enter yes</p></li>
-<li><p>Enter the password</p></li>
-<li><p>When logged in successfully, you can see that the terminal prompt has changed to <a class="reference external" href="mailto:peko&#37;&#52;&#48;robotont-X">peko<span>&#64;</span>robotont-X</a>. This will be an important reference when trying to figure out which terminal is connected to where.</p></li>
-</ol>
-<blockquote>
-<div><a class="reference internal image-reference" href="../_images/ssh_nt2.png"><img alt="../_images/ssh_nt2.png" src="../_images/ssh_nt2.png" style="width: 400px;" /></a>
-</div></blockquote>
-<ol class="arabic simple" start="7">
-<li><p>After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.</p></li>
-</ol>
-</div>
-<div class="section" id="master-slave-connection">
-<span id="same-env"></span><h3>Master-slave connection<a class="headerlink" href="#master-slave-connection" title="Permalink to this heading"></a></h3>
-<p>In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot. There are two ways to achieve this:</p>
+<p>This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot’s IP address or hostname.</p>
+<div class="section" id="hostname-vs-ip-address-based-setup">
+<h3>Hostname vs. IP-address based setup<a class="headerlink" href="#hostname-vs-ip-address-based-setup" title="Permalink to this heading"></a></h3>
+<p>In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot.
+There are two ways to achieve this:</p>
 <ol class="arabic simple">
 <li><p>Hostname based setup</p></li>
 <li><p>IP-address based setup</p></li>
@@ -237,9 +205,8 @@ catkin build
 </tr>
 </tbody>
 </table>
-</div>
 <div class="section" id="hostname-based-setup">
-<h3>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h3>
+<h4>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h4>
 <p>In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
 <p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 robotont-1
@@ -251,19 +218,52 @@ catkin build
 <span class="m">192</span>.168.200.1 robotont-1
 </pre></div>
 </div>
-<p>Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
-<p><strong>on PC</strong>, open a terminal and enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://robotont-1:11311
-</pre></div>
-</div>
-<p>Now all ROS nodes you run in this terminal will connect to the Master on the Robotont. Test it with e.g. <cite>rosnode list</cite>.
-Note that the environment variable has to be set for each terminal window! To make it automatic, you can add the line to the end of the <cite>.bashrc</cite> file in the home directory of the PC:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export ROS_MASTER_URI=http://robotont-1:11311&#39;</span> &gt;&gt; ~/.bashrc
-</pre></div>
-</div>
 </div>
 <div class="section" id="ip-address-based-setup">
-<h3>IP-address based setup<a class="headerlink" href="#ip-address-based-setup" title="Permalink to this heading"></a></h3>
+<h4>IP-address based setup<a class="headerlink" href="#ip-address-based-setup" title="Permalink to this heading"></a></h4>
+<p>If you want to configure IP based communication there is no need to edit the hosts file. Instead, a <cite>ROS_IP</cite> environmental variable has to be set on both sides:</p>
+</div>
+</div>
+<div class="section" id="ssh">
+<h3>SSH<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h3>
+<p>SSH is a secure way to connect to the robot and run commands on it. It is a good way to check the status of the robot and to run commands on it.</p>
+<p>It can be done using the IP address of the robot or the hostname.</p>
+<ol class="arabic simple">
+<li><p>Open a new terminal window</p></li>
+<li><p>Connect the user PC to Robotont’s network.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/wifi_screen.png"><img alt="../_images/wifi_screen.png" src="../_images/wifi_screen.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p>Establish an ssh connection (change the X with the ID written on the robot)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@robotont-X
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@ip_of_the_robot
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/ssh_nt.png"><img alt="../_images/ssh_nt.png" src="../_images/ssh_nt.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>If a yes/no question is asked, enter yes</p></li>
+<li><p>Enter the password</p></li>
+<li><p>When logged in successfully, you can see that the terminal prompt has changed to <a class="reference external" href="mailto:peko&#37;&#52;&#48;robotont-X">peko<span>&#64;</span>robotont-X</a>. This will be an important reference when trying to figure out which terminal is connected to where.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/ssh_nt2.png"><img alt="../_images/ssh_nt2.png" src="../_images/ssh_nt2.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.</p></li>
+</ol>
+</div>
+<div class="section" id="distributed-ros">
+<h3>Distributed ROS<a class="headerlink" href="#distributed-ros" title="Permalink to this heading"></a></h3>
+<p>The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.</p>
 <p>If you want to configure IP based communication there is no need to edit the hosts file. Instead, a <cite>ROS_IP</cite> environmental variable has to be set on both sides:</p>
 <p><strong>on Robotont on-board computer:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.101
@@ -275,14 +275,21 @@ Note that the environment variable has to be set for each terminal window! To ma
 </pre></div>
 </div>
 <p>Similarly to the hostname based setup, append the commands to <cite>.bashrc</cite> to set the variables automatically.</p>
-</div>
-<div class="section" id="remote-desktop-connection">
-<h3>Remote desktop connection<a class="headerlink" href="#remote-desktop-connection" title="Permalink to this heading"></a></h3>
 <p>You can use your own router to connect the robot and the PC to get them on the same network.</p>
 <p>You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/naming_router.png"><img alt="../_images/naming_router.png" src="../_images/naming_router.png" style="width: 400px;" /></a>
 </div></blockquote>
+<p>We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
+<p><strong>on PC</strong>, open a terminal and enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://robotont-1:11311
+</pre></div>
+</div>
+<p>Now all ROS nodes you run in this terminal will connect to the Master on the Robotont. Test it with e.g. <cite>rosnode list</cite>.
+Note that the environment variable has to be set for each terminal window! To make it automatic, you can add the line to the end of the <cite>.bashrc</cite> file in the home directory of the PC:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export ROS_MASTER_URI=http://robotont-1:11311&#39;</span> &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
 </div>
 </div>
 </div>

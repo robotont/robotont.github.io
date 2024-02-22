@@ -121,8 +121,8 @@
 <p>Before running the demos on the robot read the following instructions:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="setup_robot_pc.html#setting-up-pc"><span class="std std-ref">Setting up the PC</span></a></p></li>
-<li><p><a class="reference internal" href="setup_robot_pc.html#connecting-remotely"><span class="std std-ref">Connecting with the robot remotely</span></a></p></li>
-<li><p><a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Master-slave connection</span></a></p></li>
+<li><p><a class="reference internal" href="setup_robot_pc.html#connecting-remotely"><span class="std std-ref">Network Setup</span></a></p></li>
+<li><p><span class="xref std std-ref">same_env</span></p></li>
 </ul>
 <p>Note that some of the commands will run on Robotont on-board computer and some on user PC.</p>
 <div class="section" id="d-mapping-and-localization">
@@ -154,9 +154,10 @@ sudo apt install ros-noetic-move-base
 <div class="section" id="installation">
 <h4>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h4>
 <p>You can clone the package for the Gmapping method from <a class="reference external" href="https://github.com/robotont-demos/demo_slam_gmapping">this repository.</a></p>
-<p>To clone the package:</p>
+<p>To clone the packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_gmapping.git
+git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -175,7 +176,7 @@ sudo apt install ros-noetic-move-base
 </div>
 </li>
 <li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard (TBA)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_teleop teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -191,9 +192,10 @@ sudo apt install ros-noetic-move-base
 <div class="section" id="id1">
 <h4>Installation<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
 <p>You can clone the package for the Cartographer method from <a class="reference external" href="https://github.com/robotont-demos/demo_slam_cartographer">this repository.</a></p>
-<p>To clone the package:</p>
+<p>To clone the packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_cartographer.git
+git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -213,6 +215,15 @@ sudo apt install ros-noetic-move-base
 </div>
 </div></blockquote>
 </li>
+<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard (TBA)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_teleop teleop_keyboard.launch
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+</div>
+</li>
 </ol>
 </div>
 </div>
@@ -221,9 +232,10 @@ sudo apt install ros-noetic-move-base
 <div class="section" id="id3">
 <h4>Installation<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
 <p>You can clone the package for the Hector SLAM method from <a class="reference external" href="https://github.com/robotont-demos/demo_slam_hector">this repository.</a></p>
-<p>To clone the package:</p>
+<p>To clone the packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_hector.git
+git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -239,6 +251,15 @@ sudo apt install ros-noetic-move-base
 <li><p><strong>On PC</strong> launch 2d_slam_display.launch to visualize the result</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_slam 2d_slam_display.launch
 </pre></div>
+</div>
+</li>
+<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard (TBA)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_teleop teleop_keyboard.launch
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Notice that the teleop node only receives keypresses when the terminal window is active.</p>
 </div>
 </li>
 </ol>
@@ -272,9 +293,10 @@ and which way does it have to face.</p></li>
 </div>
 </li>
 </ol>
-<p>and clone the following package:</p>
+<p>and clone the following packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_mapping_3d.git
+git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -293,7 +315,7 @@ and which way does it have to face.</p></li>
 </div>
 </li>
 <li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on user PC</strong> and run teleop twist keyboard</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun robotont_demos teleop_keyboard.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun demo_teleop teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">

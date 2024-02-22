@@ -125,11 +125,12 @@ Installation
 
 You can clone the package for the Gmapping method from `this repository. <https://github.com/robotont-demos/demo_slam_gmapping>`__
 
-To clone the package:
+To clone the packages:
 
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_slam_gmapping.git
+      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 
 
 Running the demo
@@ -167,11 +168,12 @@ Installation
 
 You can clone the package for the Cartographer method from `this repository. <https://github.com/robotont-demos/demo_slam_cartographer>`__
 
-To clone the package:
+To clone the packages:
 
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_slam_cartographer.git
+      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 
 Running the demo
 ****************
@@ -186,7 +188,7 @@ Running the demo
 
    .. code-block:: bash
       
-      roslaunch robotont_demos teleop_keyboard.launch 
+      roslaunch demo_teleop teleop_keyboard.launch 
 
 #. Launch 2d_slam.launch
 
@@ -208,11 +210,12 @@ Installation
 
 You can clone the package for the Hector SLAM method from `this repository. <https://github.com/robotont-demos/demo_slam_hector>`__
 
-To clone the package:
+To clone the packages:
 
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_slam_hector.git
+      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 
 Running the demo
 ****************
@@ -227,7 +230,7 @@ Running the demo
 
    .. code-block:: bash
       
-      roslaunch robotont_demos teleop_keyboard.launch 
+      roslaunch demo_teleop teleop_keyboard.launch 
 
 #. Launch 2d_slam.launch
 
@@ -274,11 +277,12 @@ Installation
       
       sudo apt install ros-noetic-rtabmap-ros
 
-and clone the following package: 
+and clone the following packages: 
       
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_mapping_3d.git
+      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 
 Running the demo
 ~~~~~~~~~~~~~~~~
@@ -305,7 +309,7 @@ Running the demo
 
    .. code-block:: bash
       
-      rosrun robotont_demos teleop_keyboard.launch 
+      rosrun demo_teleop teleop_keyboard.launch 
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 

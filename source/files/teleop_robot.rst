@@ -35,7 +35,7 @@ Controlling the robot using teleop twist keyboard
 
    .. code-block:: bash
       
-         roslaunch robotont_demos teleop_keyboard.launch
+         roslaunch demo_teleop teleop_keyboard.launch
 
 #. Use the following keys to move the robot:
 
