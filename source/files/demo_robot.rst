@@ -10,7 +10,6 @@ Before running the demos on the robot read the following instructions:
 
 * :ref:`setting_up_pc`
 * :ref:`connecting_remotely`
-* :ref:`same_env`
 
 Note that some of the commands will run on Robotont on-board computer and some on user PC.
 
@@ -50,7 +49,7 @@ To clone the packages:
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_slam_gmapping.git
-      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+      git clone https://github.com/robotont-demos/demo_teleop.git
 
 
 Running the demo
@@ -89,7 +88,7 @@ To clone the packages:
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_slam_cartographer.git
-      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+      git clone https://github.com/robotont-demos/demo_teleop.git
 
 Running the demo
 ****************
@@ -127,7 +126,7 @@ To clone the packages:
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_slam_hector.git
-      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+      git clone https://github.com/robotont-demos/demo_teleop.git
 
 Running the demo
 ****************
@@ -144,7 +143,7 @@ Running the demo
       
       roslaunch demo_slam 2d_slam_display.launch
 
-#. To move the robot open another terminal window **on robotont on-board computer or on the PC** and run teleop twist keyboard (TBA)
+#. To move the robot open another terminal window **on robotont on-board computer or on the PC** and run teleop twist keyboard.
 
    .. code-block:: bash
       
@@ -190,7 +189,7 @@ and clone the following packages:
    .. code-block:: bash
       
       git clone https://github.com/robotont-demos/demo_mapping_3d.git
-      git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+      git clone https://github.com/robotont-demos/demo_teleop.git
 
 Running the demo
 ~~~~~~~~~~~~~~~~
@@ -284,3 +283,28 @@ Running the demo
          roslaunch demo_ar_steering ar_marker_display.launch
 
 
+AR Maze 
+~~~~~~~
+
+The AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag and navigate through the maze.
+
+Installation
+************
+
+#. For AR tracking:
+
+   .. code-block:: bash
+      
+      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+      git clone https://github.com/robotont-demos/demo_ar_maze.git
+
+Running the demo
+****************
+
+#. **On Robotont on-board computer or on PC** launch ar_maze.launch
+
+   .. code-block:: bash
+      
+      roslaunch demo_ar_maze ar_maze.launch
+
+   .. hint:: Make sure to modify the list with ar tags for maze navigation in 8th line of ar_maze.launch (/launch/ar_maze.launch)

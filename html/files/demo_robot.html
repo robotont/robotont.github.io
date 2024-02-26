@@ -83,6 +83,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#id10">Running the demo</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#ar-maze">AR Maze</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Running the demo</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -122,7 +127,6 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="setup_robot_pc.html#setting-up-pc"><span class="std std-ref">Setting up the PC</span></a></p></li>
 <li><p><a class="reference internal" href="setup_robot_pc.html#connecting-remotely"><span class="std std-ref">Network Setup</span></a></p></li>
-<li><p><span class="xref std std-ref">same_env</span></p></li>
 </ul>
 <p>Note that some of the commands will run on Robotont on-board computer and some on user PC.</p>
 <div class="section" id="d-mapping-and-localization">
@@ -157,7 +161,7 @@ sudo apt install ros-noetic-move-base
 <p>To clone the packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_gmapping.git
-git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+git clone https://github.com/robotont-demos/demo_teleop.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -195,7 +199,7 @@ git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 <p>To clone the packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_cartographer.git
-git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+git clone https://github.com/robotont-demos/demo_teleop.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -235,7 +239,7 @@ git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 <p>To clone the packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_slam_hector.git
-git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+git clone https://github.com/robotont-demos/demo_teleop.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -253,7 +257,7 @@ git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
 </pre></div>
 </div>
 </li>
-<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard (TBA)</p>
+<li><p>To move the robot open another terminal window <strong>on robotont on-board computer or on the PC</strong> and run teleop twist keyboard.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_teleop teleop_keyboard.launch
 </pre></div>
 </div>
@@ -296,7 +300,7 @@ and which way does it have to face.</p></li>
 <p>and clone the following packages:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont-demos/demo_mapping_3d.git
-git clone https://github.com/robotont-demos/demo_teleop_keyboard.git
+git clone https://github.com/robotont-demos/demo_teleop.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -390,6 +394,35 @@ git clone https://github.com/robotont-demos/demo_ar_steering.git
 </pre></div>
 </div>
 </div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="ar-maze">
+<h3>AR Maze<a class="headerlink" href="#ar-maze" title="Permalink to this heading"></a></h3>
+<p>The AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag and navigate through the maze.</p>
+<div class="section" id="id11">
+<h4>Installation<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p>For AR tracking:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+git clone https://github.com/robotont-demos/demo_ar_maze.git
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id12">
+<h4>Running the demo<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>On Robotont on-board computer or on PC</strong> launch ar_maze.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_ar_maze ar_maze.launch
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Make sure to modify the list with ar tags for maze navigation in 8th line of ar_maze.launch (/launch/ar_maze.launch)</p>
+</div>
 </li>
 </ol>
 </div>
