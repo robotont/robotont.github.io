@@ -371,7 +371,7 @@ Running the demo
 AR maze
 -------
 
-The AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.
+The gazebo AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.
 
 Installation
 ************
@@ -386,14 +386,14 @@ Installation
 Running the demo
 ****************
 
-#. Launch ar_maze.launch
+#. Launch gazebo_ar_maze.launch
 
    .. code-block:: bash
       
-      roslaunch demo_ar_maze ar_maze.launch 
+      roslaunch demo_ar_maze gazebo_ar_maze.launch 
 
 #. Launch the simulator
 
    .. code-block:: bash
       
-      roslaunch robotont_gazebo world_colors.launch
+      roslaunch robotont_gazebo world_minimaze_ar.launch

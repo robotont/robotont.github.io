@@ -445,7 +445,7 @@ git clone https://github.com/robotont-demos/demo_ar_steering.git
 </div>
 <div class="section" id="ar-maze">
 <h2>AR maze<a class="headerlink" href="#ar-maze" title="Permalink to this heading"></a></h2>
-<p>The AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.</p>
+<p>The gazebo AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.</p>
 <ol class="arabic">
 <li><p>For AR tracking:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
@@ -455,13 +455,13 @@ git clone https://github.com/robotont-demos/demo_ar_maze.git
 </li>
 </ol>
 <ol class="arabic">
-<li><p>Launch ar_maze.launch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_ar_maze ar_maze.launch
+<li><p>Launch gazebo_ar_maze.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_ar_maze gazebo_ar_maze.launch
 </pre></div>
 </div>
 </li>
 <li><p>Launch the simulator</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_colors.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze_ar.launch
 </pre></div>
 </div>
 </li>

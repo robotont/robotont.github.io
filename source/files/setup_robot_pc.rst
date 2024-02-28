@@ -86,7 +86,12 @@ Network Setup
 
 There are different ways in which you can connect to the robot remotely.
 
-#. AP connection
+1. AP connection
+2. Client connection
+
+
+AP connection
+-------------
 
 Access Point (AP) connection involves connecting directly to the robotont's own network.
 
@@ -97,14 +102,23 @@ The topology of the network can be seen in the following image:
   .. image:: /files/pictures/apconfig.png
     :width: 400
 
+You can achieve this by connecting the user PC to Robotont's network.
 
-#. Client connection
+  .. image:: /files/pictures/wifi_screen.png
+    :width: 400
+
+Client connection
+-----------------
 
 This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot's IP address or hostname.
 
-Both of these methods can be used with either an IP address or a hostname based setup.
+  .. image:: /files/pictures/ssh_graph.png
+    :width: 400
 
-Hostname vs. IP-address based setup
+Both AP and Client connection methods can be used with either an IP address or a hostname based setup.
+
+
+Hostname based setup
 ------------------------------------
 
 In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot.
@@ -122,10 +136,10 @@ In the following examples, we assume the Robotont and the PC having the followin
   "Robotont", "robotont-1", "192.168.200.1", "255.255.255.0"
   "PC", "laptop-1", "192.168.1.101","255.255.255.0"
 
-Hostname based setup
+Setting up hosts file
 *********************
 
-In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other's names associated with IP addresses. These hostname <--> IP pairs are defined in the `/etc/hosts` file. Use your favorite text editor and make sure the following entries exist.
+In the hostname based configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other's names associated with IP addresses. These hostname <--> IP pairs are defined in the `/etc/hosts` file. Use your favorite text editor and make sure the following entries exist.
 
 **/etc/hosts on Robotont on-board computer:**
 
@@ -143,13 +157,15 @@ In this configuration, the robot and PC query each other via hostnames. It means
   192.168.200.1 robotont-1
 
 
-IP-address based setup
-**********************
+.. image:: /files/pictures/hostfile.png
+  :width: 400
 
-If you want to configure IP based communication there is no need to edit the hosts file. Instead, a `ROS_IP` environmental variable has to be set on both sides:
+If you opt for an IP-address based setup, you can skip the hosts file setup. 
 
 SSH 
 ---
+
+:ref:`ssh_connection`
 
 SSH is a secure way to connect to the robot and run commands on it. It is a good way to check the status of the robot and to run commands on it.
 
@@ -169,13 +185,16 @@ You can achieve this by following the steps below:
   .. image:: /files/pictures/wifi_screen.png
     :width: 400
 
-3. Establish an ssh connection (change the X with the ID written on the robot)
+3. Establish an ssh connection with either IP address or hostname.
+
+If you set up the hosts file (change the X with the ID written on the robot): 
 
    .. code-block:: bash
       
       ssh peko@robotont-X
 
-  or 
+   
+Otherwise, use the IP address:
 
   .. code-block:: bash
       

@@ -9,7 +9,8 @@ The camera feed is launched automatically when the robot is turned on.
 Displaying the camera feed
 --------------------------
 
-#. Establish an ssh connection between the robot and the PC as shown here: :ref:`connecting-remotely`
+#. Establish an ssh connection between the robot and the PC as shown here: :ref:`setting_up_pc`
+
 
 #. **On the PC** display the feed on RViz
 

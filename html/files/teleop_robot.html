@@ -48,6 +48,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="teleop.html">Teleoperation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Controlling the robot</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-teleop-twist-keyboard">Controlling the robot using teleop twist keyboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-a-web-interface">Controlling the robot using a web interface</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="teleop_simu.html">Controlling the simulated robot on RViz</a></li>
@@ -104,7 +105,7 @@ sudo apt install ros-noetic-teleop-twist-keyboard
 </div>
 </li>
 <li><p>Open a new terminal window</p></li>
-<li><p>Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Master-slave connection</span></a>.</p></li>
+<li><p>Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Distributed ROS</span></a>.</p></li>
 <li><p><strong>On ROBOTONT on-board computer</strong> or on <strong>on PC</strong> run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 </pre></div>
@@ -132,6 +133,27 @@ sudo apt install ros-noetic-teleop-twist-keyboard
 <p class="admonition-title">Tip</p>
 <p>Use <code class="code docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">C</span></code> to stop the node.</p>
 </div>
+</li>
+</ol>
+</div>
+<div class="section" id="controlling-the-robot-using-a-web-interface">
+<h2>Controlling the robot using a web interface<a class="headerlink" href="#controlling-the-robot-using-a-web-interface" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Make sure that the user device and Robot device are connected to the same wifi router</p></li>
+<li><p>Open the following URL in the user device browser, replacing the IP address with the robot’s IP address:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://Robot-IP:3000/
+</pre></div>
+</div>
+</li>
+</ol>
+<p>You should see the following page:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/webapp_ok_step.png"><img alt="../_images/webapp_ok_step.png" src="../_images/webapp_ok_step.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Click OK to add the robot</p></li>
+<li><p>Now you can teleoperate the robot using the touch joystick button as well as see the camera feed and depthcloud.</p>
+<a class="reference internal image-reference" href="../_images/webapp3.png"><img alt="../_images/webapp3.png" src="../_images/webapp3.png" style="width: 400px;" /></a>
 </li>
 </ol>
 </div>

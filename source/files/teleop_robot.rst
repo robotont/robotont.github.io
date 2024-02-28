@@ -51,3 +51,27 @@ Controlling the robot using teleop twist keyboard
    .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.
    
    .. tip:: Use :code:`CTRL + C` to stop the node.
+
+
+Controlling the robot using a web interface
+-------------------------------------------
+
+#. Make sure that the user device and Robot device are connected to the same wifi router
+
+#. Open the following URL in the user device browser, replacing the IP address with the robot's IP address:
+
+   .. code-block:: bash
+      
+     http://Robot-IP:3000/
+
+You should see the following page:
+
+   .. image:: /files/pictures/webapp_ok_step.png
+       :width: 400
+
+#. Click OK to add the robot
+
+#. Now you can teleoperate the robot using the touch joystick button as well as see the camera feed and depthcloud.
+
+   .. image:: /files/pictures/webapp3.png
+       :width: 400

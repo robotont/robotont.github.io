@@ -56,6 +56,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#network-setup">Network Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ap-connection">AP connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#client-connection">Client connection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hostname-vs-ip-address-based-setup">Hostname vs. IP-address based setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ssh">SSH</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#distributed-ros">Distributed ROS</a></li>
@@ -162,18 +164,29 @@ catkin build
 <p>There are different ways in which you can connect to the robot remotely.</p>
 <ol class="arabic simple">
 <li><p>AP connection</p></li>
+<li><p>Client connection</p></li>
 </ol>
+<div class="section" id="ap-connection">
+<h3>AP connection<a class="headerlink" href="#ap-connection" title="Permalink to this heading"></a></h3>
 <p>Access Point (AP) connection involves connecting directly to the robotont’s own network.</p>
 <p>This method allows for direct communication with the robot without needing an external network infrastructure and is the easiest way to connect to the robot.</p>
 <p>The topology of the network can be seen in the following image:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/apconfig.png"><img alt="../_images/apconfig.png" src="../_images/apconfig.png" style="width: 400px;" /></a>
 </div></blockquote>
-<ol class="arabic simple">
-<li><p>Client connection</p></li>
-</ol>
+<p>You can achieve this by connecting the user PC to Robotont’s network.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/wifi_screen.png"><img alt="../_images/wifi_screen.png" src="../_images/wifi_screen.png" style="width: 400px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="client-connection">
+<h3>Client connection<a class="headerlink" href="#client-connection" title="Permalink to this heading"></a></h3>
 <p>This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot’s IP address or hostname.</p>
-<p>Both of these methods can be used with either an IP address or a hostname based setup.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/ssh_graph.png"><img alt="../_images/ssh_graph.png" src="../_images/ssh_graph.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>Both AP and Client connection methods can be used with either an IP address or a hostname based setup.</p>
+</div>
 <div class="section" id="hostname-vs-ip-address-based-setup">
 <h3>Hostname vs. IP-address based setup<a class="headerlink" href="#hostname-vs-ip-address-based-setup" title="Permalink to this heading"></a></h3>
 <p>In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot.
@@ -210,9 +223,9 @@ There are two ways to achieve this:</p>
 </tr>
 </tbody>
 </table>
-<div class="section" id="hostname-based-setup">
-<h4>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h4>
-<p>In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
+<div class="section" id="setting-up-hosts-file">
+<h4>Setting up hosts file<a class="headerlink" href="#setting-up-hosts-file" title="Permalink to this heading"></a></h4>
+<p>In the hostname based configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
 <p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 robotont-1
 <span class="m">192</span>.168.200.101 laptop-1
@@ -223,14 +236,13 @@ There are two ways to achieve this:</p>
 <span class="m">192</span>.168.200.1 robotont-1
 </pre></div>
 </div>
-</div>
-<div class="section" id="ip-address-based-setup">
-<h4>IP-address based setup<a class="headerlink" href="#ip-address-based-setup" title="Permalink to this heading"></a></h4>
-<p>If you want to configure IP based communication there is no need to edit the hosts file. Instead, a <cite>ROS_IP</cite> environmental variable has to be set on both sides:</p>
+<a class="reference internal image-reference" href="../_images/hostfile.png"><img alt="../_images/hostfile.png" src="../_images/hostfile.png" style="width: 400px;" /></a>
+<p>If you opt for an IP-address based setup, you can skip the hosts file setup.</p>
 </div>
 </div>
 <div class="section" id="ssh">
 <h3>SSH<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h3>
+<p><span class="xref std std-ref">ssh_connection</span></p>
 <p>SSH is a secure way to connect to the robot and run commands on it. It is a good way to check the status of the robot and to run commands on it.</p>
 <p>It can be done using the IP address of the robot or the hostname.</p>
 <p>The topology of the network can be seen in the following image:</p>
@@ -245,16 +257,18 @@ There are two ways to achieve this:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/wifi_screen.png"><img alt="../_images/wifi_screen.png" src="../_images/wifi_screen.png" style="width: 400px;" /></a>
 </div></blockquote>
-<ol class="arabic" start="3">
-<li><p>Establish an ssh connection (change the X with the ID written on the robot)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@robotont-X
+<ol class="arabic simple" start="3">
+<li><p>Establish an ssh connection with either IP address or hostname.</p></li>
+</ol>
+<p>If you set up the hosts file (change the X with the ID written on the robot):</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@robotont-X
 </pre></div>
 </div>
-</li>
-</ol>
+</div></blockquote>
+<p>Otherwise, use the IP address:</p>
 <blockquote>
-<div><p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@ip_of_the_robot
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@ip_of_the_robot
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/ssh_nt.png"><img alt="../_images/ssh_nt.png" src="../_images/ssh_nt.png" style="width: 400px;" /></a>
