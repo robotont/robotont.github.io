@@ -79,12 +79,5 @@ For automatic sourcing:
 
       echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-Running the demos with a physical robot.
-----------------------------------------
-
-Tutorial for running the simulation with the demos can be found here: :ref:`demos_on_gazebo`.
-
-
-    
 
 

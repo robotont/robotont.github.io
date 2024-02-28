@@ -89,11 +89,13 @@
 <ol class="arabic">
 <li><p>Establish an ssh connection between the robot and the PC as shown here: <a class="reference internal" href="setup_robot_pc.html#setting-up-pc"><span class="std std-ref">Setting up the PC</span></a></p></li>
 <li><p><strong>On the PC</strong> display the feed on RViz</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_camera.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch rviz rviz
 </pre></div>
 </div>
 </li>
 </ol>
+<p>Click on Add and select Camera. In the Camera topic field, select /camera/color/image_raw.</p>
+<a class="reference internal image-reference" href="files/pictures/camera_view.png"><img alt="files/pictures/camera_view.png" src="files/pictures/camera_view.png" style="width: 400px;" /></a>
 </div>
 <div class="section" id="getting-distances-from-objects">
 <h2>Getting distances from objects<a class="headerlink" href="#getting-distances-from-objects" title="Permalink to this heading"></a></h2>
