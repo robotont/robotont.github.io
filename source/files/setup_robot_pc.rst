@@ -164,26 +164,15 @@ If you opt for an IP-address based setup, you can skip the hosts file setup.
 
 SSH 
 ---
-
-:ref:`ssh_connection`
-
 SSH is a secure way to connect to the robot and run commands on it. It is a good way to check the status of the robot and to run commands on it.
 
 It can be done using the IP address of the robot or the hostname.
-
-The topology of the network can be seen in the following image:
-
-  .. image:: /files/pictures/ssh_graph.png
-    :width: 400
 
 You can achieve this by following the steps below:
 
 1. Open a new terminal window
 
 2. Connect the user PC to Robotont's network.
-
-  .. image:: /files/pictures/wifi_screen.png
-    :width: 400
 
 3. Establish an ssh connection with either IP address or hostname.
 
@@ -222,11 +211,21 @@ Distributed ROS
 
 The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.
 
+You can use your own router to connect the robot and the PC to get them on the same network.
+
+You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.
+
+  .. image:: /files/pictures/naming_router.png
+    :width: 400
+
 ROS_IP
-^^^^^^
-If you want to configure IP based communication there is no need to edit the hosts file. Instead, a `ROS_IP` environmental variable has to be set on both sides:
+******
+
+To set up the ROS environment with an IP based setup, the `ROS_IP` environmental variable has to be set on both sides.
 
 **on Robotont on-board computer:**
+
+Add the user PC's IP address to the `ROS_IP` environment variable.
 
 .. code-block:: bash
 
@@ -234,6 +233,8 @@ If you want to configure IP based communication there is no need to edit the hos
 
 
 **on PC:**
+
+Add the robot's IP address to the `ROS_IP` environment variable.
 
 .. code-block:: bash
 
@@ -243,17 +244,8 @@ If you want to configure IP based communication there is no need to edit the hos
 
 Similarly to the hostname based setup, append the commands to `.bashrc` to set the variables automatically.
 
-
-You can use your own router to connect the robot and the PC to get them on the same network.
-
-You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.
-
-  .. image:: /files/pictures/naming_router.png
-    :width: 400
-
-
 ROS_MASTER_URI
-^^^^^^^^^^^^^^
+***************
 
 We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named `ROS_MASTER_URI`, which by default points to localhost.
 
