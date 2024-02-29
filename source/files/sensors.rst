@@ -21,9 +21,8 @@ Displaying the camera feed
 
 Click on Add and select Camera. In the Camera topic field, select /camera/color/image_raw. 
 
-.. image:: /files/pictures/camera_view.png
-   :width: 400
-
+   .. image:: /files/pictures/camera_view.png
+      :width: 400
 
 Getting distances from objects
 ------------------------------
