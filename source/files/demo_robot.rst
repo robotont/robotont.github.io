@@ -307,4 +307,7 @@ Running the demo
       
       roslaunch demo_ar_maze ar_maze.launch
 
-   .. hint:: Make sure to modify the list with ar tags for maze navigation in 8th line of ar_maze.launch (/launch/ar_maze.launch)
+   .. hint:: Make sure to modify the list with ar tags for maze navigation in 8th line of ar_maze.launch 
+
+         .. code-block:: bash
+         roslaunch demo_ar_maze ar_maze.launch marker_ids:="4,10,5"
