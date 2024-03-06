@@ -115,17 +115,16 @@ This method involves connecting the robot and the user PC to the same network. T
   .. image:: /files/pictures/ssh_graph.png
     :width: 400
 
-Both AP and Client connection methods can be used with either an IP address or a hostname based setup.
-
-
 Hostname based setup
 ------------------------------------
 
 In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot.
-There are two ways to achieve this:
+Both AP and Client connection methods can be used with either an IP address or a hostname based setup:
 
 #. Hostname based setup
 #. IP-address based setup
+
+If you opt for an IP-address based setup, you can skip the hosts file setup. 
 
 In the following examples, we assume the Robotont and the PC having the following configuration:
 
@@ -134,7 +133,7 @@ In the following examples, we assume the Robotont and the PC having the followin
   :widths: 40, 40, 40,40 
 
   "Robotont", "robotont-1", "192.168.200.1", "255.255.255.0"
-  "PC", "laptop-1", "192.168.1.101","255.255.255.0"
+  "PC", "laptop-1", "192.168.200.101","255.255.255.0"
 
 Setting up hosts file
 *********************
@@ -159,8 +158,6 @@ In the hostname based configuration, the robot and PC query each other via hostn
 
 .. image:: /files/pictures/hostfile.png
   :width: 400
-
-If you opt for an IP-address based setup, you can skip the hosts file setup. 
 
 SSH 
 ---
@@ -213,10 +210,6 @@ The ROS environment can be distributed across multiple machines. This means that
 
 You can use your own router to connect the robot and the PC to get them on the same network.
 
-You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.
-
-  .. image:: /files/pictures/naming_router.png
-    :width: 400
 
 ROS_IP
 ******

@@ -185,16 +185,16 @@ catkin build
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/ssh_graph.png"><img alt="../_images/ssh_graph.png" src="../_images/ssh_graph.png" style="width: 400px;" /></a>
 </div></blockquote>
-<p>Both AP and Client connection methods can be used with either an IP address or a hostname based setup.</p>
 </div>
 <div class="section" id="hostname-based-setup">
 <h3>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h3>
 <p>In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot.
-There are two ways to achieve this:</p>
+Both AP and Client connection methods can be used with either an IP address or a hostname based setup:</p>
 <ol class="arabic simple">
 <li><p>Hostname based setup</p></li>
 <li><p>IP-address based setup</p></li>
 </ol>
+<p>If you opt for an IP-address based setup, you can skip the hosts file setup.</p>
 <p>In the following examples, we assume the Robotont and the PC having the following configuration:</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -218,7 +218,7 @@ There are two ways to achieve this:</p>
 </tr>
 <tr class="row-odd"><td><p>PC</p></td>
 <td><p>laptop-1</p></td>
-<td><p>192.168.1.101</p></td>
+<td><p>192.168.200.101</p></td>
 <td><p>255.255.255.0</p></td>
 </tr>
 </tbody>
@@ -237,7 +237,6 @@ There are two ways to achieve this:</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/hostfile.png"><img alt="../_images/hostfile.png" src="../_images/hostfile.png" style="width: 400px;" /></a>
-<p>If you opt for an IP-address based setup, you can skip the hosts file setup.</p>
 </div>
 </div>
 <div class="section" id="ssh">
@@ -279,10 +278,6 @@ There are two ways to achieve this:</p>
 <span id="same-env"></span><h3>Distributed ROS<a class="headerlink" href="#distributed-ros" title="Permalink to this heading"></a></h3>
 <p>The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.</p>
 <p>You can use your own router to connect the robot and the PC to get them on the same network.</p>
-<p>You can set up the environment by following the naming conventions for the IP-address assignment to every device that connects to the router.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../_images/naming_router.png"><img alt="../_images/naming_router.png" src="../_images/naming_router.png" style="width: 400px;" /></a>
-</div></blockquote>
 <div class="section" id="ros-ip">
 <h4>ROS_IP<a class="headerlink" href="#ros-ip" title="Permalink to this heading"></a></h4>
 <p>To set up the ROS environment with an IP based setup, the <cite>ROS_IP</cite> environmental variable has to be set on both sides.</p>

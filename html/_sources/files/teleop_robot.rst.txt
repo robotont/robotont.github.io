@@ -69,7 +69,7 @@ You should see the following page:
    .. image:: /files/pictures/webapp_ok_step.png
        :width: 400
 
-#. Click OK to add the robot
+#. Click OK to close the connection status dialog
 
 #. Now you can teleoperate the robot using the touch joystick button as well as see the camera feed and depthcloud.
 
