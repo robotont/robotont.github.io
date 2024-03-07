@@ -58,7 +58,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#network-setup">Network Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ap-connection">AP connection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#client-connection">Client connection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#hostname-based-setup">Hostname based setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ip-addresses-and-hostnames">IP addresses and Hostnames</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ssh">SSH</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#distributed-ros">Distributed ROS</a></li>
 </ul>
@@ -161,6 +161,7 @@ catkin build
 </div>
 <div class="section" id="network-setup">
 <span id="connecting-remotely"></span><h2>Network Setup<a class="headerlink" href="#network-setup" title="Permalink to this heading"></a></h2>
+<p>In order to work with Robotont one of the most convenient ways is to build a network connection between the robot and your PC.</p>
 <p>There are different ways in which you can connect to the robot remotely.</p>
 <ol class="arabic simple">
 <li><p>AP connection</p></li>
@@ -184,12 +185,12 @@ catkin build
 <p>This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot’s IP address or hostname.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/ssh_graph.png"><img alt="../_images/ssh_graph.png" src="../_images/ssh_graph.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/naming_router.png"><img alt="../_images/naming_router.png" src="../_images/naming_router.png" style="width: 400px;" /></a>
 </div></blockquote>
 </div>
-<div class="section" id="hostname-based-setup">
-<h3>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h3>
-<p>In order to run ROS nodes on the robot from a PC, the PC needs to be in the same ROS environment as the robot.
-Both AP and Client connection methods can be used with either an IP address or a hostname based setup:</p>
+<div class="section" id="ip-addresses-and-hostnames">
+<h3>IP addresses and Hostnames<a class="headerlink" href="#ip-addresses-and-hostnames" title="Permalink to this heading"></a></h3>
+<p>Both AP and Client connection methods can be used with either an IP address or a hostname based setup:</p>
 <ol class="arabic simple">
 <li><p>Hostname based setup</p></li>
 <li><p>IP-address based setup</p></li>
@@ -223,8 +224,8 @@ Both AP and Client connection methods can be used with either an IP address or a
 </tr>
 </tbody>
 </table>
-<div class="section" id="setting-up-hosts-file">
-<h4>Setting up hosts file<a class="headerlink" href="#setting-up-hosts-file" title="Permalink to this heading"></a></h4>
+<div class="section" id="hostname-based-setup">
+<h4>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h4>
 <p>In the hostname based configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
 <p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 robotont-1
@@ -278,8 +279,21 @@ Both AP and Client connection methods can be used with either an IP address or a
 <span id="same-env"></span><h3>Distributed ROS<a class="headerlink" href="#distributed-ros" title="Permalink to this heading"></a></h3>
 <p>The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.</p>
 <p>You can use your own router to connect the robot and the PC to get them on the same network.</p>
-<div class="section" id="ros-ip">
-<h4>ROS_IP<a class="headerlink" href="#ros-ip" title="Permalink to this heading"></a></h4>
+<div class="section" id="hostname-based-approach">
+<h4>Hostname based approach<a class="headerlink" href="#hostname-based-approach" title="Permalink to this heading"></a></h4>
+<p>We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
+<p><strong>on PC</strong>, open a terminal and enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://robotont-1:11311
+</pre></div>
+</div>
+<p>Now all ROS nodes you run in this terminal will connect to the Master on the Robotont. Test it with e.g. <cite>rosnode list</cite>.
+Note that the environment variable has to be set for each terminal window! To make it automatic, you can add the line to the end of the <cite>.bashrc</cite> file in the home directory of the PC:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export ROS_MASTER_URI=http://robotont-1:11311&#39;</span> &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+</div>
+<div class="section" id="ip-address-based-approach">
+<h4>IP address based approach<a class="headerlink" href="#ip-address-based-approach" title="Permalink to this heading"></a></h4>
 <p>To set up the ROS environment with an IP based setup, the <cite>ROS_IP</cite> environmental variable has to be set on both sides.</p>
 <p><strong>on Robotont on-board computer:</strong></p>
 <p>Add the user PC’s IP address to the <cite>ROS_IP</cite> environment variable.</p>
@@ -293,19 +307,6 @@ Both AP and Client connection methods can be used with either an IP address or a
 </pre></div>
 </div>
 <p>Similarly to the hostname based setup, append the commands to <cite>.bashrc</cite> to set the variables automatically.</p>
-</div>
-<div class="section" id="ros-master-uri">
-<h4>ROS_MASTER_URI<a class="headerlink" href="#ros-master-uri" title="Permalink to this heading"></a></h4>
-<p>We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
-<p><strong>on PC</strong>, open a terminal and enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://robotont-1:11311
-</pre></div>
-</div>
-<p>Now all ROS nodes you run in this terminal will connect to the Master on the Robotont. Test it with e.g. <cite>rosnode list</cite>.
-Note that the environment variable has to be set for each terminal window! To make it automatic, you can add the line to the end of the <cite>.bashrc</cite> file in the home directory of the PC:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export ROS_MASTER_URI=http://robotont-1:11311&#39;</span> &gt;&gt; ~/.bashrc
-</pre></div>
-</div>
 </div>
 </div>
 </div>
