@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using the robot with a user PC &mdash; Robotont 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f6245a2f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -55,22 +55,24 @@
 <li class="toctree-l4"><a class="reference internal" href="#sourcing-the-workspace">Sourcing the workspace</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#connecting-with-the-robot-remotely">Connecting with the robot remotely</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-the-robotont-and-pc-into-the-same-ros-environment">Getting the Robotont and PC into the same ROS environment</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#hostname-based-setup">Hostname based setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ip-address-based-setup">IP-address based setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-setup">Network Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ap-connection">AP connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#client-connection">Client connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ip-addresses-and-hostnames">IP addresses and Hostnames</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ssh">SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distributed-ros">Distributed ROS</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html">Using only the simulated robot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html">Simulated robot on docker with X11 forwarding</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">Sandbox</a></li>
 </ul>
 
         </div>
@@ -98,25 +100,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="using-the-robot-with-a-user-pc">
+  <div class="section" id="using-the-robot-with-a-user-pc">
 <h1>Using the robot with a user PC<a class="headerlink" href="#using-the-robot-with-a-user-pc" title="Permalink to this heading"></a></h1>
 <p>This setup tutorial will guide you through setting up your PC to use it with Robotont.</p>
-<section id="setting-up-the-pc">
+<div class="section" id="setting-up-the-pc">
 <span id="setting-up-pc"></span><h2>Setting up the PC<a class="headerlink" href="#setting-up-the-pc" title="Permalink to this heading"></a></h2>
-<section id="installing-ubuntu">
+<div class="section" id="installing-ubuntu">
 <h3>Installing Ubuntu<a class="headerlink" href="#installing-ubuntu" title="Permalink to this heading"></a></h3>
-<p>Download and install Ubuntu Linux on your PC from the following link: <a class="reference external" href="http://releases.ubuntu.com/18.04.4/?_ga=2.170843936.1678816316.1594710587-1973467440.1591964081">Ubuntu 18.04.4 LTS (Bionic Beaver)</a>.</p>
+<p>Download and install Ubuntu Linux on your PC from the following link: <a class="reference external" href="https://releases.ubuntu.com/focal/">Ubuntu 20.04.6 LTS (Focal Fossa)</a>.</p>
 <p>The guide to install Ubuntu on your PC can be found <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview">here</a>.</p>
-</section>
-<section id="installing-ros">
+</div>
+<div class="section" id="installing-ros">
 <h3>Installing ROS<a class="headerlink" href="#installing-ros" title="Permalink to this heading"></a></h3>
-<p>Install Ros Melodic according to the following link: <a class="reference external" href="http://wiki.ros.org/melodic/Installation/Ubuntu">Ros Melodic</a>.</p>
-</section>
-<section id="creating-a-catkin-workspace">
+<p>Install ROS Noetic by following the guide: <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu">ROS Noetic</a>.</p>
+</div>
+<div class="section" id="creating-a-catkin-workspace">
 <h3>Creating a catkin workspace<a class="headerlink" href="#creating-a-catkin-workspace" title="Permalink to this heading"></a></h3>
 <p>Create a workspace for catkin as shown <a class="reference external" href="http://wiki.ros.org/catkin/Tutorials/create_a_workspace">here</a>.</p>
-</section>
-<section id="cloning-robotont-s-packages">
+</div>
+<div class="section" id="cloning-robotont-s-packages">
 <h3>Cloning Robotont’s packages<a class="headerlink" href="#cloning-robotont-s-packages" title="Permalink to this heading"></a></h3>
 <p>All Robotont’s packages can be accessed from <a class="reference external" href="https://github.com/robotont">Robotont’s GitHub</a>.</p>
 <p>Packages necessary to run the demos from PC’s terminal are following:</p>
@@ -124,59 +126,148 @@
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_description">robotont_description</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_nuc_description">robotont_nuc_description</a></p></li>
 <li><p><a class="reference external" href="https://github.com/robotont/robotont_gazebo">robotont_navigation</a></p></li>
-<li><p><a class="reference external" href="https://github.com/robotont/robotont_demos">robotont_demos</a></p></li>
 </ol>
+<p>You can find the demos from the following repositories:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/robotont-demos/ar_follow_the_leader.git">AR Demo Follow-the-leader</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/ar_steering.git">AR Steering</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/demo_slam">Slam 2D</a></p></li>
+<li><p><a class="reference external" href="https://github.com/robotont-demos/demo_mapping_3d.git">Mapping 3D</a></p></li>
+</ol>
+<p>See the <a class="reference internal" href="demo_robot.html#demos-on-robot"><span class="std std-ref">Demos on Robotont</span></a> for more information about the demos.</p>
 <p>To clone the packages:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/robotont/package_name.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont/package_name.git
 </pre></div>
 </div>
-</section>
-<section id="building-the-catkin-workspace">
+</div>
+<div class="section" id="building-the-catkin-workspace">
 <h3>Building the catkin workspace<a class="headerlink" href="#building-the-catkin-workspace" title="Permalink to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>catkin_ws
-catkin<span class="w"> </span>build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> catkin_ws
+catkin build
 </pre></div>
 </div>
-</section>
-<section id="sourcing-the-workspace">
+</div>
+<div class="section" id="sourcing-the-workspace">
 <h3>Sourcing the workspace<a class="headerlink" href="#sourcing-the-workspace" title="Permalink to this heading"></a></h3>
 <p>Make the workspace visible to ROS (must be done for every new terminal)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/catkin_ws/devel/setup.bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
 </pre></div>
 </div>
 <p>For automatic sourcing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
-</section>
-</section>
-<section id="connecting-with-the-robot-remotely">
-<span id="connecting-remotely"></span><h2>Connecting with the robot remotely<a class="headerlink" href="#connecting-with-the-robot-remotely" title="Permalink to this heading"></a></h2>
+</div>
+</div>
+<div class="section" id="network-setup">
+<span id="connecting-remotely"></span><h2>Network Setup<a class="headerlink" href="#network-setup" title="Permalink to this heading"></a></h2>
+<p>In order to work with Robotont one of the most convenient ways is to build a network connection between the robot and your PC.</p>
+<p>There are different ways in which you can connect to the robot remotely.</p>
 <ol class="arabic simple">
-<li><p>Open a new terminal window</p></li>
-<li><p>Connect the user PC to Robotont’s network or make sure that the user PC and Robotont’s on-board computer are connected to the same wifi router</p></li>
+<li><p>AP connection</p></li>
+<li><p>Client connection</p></li>
 </ol>
+<div class="section" id="ap-connection">
+<h3>AP connection<a class="headerlink" href="#ap-connection" title="Permalink to this heading"></a></h3>
+<p>Access Point (AP) connection involves connecting directly to the robotont’s own network.</p>
+<p>This method allows for direct communication with the robot without needing an external network infrastructure and is the easiest way to connect to the robot.</p>
+<p>The topology of the network can be seen in the following image:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/apconfig.png"><img alt="../_images/apconfig.png" src="../_images/apconfig.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>You can achieve this by connecting the user PC to Robotont’s network.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/wifi_screen.png"><img alt="../_images/wifi_screen.png" src="../_images/wifi_screen.png" style="width: 400px;" /></a>
 </div></blockquote>
-<ol class="arabic" start="3">
-<li><p>Establish an ssh connection (change the X with the ID written on the robot)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>kasutaja@robotont-X
-</pre></div>
 </div>
-</li>
-</ol>
+<div class="section" id="client-connection">
+<h3>Client connection<a class="headerlink" href="#client-connection" title="Permalink to this heading"></a></h3>
+<p>This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot’s IP address or hostname.</p>
 <blockquote>
-<div><p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>kasutaja@ip_of_the_robot
+<div><a class="reference internal image-reference" href="../_images/ssh_graph.png"><img alt="../_images/ssh_graph.png" src="../_images/ssh_graph.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>This approach can be used to have multiple Robotonts and PCs within the same network. That is particularly helpful when setting up a classroom with multiple Robotonts.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/naming_router.png"><img alt="../_images/naming_router.png" src="../_images/naming_router.png" style="width: 400px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="ip-addresses-and-hostnames">
+<h3>IP addresses and Hostnames<a class="headerlink" href="#ip-addresses-and-hostnames" title="Permalink to this heading"></a></h3>
+<p>Both AP and Client connection methods can be used with either an IP address or a hostname based setup.</p>
+<p>If you opt for an IP-address based setup, you can skip the hosts file setup.</p>
+<p>In the following examples, we assume the Robotont and the PC having the following configuration:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Machine</p></th>
+<th class="head"><p>Hostname</p></th>
+<th class="head"><p>IP-address</p></th>
+<th class="head"><p>Netmask</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Robotont</p></td>
+<td><p>robotont-1</p></td>
+<td><p>192.168.200.1</p></td>
+<td><p>255.255.255.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>PC</p></td>
+<td><p>laptop-1</p></td>
+<td><p>192.168.200.101</p></td>
+<td><p>255.255.255.0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="hostname-based-setup">
+<h4>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h4>
+<p>In the hostname based configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
+<p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 robotont-1
+<span class="m">192</span>.168.200.101 laptop-1
 </pre></div>
 </div>
+<p><strong>/etc/hosts on PC:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 laptop-1
+<span class="m">192</span>.168.200.1 robotont-1
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/hostfile.png"><img alt="../_images/hostfile.png" src="../_images/hostfile.png" style="width: 400px;" /></a>
+</div>
+</div>
+<div class="section" id="ssh">
+<h3>SSH<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h3>
+<p>SSH is a secure way to connect to the robot and run commands on it. It is a good way to check the status of the robot and to run commands on it.</p>
+<p>It can be done using the IP address of the robot or the hostname.</p>
+<p>You can achieve this by following the steps below:</p>
+<ol class="arabic simple">
+<li><p>Open a new terminal window</p></li>
+<li><p>Connect the user PC to Robotont’s network.</p></li>
+<li><p>Establish an ssh connection with either IP address or hostname.</p></li>
+</ol>
+<p>If you set up the hosts file (change the X with the ID written on the robot):</p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@robotont-X
+</pre></div>
+</div>
+</div></blockquote>
 <a class="reference internal image-reference" href="../_images/ssh_nt.png"><img alt="../_images/ssh_nt.png" src="../_images/ssh_nt.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>Otherwise, use the IP address:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@ip_of_the_robot
+</pre></div>
+</div>
 </div></blockquote>
 <ol class="arabic simple" start="4">
 <li><p>If a yes/no question is asked, enter yes</p></li>
 <li><p>Enter the password</p></li>
-<li><p>When logged in successfully, you can see that the terminal prompt has changed to <a class="reference external" href="mailto:kasutaja&#37;&#52;&#48;robotont-X">kasutaja<span>&#64;</span>robotont-X</a>. This will be an important reference when trying to figure out which terminal is connected to where.</p></li>
+<li><p>When logged in successfully, you can see that the terminal prompt has changed to <a class="reference external" href="mailto:peko&#37;&#52;&#48;robotont-X">peko<span>&#64;</span>robotont-X</a>. This will be an important reference when trying to figure out which terminal is connected to where.</p></li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/ssh_nt2.png"><img alt="../_images/ssh_nt2.png" src="../_images/ssh_nt2.png" style="width: 400px;" /></a>
@@ -184,77 +275,42 @@ catkin<span class="w"> </span>build
 <ol class="arabic simple" start="7">
 <li><p>After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.</p></li>
 </ol>
-</section>
-<section id="getting-the-robotont-and-pc-into-the-same-ros-environment">
-<span id="same-env"></span><h2>Getting the Robotont and PC into the same ROS environment<a class="headerlink" href="#getting-the-robotont-and-pc-into-the-same-ros-environment" title="Permalink to this heading"></a></h2>
-<p>There are two approaches to get the Robotont and PC into the same ROS environment. A common prerequisite for both methods is that the hosts are connected to the same network. In the following examples, we assume the Robotont and the PC having the following configuration:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Machine</p></th>
-<th class="head"><p>Hostname</p></th>
-<th class="head"><p>IP-address</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Robotont</p></td>
-<td><p>robotont-1</p></td>
-<td><p>192.168.1.1</p></td>
-</tr>
-<tr class="row-odd"><td><p>PC</p></td>
-<td><p>laptop-1</p></td>
-<td><p>192.168.1.101</p></td>
-</tr>
-</tbody>
-</table>
-<section id="hostname-based-setup">
-<h3>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this heading"></a></h3>
-<p>In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
-<p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1<span class="w"> </span>robotont-1
-<span class="m">192</span>.168.1.101<span class="w"> </span>laptop-1
-</pre></div>
 </div>
-<p><strong>/etc/hosts on PC:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1<span class="w"> </span>laptop-1
-<span class="m">192</span>.168.1.1<span class="w"> </span>robotont-1
-</pre></div>
-</div>
-<p>Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
+<div class="section" id="distributed-ros">
+<span id="same-env"></span><h3>Distributed ROS<a class="headerlink" href="#distributed-ros" title="Permalink to this heading"></a></h3>
+<p>The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.</p>
+<div class="section" id="hostname-based-approach">
+<h4>Hostname based approach<a class="headerlink" href="#hostname-based-approach" title="Permalink to this heading"></a></h4>
+<p>We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
 <p><strong>on PC</strong>, open a terminal and enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://robotont-1:11311
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://robotont-1:11311
 </pre></div>
 </div>
 <p>Now all ROS nodes you run in this terminal will connect to the Master on the Robotont. Test it with e.g. <cite>rosnode list</cite>.
 Note that the environment variable has to be set for each terminal window! To make it automatic, you can add the line to the end of the <cite>.bashrc</cite> file in the home directory of the PC:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_MASTER_URI=http://robotont-1:11311&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export ROS_MASTER_URI=http://robotont-1:11311&#39;</span> &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
-</section>
-<section id="ip-address-based-setup">
-<h3>IP-address based setup<a class="headerlink" href="#ip-address-based-setup" title="Permalink to this heading"></a></h3>
-<p>If you want to configure IP based communication there is no need to edit the hosts file. Instead, a <cite>ROS_IP</cite> environmental variable has to be set on both sides:</p>
+</div>
+<div class="section" id="ip-address-based-approach">
+<h4>IP address based approach<a class="headerlink" href="#ip-address-based-approach" title="Permalink to this heading"></a></h4>
+<p>To set up the ROS environment with an IP based setup, the <cite>ROS_IP</cite> environmental variable has to be set on both sides.</p>
 <p><strong>on Robotont on-board computer:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.1
+<p>Add the user PC’s IP address to the <cite>ROS_IP</cite> environment variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.101
 </pre></div>
 </div>
 <p><strong>on PC:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.200.1:11311
-<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.101
+<p>Add the robot’s IP address to the <cite>ROS_IP</cite> environment variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.200.1:11311
+<span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.200.101
 </pre></div>
 </div>
 <p>Similarly to the hostname based setup, append the commands to <cite>.bashrc</cite> to set the variables automatically.</p>
-</section>
-<section id="running-the-demos-with-gazebo">
-<h3>Running the demos with Gazebo<a class="headerlink" href="#running-the-demos-with-gazebo" title="Permalink to this heading"></a></h3>
-<p>Tutorial for running the demos can be found here: <a class="reference internal" href="demo_robot.html#demos-on-robot"><span class="std std-ref">Demos on Robotont</span></a>.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
            </div>

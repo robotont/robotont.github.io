@@ -8,6 +8,8 @@ Table of Contents
 
    files/overview.rst
    files/setup.rst
-   files/sensors.rst
    files/teleop.rst
-   files/demos.rst
+   files/sensors.rst
+   files/demo_robot.rst
+   files/demo_gazebo.rst
+   files/sandbox.rst

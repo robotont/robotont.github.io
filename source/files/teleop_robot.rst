@@ -19,7 +19,7 @@ Controlling the robot using teleop twist keyboard
    .. code-block:: bash
       
       sudo apt update
-      sudo apt install ros-melodic-teleop-twist-keyboard
+      sudo apt install ros-noetic-teleop-twist-keyboard
 
 #. Open a new terminal window
 
@@ -35,7 +35,7 @@ Controlling the robot using teleop twist keyboard
 
    .. code-block:: bash
       
-         roslaunch robotont_demos teleop_keyboard.launch
+         roslaunch demo_teleop teleop_keyboard.launch
 
 #. Use the following keys to move the robot:
 
@@ -52,25 +52,26 @@ Controlling the robot using teleop twist keyboard
    
    .. tip:: Use :code:`CTRL + C` to stop the node.
 
-Controlling the robot using an Android device
-----------------------------------------------
 
-#. Turn on robotont
+Controlling the robot using a web interface
+-------------------------------------------
 
-#. From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__.
+#. Make sure that the user device and Robot device are connected to the same wifi router
 
-#. Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router
-
-#. Open the ROS Control app on your phone
-
-#. Insert the ROBOTONT's IP address into Master URI field by entering the following:
+#. Open the following URL in the user device browser, replacing the IP address with the robot's IP address:
 
    .. code-block:: bash
       
-         http://robotont_IP_address:11311
+     http://Robot-IP:3000/
 
-#. Click on "Show advanced options" in the prompted window and fill in "Joystick" and "Odometry" topic names with "cmd_vel" and "odom", respectively
+You should see the following page:
 
-#. Click OK to add the robot
+   .. image:: /files/pictures/webapp_ok_step.png
+       :width: 400
 
-#. Now you can select the robot from the list and teleoperate it using the touch joystick button
+#. Click OK to close the connection status dialog
+
+#. Now you can teleoperate the robot using the touch joystick button as well as see the camera feed and depthcloud.
+
+   .. image:: /files/pictures/webapp3.png
+       :width: 400

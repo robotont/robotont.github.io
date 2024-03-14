@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setup &mdash; Robotont 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f6245a2f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -47,12 +47,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Setup</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="setup_robot_pc.html">Using the robot with a user PC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html">Using only the simulated robot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html">Simulated robot on docker with X11 forwarding</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">Sandbox</a></li>
 </ul>
 
         </div>
@@ -79,7 +80,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="setup">
+  <div class="section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h1>
 <p>There are two setup tutorials that will guide you through setting up your PC to either use the real Robotont robot or the simulated version of the robot.</p>
 <div class="toctree-wrapper compound">
@@ -94,11 +95,19 @@
 <li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#sourcing-the-workspace">Sourcing the workspace</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="setup_robot_pc.html#connecting-with-the-robot-remotely">Connecting with the robot remotely</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_robot_pc.html#getting-the-robotont-and-pc-into-the-same-ros-environment">Getting the Robotont and PC into the same ROS environment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#hostname-based-setup">Hostname based setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#ip-address-based-setup">IP-address based setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_robot_pc.html#network-setup">Network Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#ap-connection">AP connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#client-connection">Client connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#ip-addresses-and-hostnames">IP addresses and Hostnames</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_robot_pc.html#hostname-based-setup">Hostname based setup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#ssh">SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_robot_pc.html#distributed-ros">Distributed ROS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_robot_pc.html#hostname-based-approach">Hostname based approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_robot_pc.html#ip-address-based-approach">IP address based approach</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -110,24 +119,11 @@
 <li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html#cloning-robotont-s-packages">Cloning Robotont’s packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html#building-the-catkin-workspace">Building the catkin workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html#sourcing-the-workspace">Sourcing the workspace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_pc_only.html#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="setup_docker.html">Simulated robot on docker with X11 forwarding</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#installing-docker">Installing Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#cloning-robotont-s-packages">Cloning Robotont’s packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#instructions-when-using-an-nvidia-gpu">Instructions when using an nvidia GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#instructions-for-everyone-else">Instructions for everyone else</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#logging-into-your-ros-image">Logging into your ros image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#installing-missing-dependancies">Installing missing dependancies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#building-the-catkin-workspace">Building the catkin workspace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#sourcing-the-workspace">Sourcing the workspace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_docker.html#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
 </ul>
 </li>
 </ul>
 </div>
-</section>
+</div>
 
 
            </div>

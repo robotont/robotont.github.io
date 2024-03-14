@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Controlling the robot &mdash; Robotont 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,11 +10,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f6245a2f"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -45,17 +45,19 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="teleop.html">Teleoperation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Controlling the robot</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-teleop-twist-keyboard">Controlling the robot using teleop twist keyboard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-an-android-device">Controlling the robot using an Android device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-the-robot-using-a-web-interface">Controlling the robot using a web interface</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="teleop_simu.html">Controlling the simulated robot on RViz</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">Sandbox</a></li>
 </ul>
 
         </div>
@@ -83,7 +85,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="controlling-the-robot">
+  <div class="section" id="controlling-the-robot">
 <h1>Controlling the robot<a class="headerlink" href="#controlling-the-robot" title="Permalink to this heading"></a></h1>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/coord.png"><img alt="../_images/coord.png" src="../_images/coord.png" style="width: 400px;" /></a>
@@ -93,23 +95,23 @@
 <li><p>The message is of type <code class="code docutils literal notranslate"><span class="pre">geometry_msgs/Twist</span></code> and it’s structure can be found from <a class="reference external" href="https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html">ROS wiki</a>.</p></li>
 <li><p>To set and control the robot speed, the velocity commands need to be published continuously.</p></li>
 </ol>
-<section id="controlling-the-robot-using-teleop-twist-keyboard">
+<div class="section" id="controlling-the-robot-using-teleop-twist-keyboard">
 <h2>Controlling the robot using teleop twist keyboard<a class="headerlink" href="#controlling-the-robot-using-teleop-twist-keyboard" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>If teleop twist keyboard is not installed</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-melodic-teleop-twist-keyboard
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install ros-noetic-teleop-twist-keyboard
 </pre></div>
 </div>
 </li>
 <li><p>Open a new terminal window</p></li>
-<li><p>Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a>.</p></li>
+<li><p>Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Distributed ROS</span></a>.</p></li>
 <li><p><strong>On ROBOTONT on-board computer</strong> or on <strong>on PC</strong> run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>robotont_demos<span class="w"> </span>teleop_keyboard.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch demo_teleop teleop_keyboard.launch
 </pre></div>
 </div>
 </li>
@@ -133,25 +135,29 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </div>
 </li>
 </ol>
-</section>
-<section id="controlling-the-robot-using-an-android-device">
-<h2>Controlling the robot using an Android device<a class="headerlink" href="#controlling-the-robot-using-an-android-device" title="Permalink to this heading"></a></h2>
+</div>
+<div class="section" id="controlling-the-robot-using-a-web-interface">
+<h2>Controlling the robot using a web interface<a class="headerlink" href="#controlling-the-robot-using-a-web-interface" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
-<li><p>Turn on robotont</p></li>
-<li><p>From your Android device, go to Google Play Store and install the <a class="reference external" href="https://play.google.com/store/apps/details?id=com.robotca.ControlApp&amp;hl=en">ROS Control app</a>.</p></li>
-<li><p>Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router</p></li>
-<li><p>Open the ROS Control app on your phone</p></li>
-<li><p>Insert the ROBOTONT’s IP address into Master URI field by entering the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://robotont_IP_address:11311
+<li><p>Make sure that the user device and Robot device are connected to the same wifi router</p></li>
+<li><p>Open the following URL in the user device browser, replacing the IP address with the robot’s IP address:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://Robot-IP:3000/
 </pre></div>
 </div>
 </li>
-<li><p>Click on “Show advanced options” in the prompted window and fill in “Joystick” and “Odometry” topic names with “cmd_vel” and “odom”, respectively</p></li>
-<li><p>Click OK to add the robot</p></li>
-<li><p>Now you can select the robot from the list and teleoperate it using the touch joystick button</p></li>
 </ol>
-</section>
-</section>
+<p>You should see the following page:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/webapp_ok_step.png"><img alt="../_images/webapp_ok_step.png" src="../_images/webapp_ok_step.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Click OK to close the connection status dialog</p></li>
+<li><p>Now you can teleoperate the robot using the touch joystick button as well as see the camera feed and depthcloud.</p>
+<a class="reference internal image-reference" href="../_images/webapp3.png"><img alt="../_images/webapp3.png" src="../_images/webapp3.png" style="width: 400px;" /></a>
+</li>
+</ol>
+</div>
+</div>
 
 
            </div>

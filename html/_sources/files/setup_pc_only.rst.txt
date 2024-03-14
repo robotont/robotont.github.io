@@ -10,14 +10,14 @@ This setup tutorial will guide you through setting up your PC to run the simulat
 Installing Ubuntu
 -----------------
 
-Download and install Ubuntu Linux on your PC from the following link: `Ubuntu 18.04.4 LTS (Bionic Beaver) <http://releases.ubuntu.com/18.04.4/?_ga=2.170843936.1678816316.1594710587-1973467440.1591964081>`__.
+Download and install Ubuntu Linux on your PC from the following link: `Ubuntu 20.04.6 LTS (Focal Fossa) <https://releases.ubuntu.com/focal/>`__.
 
 The guide to install Ubuntu on your PC can be found `here <https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview>`__.
 
 Installing ROS
 --------------
 
-Install Ros Melodic by following the guide: `Ros Melodic <http://wiki.ros.org/melodic/Installation/Ubuntu>`__.
+Install ROS Noetic by following the guide: `ROS Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`__.
 
 Creating a catkin workspace
 ----------------------------
@@ -39,10 +39,16 @@ Packages necessary to run the Gazebo simulation with Robotont's demos are follow
 
 #. `robotont_navigation <https://github.com/robotont/robotont_gazebo>`__
 
-#. `robotont_demos <https://github.com/robotont/robotont_demos>`__
-
 #. `robotont_msgs <https://github.com/robotont/robotont_msgs.git>`__
 
+You can find the demos from the following repositories:
+
+#. `AR Demo Follow-the-leader <https://github.com/robotont-demos/ar_follow_the_leader.git>`__
+#. `AR Steering <https://github.com/robotont-demos/ar_steering.git>`__
+#. `Slam 2D <https://github.com/robotont-demos/demo_slam>`__
+#. `Mapping 3D <https://github.com/robotont-demos/demo_mapping_3d.git>`__
+
+See the :ref:`demos_on_gazebo` for more information about the demos.
 
 To clone the packages, for example, robotont_description:
 
@@ -73,12 +79,5 @@ For automatic sourcing:
 
       echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-Running the demos with Gazebo
------------------------------
-
-Tutorial for running the simulation with the demos can be found here: :ref:`demos_on_gazebo`.
-
-
-    
 
 

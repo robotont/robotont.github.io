@@ -10,9 +10,7 @@ Setup
    .. code-block:: bash
       
       sudo apt update
-      sudo apt install ros-melodic-teleop-twist-keyboard
-
-#. From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__.
+      sudo apt install ros-noetic-teleop-twist-keyboard
 
 #. Start the driver
 
@@ -20,7 +18,10 @@ Setup
       
       roslaunch robotont_driver fake_driver.launch
 
-#. Make sure that fixed frame is set to "odom"!
+#. Set the fixed frame to :code:`odom` in RViz
+
+   .. image:: /files/pictures/frame_odom_img.png
+       :width: 400
 
 Controlling the robot using teleop twist keyboard
 -------------------------------------------------
@@ -41,23 +42,3 @@ Controlling the robot using teleop twist keyboard
    .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.
 
    .. tip:: Use :code:`CTRL + C` to stop the node.
-
-
-Controlling the robot using an Android device
----------------------------------------------
-
-#. Make sure that the user PC and Android device are connected to the same wifi router
-
-#. Open the ROS Control app on your phone
-
-#. Insert your computer's IP address into Master URI field by entering the following:
-
-   .. code-block:: bash
-      
-         http://IP_address:11311
-
-#. Click on "Show advanced options" in the prompted window and fill in "Joystick" and "Odometry" topic names with "cmd_vel" and "odom", respectively
-
-#. Click OK to add the robot
-
-#. Now you can select the robot from the list and teleoperate it using the touch joystick button
