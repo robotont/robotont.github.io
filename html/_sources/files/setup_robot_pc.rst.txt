@@ -125,7 +125,7 @@ This approach can be used to have multiple Robotonts and PCs within the same net
 IP addresses and Hostnames
 ---------------------------
 
-Both AP and Client connection methods can be used with either an IP address or a hostname based setup:
+Both AP and Client connection methods can be used with either an IP address or a hostname based setup.
 
 If you opt for an IP-address based setup, you can skip the hosts file setup. 
 
