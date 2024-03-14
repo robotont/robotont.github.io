@@ -185,16 +185,15 @@ catkin build
 <p>This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot’s IP address or hostname.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/ssh_graph.png"><img alt="../_images/ssh_graph.png" src="../_images/ssh_graph.png" style="width: 400px;" /></a>
-<a class="reference internal image-reference" href="../_images/naming_router.png"><img alt="../_images/naming_router.png" src="../_images/naming_router.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>This approach can be used to have multiple Robotonts and PCs within the same network. That is particularly helpful when setting up a classroom with multiple Robotonts.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/naming_router.png"><img alt="../_images/naming_router.png" src="../_images/naming_router.png" style="width: 400px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="ip-addresses-and-hostnames">
 <h3>IP addresses and Hostnames<a class="headerlink" href="#ip-addresses-and-hostnames" title="Permalink to this heading"></a></h3>
 <p>Both AP and Client connection methods can be used with either an IP address or a hostname based setup:</p>
-<ol class="arabic simple">
-<li><p>Hostname based setup</p></li>
-<li><p>IP-address based setup</p></li>
-</ol>
 <p>If you opt for an IP-address based setup, you can skip the hosts file setup.</p>
 <p>In the following examples, we assume the Robotont and the PC having the following configuration:</p>
 <table class="colwidths-given docutils align-default">
@@ -252,16 +251,18 @@ catkin build
 </ol>
 <p>If you set up the hosts file (change the X with the ID written on the robot):</p>
 <blockquote>
+<div><blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@robotont-X
 </pre></div>
 </div>
+</div></blockquote>
+<a class="reference internal image-reference" href="../_images/ssh_nt.png"><img alt="../_images/ssh_nt.png" src="../_images/ssh_nt.png" style="width: 400px;" /></a>
 </div></blockquote>
 <p>Otherwise, use the IP address:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh peko@ip_of_the_robot
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/ssh_nt.png"><img alt="../_images/ssh_nt.png" src="../_images/ssh_nt.png" style="width: 400px;" /></a>
 </div></blockquote>
 <ol class="arabic simple" start="4">
 <li><p>If a yes/no question is asked, enter yes</p></li>
@@ -278,7 +279,6 @@ catkin build
 <div class="section" id="distributed-ros">
 <span id="same-env"></span><h3>Distributed ROS<a class="headerlink" href="#distributed-ros" title="Permalink to this heading"></a></h3>
 <p>The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.</p>
-<p>You can use your own router to connect the robot and the PC to get them on the same network.</p>
 <div class="section" id="hostname-based-approach">
 <h4>Hostname based approach<a class="headerlink" href="#hostname-based-approach" title="Permalink to this heading"></a></h4>
 <p>We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>

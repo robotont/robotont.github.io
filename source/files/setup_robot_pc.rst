@@ -116,6 +116,8 @@ This method involves connecting the robot and the user PC to the same network. T
   .. image:: /files/pictures/ssh_graph.png
     :width: 400
 
+This approach can be used to have multiple Robotonts and PCs within the same network. That is particularly helpful when setting up a classroom with multiple Robotonts.
+
   .. image:: /files/pictures/naming_router.png
     :width: 400
 
@@ -124,9 +126,6 @@ IP addresses and Hostnames
 ---------------------------
 
 Both AP and Client connection methods can be used with either an IP address or a hostname based setup:
-
-#. Hostname based setup
-#. IP-address based setup
 
 If you opt for an IP-address based setup, you can skip the hosts file setup. 
 
@@ -183,15 +182,14 @@ If you set up the hosts file (change the X with the ID written on the robot):
       
       ssh peko@robotont-X
 
+  .. image:: /files/pictures/ssh_nt.png
+    :width: 400
    
 Otherwise, use the IP address:
 
   .. code-block:: bash
       
       ssh peko@ip_of_the_robot
-
-  .. image:: /files/pictures/ssh_nt.png
-    :width: 400
 
 4. If a yes/no question is asked, enter yes
 
@@ -211,8 +209,6 @@ Distributed ROS
 ----------------
 
 The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.
-
-You can use your own router to connect the robot and the PC to get them on the same network.
 
 Hostname based approach 
 ***************
