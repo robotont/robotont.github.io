@@ -21,7 +21,7 @@
 
 project = u'Robotont'
 copyright = u'2023, University of Tartu, Licensed under CC BY-NC'
-author = u'M'
+author = u'Veiko Vunder'
 
 # The short X.Y version
 version = u''
