@@ -3,7 +3,7 @@ name: Build Docs
 on:
   push:
     branches:
-      - paola_devel  # Adjust this branch name if needed
+      - main  # Adjust this branch name if needed
 
 jobs:
   build:
