@@ -44,21 +44,17 @@ jobs:
         sphinx-build -b html source "${OUTPUT_FOLDER}"
         touch "${OUTPUT_FOLDER}/.nojekyll"
     - name: Upload Pages Artifact
-      uses:
-        actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v3
       with:
         path: docs/_build/${BRANCH_NAME}
 
   deploy:
-  environment:
-    name: github-pages
-    url: ${{ steps.build.outputs.url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.build.outputs.url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: 
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/${BRANCH_NAME}
+        uses: actions/deploy-pages@v4
