@@ -1,0 +1,809 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, M
+# This file is distributed under the same license as the Robotont package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Robotont \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-22 05:34+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../files/demo_gazebo.rst:3
+msgid "Demos on Gazebo"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:7
+msgid "Launching the Simulation"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:9
+msgid "To launch the simulator:"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:15
+msgid "There are two arguments on the launch file, that change the map and the position, where the robot will spawn:"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:17
+msgid "world - the map where the robot will spawn, the default map is empty world"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:19
+msgid "x_pos - x coordinate of the map, controls where the robot will spawn"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:22
+msgid "For example, the following command will spawn the robot to a map called minimaze.world in position x=2:"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:30
+msgid "Maps"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:32
+msgid "minimaze.world"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:37
+#: ../../files/demo_gazebo.rst:48
+#: ../../files/demo_gazebo.rst:59
+msgid "To run"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:43
+msgid "bangbang.world"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:54
+msgid "between.world"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:67
+msgid "2D Mapping"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:70
+msgid "gmapping"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:72
+#: ../../files/demo_gazebo.rst:88
+msgid "Launch the simulator"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:78
+msgid "Launch the gmapping software and visualize the map on RViz"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:84
+#: ../../files/demo_gazebo.rst:100
+msgid "Drive around using the keyboard and map the world"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:87
+msgid "Google Cartographer"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:94
+msgid "Launch Google Cartographer software and visualize the map on RViz"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:104
+#: ../../files/demo_robot.rst:105
+msgid "ROS navstack"
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:105
+#: ../../files/demo_robot.rst:106
+msgid "Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go."
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:107
+#: ../../files/demo_robot.rst:108
+msgid "For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is."
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:113
+#: ../../files/demo_robot.rst:114
+msgid "To tell the robot where to go, click on 2D Nav Goal and drag the arrow to where you want the robot to go and which way does it have to face."
+msgstr ""
+
+#: ../../files/demo_gazebo.rst:121
+#: ../../files/demo_robot.rst:122
+msgid "From *planner.yaml* you can tune the parameters for the planner. Reference can be found `here <http://wiki.ros.org/base_local_planner>`__."
+msgstr ""
+
+#: ../../files/demo_robot.rst:3
+msgid "Demos on Robotont"
+msgstr ""
+
+#: ../../files/demo_robot.rst:5
+msgid "Before starting establish an ssh connection between the robot and the user PC as shown here: :ref:`connecting-remotely`."
+msgstr ""
+
+#: ../../files/demo_robot.rst:7
+msgid "The following packages are needed to run the demos:"
+msgstr ""
+
+#: ../../files/demo_robot.rst:9
+msgid "For 2D mapping:"
+msgstr ""
+
+#: ../../files/demo_robot.rst:18
+msgid "For 3D mapping:"
+msgstr ""
+
+#: ../../files/demo_robot.rst:24
+msgid "For AR tracking:"
+msgstr ""
+
+#: ../../files/demo_robot.rst:33
+msgid "2D mapping"
+msgstr ""
+
+#: ../../files/demo_robot.rst:35
+msgid "**On Robotont on-board computer** launch 2d_nav_carto.launch"
+msgstr ""
+
+#: ../../files/demo_robot.rst:41
+msgid "**On PC** launch display_2d_mapping.launch to visualize the result"
+msgstr ""
+
+#: ../../files/demo_robot.rst:47
+msgid "To move the robot open another terminal window **on the PC** and run teleop twist keyboard"
+msgstr ""
+
+#: ../../files/demo_robot.rst:53
+#: ../../files/demo_robot.rst:76
+#: ../../files/demo_robot.rst:102
+msgid "Notice that the teleop node only receives keypresses when the terminal window is active."
+msgstr ""
+
+#: ../../files/demo_robot.rst:56
+msgid "3D mapping"
+msgstr ""
+
+#: ../../files/demo_robot.rst:58
+msgid "**On Robotont on-board computer** launch 3d_mapping.launch"
+msgstr ""
+
+#: ../../files/demo_robot.rst:64
+msgid "**On PC** launch display_3d_mapping.launch to visualize the result"
+msgstr ""
+
+#: ../../files/demo_robot.rst:70
+msgid "To move the robot open another terminal window **on the user PC** and run teleop twist keyboard"
+msgstr ""
+
+#: ../../files/demo_robot.rst:82
+msgid "AR tracking"
+msgstr ""
+
+#: ../../files/demo_robot.rst:83
+msgid "**On Robotont on-board computer** launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)"
+msgstr ""
+
+#: ../../files/demo_robot.rst:89
+msgid "**On PC** launch display_ar_marker.launch to visualize the result"
+msgstr ""
+
+#: ../../files/demo_robot.rst:95
+msgid "To move the robot open another terminal window **on PC** and run teleop twist keyboard"
+msgstr ""
+
+#: ../../files/demos.rst:4
+msgid "Demos"
+msgstr ""
+
+#: ../../files/overview.rst:4
+msgid "Overview"
+msgstr ""
+
+#: ../../files/overview.rst:6
+msgid "ROBOTONT’s depth camera gives the ability to see like humans and map the entire environment in 3D. With its omnidirectional wheels, the platform is free to move in any direction at any time. Its transparent design, extendable hardware, and open source software offer plenty of room for customized extensions. ROBOTONT is based on the most widely used software in robotics development called ROS (Robot Operating System). ROS gives open access to the latest software packages that are already used by worldwide known companies, such as, Boeing, Siemens, ABB, etc., and connects the industry with leading research institutions..."
+msgstr ""
+
+#: ../../files/overview.rst:17
+msgid "Specification"
+msgstr ""
+
+#: ../../files/overview.rst:19
+msgid "`On-board computer - Intel NUC7i5BNK <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnk.html>`__"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Processor"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Intel Core i5 (7th Gen) 7260U (2 cores, up to 3.4 GHz)"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "RAM"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "DDR4 2133 MHz 4 GB"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "GPU"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Intel Iris Plus Graphics 640"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Peripherals"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "1x HDMI, 4 x USB 3.0 Type A, 1 x Thunderbolt 3/DisplayPort/USB-C 3.1 Gen2"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Storage"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Transcend MTS420 M2.0 SSD 120 GB"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Network"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Intel I219-V Gigabit Ethernet – RJ45 <br> Intel Dual Band Wireless-AC 8265, IEEE 802.11a/b/g/n/ac"
+msgstr ""
+
+#: ../../files/overview.rst:31
+msgid "`Development board for external devices and motors- ARM NUCLEO-L476RG <https://os.mbed.com/platforms/ST-Nucleo-L476RG/>`__"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "CPU"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "ARM®32-bit Cortex®-M4, 80 MHz"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Debugging and programming interface"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "ST-LINK/V2-1"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Connectivity"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "mini-USB"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "GPIO"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "51"
+msgstr ""
+
+#: ../../files/overview.rst:41
+msgid "`Motors – DC motors with encoders <https://www.pololu.com/product/1442/specs/>`__"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Voltage"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "12 V"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Stall current"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "5000 mA"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Max rpm"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "500"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Max torque"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "0.59 Nm"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Gear Ratio"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "19:1"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Encoder resolution (motor)"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "64 counts per revolution"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Encoder resolution (gearbox)"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "1200 counts per revolution"
+msgstr ""
+
+#: ../../files/overview.rst:54
+msgid "`3D depth camera – Intel Realsense D435 <3D depth camera – Intel Realsense D435/>`__"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Depth Stream Output Resolution"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "1280 x 720"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Depth Field of View horizontal"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "85.2 deg"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Depth Field of Vies vertical"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "58 deg"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "RGB Sensor Resolution and Frame Rate"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "1920 x 1080 at 30 fps"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Minimum depth"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "110 mm"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Max range"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Approx.10 meters; Varies depending on calibration, scene, and lighting condition"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "Connection type"
+msgstr ""
+
+#: ../../files/overview.rst:1
+msgid "USB 3 Type-C"
+msgstr ""
+
+#: ../../files/sensors.rst:3
+msgid "Sensors"
+msgstr ""
+
+#: ../../files/sensors.rst:5
+msgid "Robotont uses a Realsense D435 3D camera, which provides a regular camera feed and a depth sensor."
+msgstr ""
+
+#: ../../files/sensors.rst:7
+msgid "The camera feed is launched automatically when the robot is turned on."
+msgstr ""
+
+#: ../../files/sensors.rst:10
+msgid "Displaying the camera feed"
+msgstr ""
+
+#: ../../files/sensors.rst:12
+msgid "Establish an ssh connection between the robot and the PC as shown here: :ref:`connecting-remotely`"
+msgstr ""
+
+#: ../../files/sensors.rst:14
+msgid "**On the PC** display the feed on RViz"
+msgstr ""
+
+#: ../../files/sensors.rst:23
+msgid "Getting distances from objects"
+msgstr ""
+
+#: ../../files/sensors.rst:25
+msgid "Laserscan_to_distance node provides distances from the closest object from the left, the right and the middle."
+msgstr ""
+
+#: ../../files/sensors.rst:27
+msgid "To run laserscan_to_distance node **on Robotont on-board computer**"
+msgstr ""
+
+#: ../../files/sensors.rst:33
+msgid "To display the distances either **on PC** or **on Robotont on-board computer**"
+msgstr ""
+
+#: ../../files/setup.rst:4
+#: ../../files/teleop_robot.rst:16
+#: ../../files/teleop_simu.rst:6
+msgid "Setup"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:3
+msgid "Using only the simulated robot"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:6
+#: ../../files/setup_robot_pc.rst:9
+msgid "Installing Ubuntu"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:8
+#: ../../files/setup_robot_pc.rst:11
+msgid "Download and install Ubuntu Linux on your PC from the following link: `Ubuntu 18.04.4 LTS (Bionic Beaver) <http://releases.ubuntu.com/18.04.4/?_ga=2.170843936.1678816316.1594710587-1973467440.1591964081>`__."
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:10
+#: ../../files/setup_robot_pc.rst:13
+msgid "The guide to install Ubuntu on your PC can be found `here <https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview>`__."
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:13
+#: ../../files/setup_robot_pc.rst:16
+msgid "Installing ROS"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:15
+msgid "Install Ros Melodic by following the guide: `Ros Melodic <http://wiki.ros.org/melodic/Installation/Ubuntu>`__."
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:18
+#: ../../files/setup_robot_pc.rst:22
+msgid "Creating a catkin workspace"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:20
+#: ../../files/setup_robot_pc.rst:24
+msgid "Create a workspace for catkin as shown `here <http://wiki.ros.org/catkin/Tutorials/create_a_workspace>`__."
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:23
+#: ../../files/setup_robot_pc.rst:27
+msgid "Cloning Robotont's packages"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:25
+#: ../../files/setup_robot_pc.rst:29
+msgid "All Robotont's packages can be accessed from `Robotont's GitHub <https://github.com/robotont>`__."
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:27
+#: ../../files/setup_robot_pc.rst:31
+msgid "To clone the packages:"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:34
+#: ../../files/setup_robot_pc.rst:38
+msgid "Building the catkin workspace"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:42
+#: ../../files/setup_robot_pc.rst:46
+msgid "Sourcing the workspace"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:44
+#: ../../files/setup_robot_pc.rst:48
+msgid "Make the workspace visible to ROS (must be done for every new terminal)"
+msgstr ""
+
+#: ../../files/setup_pc_only.rst:50
+#: ../../files/setup_robot_pc.rst:54
+msgid "For automatic sourcing:"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:3
+msgid "Using the robot with a user PC"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:6
+msgid "Setting up the PC"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:18
+msgid "Install Ros Melodic according to the following link: `Ros Melodic <http://wiki.ros.org/melodic/Installation/Ubuntu>`__."
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:63
+msgid "Connecting with the robot remotely"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:65
+#: ../../files/teleop_robot.rst:31
+#: ../../files/teleop_simu.rst:28
+msgid "Open a new terminal window"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:67
+msgid "Connect the user PC to Robotont's network or make sure that the user PC and Robotont's on-board computer are connected to the same wifi router"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:72
+msgid "Establish an ssh connection (change the X with the ID written on the robot)"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:78
+#: ../../files/teleop_robot.rst:39
+msgid "or"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:87
+msgid "If a yes/no question is asked, enter yes"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:89
+msgid "Enter the password"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:92
+msgid "When logged in successfully, you can see that the terminal prompt has changed to kasutaja@clearbot-X. This will be an important reference when trying to figure out which terminal is connected to where."
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:97
+msgid "After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced."
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:101
+msgid "Getting the Robotont and PC into the same ROS environment"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:103
+msgid "There are two approaches to get the Robotont and PC into the same ROS environment. A common prerequisite for both methods is that the hosts are connected to the same network. In the following examples, we assume the Robotont and the PC having the following configuration:"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "Machine"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "Hostname"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "IP-address"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "Robotont"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "clearbot-1"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "192.168.1.1"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "PC"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "laptop-1"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:1
+msgid "192.168.1.101"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:113
+msgid "Hostname based setup"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:115
+msgid "In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other's names associated with IP addresses. These hostname <--> IP pairs are defined in the `/etc/hosts` file. Use your favorite text editor and make sure the following entries exist."
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:117
+msgid "**/etc/hosts on Robotont on-board computer:**"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:125
+msgid "**/etc/hosts on PC:**"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:133
+msgid "Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named `ROS_MASTER_URI`, which by default points to localhost."
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:135
+msgid "**on PC**, open a terminal and enter:"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:141
+msgid "Now all ROS nodes you run in this terminal will connect to the Master on the Robotont. Test it with e.g. `rosnode list`. Note that the environment variable has to be set for each terminal window! To make it automatic, you can add the line to the end of the `.bashrc` file in the home directory of the PC:"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:150
+msgid "IP-address based setup"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:151
+msgid "If you want to configure IP based communication there is no need to edit the hosts file. Instead, a `ROS_IP` environmental variable has to be set on both sides:"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:153
+msgid "**on Robotont on-board computer:**"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:160
+msgid "**on PC:**"
+msgstr ""
+
+#: ../../files/setup_robot_pc.rst:168
+msgid "Similarly to the hostname based setup, append the commands to `.bashrc` to set the variables automatically."
+msgstr ""
+
+#: ../../files/teleop.rst:3
+msgid "Teleoperation"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:3
+msgid "Controlling the robot"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:8
+msgid "The robot driver subscribes to a specific type of messages called *velocity commands*. The standard name for this topic is :code:`/cmd_vel` or :code:`/robotont/cmd_vel` when in robot namespace."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:10
+msgid "The message is of type :code:`geometry_msgs/Twist` and it's structure can be found from `ROS wiki <https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html>`__."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:12
+msgid "To set and control the robot speed, the velocity commands need to be published continuously."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:17
+#: ../../files/teleop_simu.rst:8
+msgid "Install teleop twist keyboard"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:24
+#: ../../files/teleop_simu.rst:15
+msgid "From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:26
+msgid "Establish an ssh connection between the robot and the user PC as shown here: :ref:`connecting-remotely`."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:29
+#: ../../files/teleop_simu.rst:26
+msgid "Controlling the robot using teleop twist keyboard"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:33
+msgid "**On ROBOTONT on-board computer** run the following command:"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:45
+#: ../../files/teleop_simu.rst:36
+msgid "Use the following keys to move the robot:"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:51
+msgid "From this point beyond, you are able to drive the robot with a keyboard. Should you loose control over the robot, do one of the following"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:53
+msgid "PRESS \"k\" TO STOP THE ROBOT!"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:54
+msgid "PRESS THE EMERGENCY SWITCH ON THE ROBOT."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:56
+#: ../../files/teleop_simu.rst:41
+msgid "Notice that the teleop node only receives keypresses only when the terminal window is active."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:58
+#: ../../files/teleop_simu.rst:43
+msgid "Use :code:`CTRL + C` to stop the node."
+msgstr ""
+
+#: ../../files/teleop_robot.rst:61
+#: ../../files/teleop_simu.rst:47
+msgid "Controlling the robot using an Android device"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:63
+#: ../../files/teleop_simu.rst:49
+msgid "Open the ROS Control app on your phone"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:65
+msgid "Insert the ROBOTONT's IP address into Master URI field by entering the following:"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:71
+msgid "Click on \"Show advanced options\" in the prompted window and fill in \"Joystick\" and \"Odometry\" topic names with \"robotont/cmd_vel\" and \"robotont/odom\", respectively"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:73
+#: ../../files/teleop_simu.rst:59
+msgid "Click OK to add the robot"
+msgstr ""
+
+#: ../../files/teleop_robot.rst:75
+#: ../../files/teleop_simu.rst:61
+msgid "Now you can select the robot from the list and teleoperate it using the touch joystick button"
+msgstr ""
+
+#: ../../files/teleop_simu.rst:3
+msgid "Controlling the simulated robot on RViz"
+msgstr ""
+
+#: ../../files/teleop_simu.rst:17
+msgid "Start the driver"
+msgstr ""
+
+#: ../../files/teleop_simu.rst:23
+msgid "Make sure that fixed frame is set to \"odom\"!"
+msgstr ""
+
+#: ../../files/teleop_simu.rst:30
+msgid "Run the following command:"
+msgstr ""
+
+#: ../../files/teleop_simu.rst:51
+msgid "Insert your computer's IP address into Master URI field by entering the following:"
+msgstr ""
+
+#: ../../files/teleop_simu.rst:57
+msgid "Click on \"Show advanced options\" in the prompted window and fill in \"Joystick\" and \"Odometry\" topic names with \"cmd_vel\" and \"odom\", respectively"
+msgstr ""
+
