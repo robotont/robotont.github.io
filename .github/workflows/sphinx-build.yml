@@ -39,8 +39,8 @@ jobs:
       run: |
         BRANCH_NAME=$(echo $GITHUB_REF | awk 'BEGIN {FS="/"} {print $3}')
         OUTPUT_FOLDER="docs/_build/${BRANCH_NAME}"
+        echo "output folder: ${OUTPUT_FOLDER}"
 
-        sphinx-quickstart -q -p docs source
         sphinx-build -b html source "${OUTPUT_FOLDER}"
         touch "${OUTPUT_FOLDER}/.nojekyll"
     - name: Upload Pages Artifact
