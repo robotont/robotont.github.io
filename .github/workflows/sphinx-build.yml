@@ -25,6 +25,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    - name: Determine Branch Name
+      id: branch_name
+      run: echo "BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")" >> $GITHUB_ENV
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -45,10 +49,10 @@ jobs:
         touch "${OUTPUT_FOLDER}/.nojekyll"
         echo "::set-output name=docs_folder::${OUTPUT_FOLDER}"  # Set output for deploy job
     - name: Upload Pages Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-pages-artifact@v3
       with:
         name: github-pages
-        path: ${{ steps.build.outputs.docs_folder }}
+        path: docs/_build/${{ steps.branch_name.outputs.BRANCH_NAME }}/
 
   deploy:
     environment:
