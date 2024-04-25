@@ -43,8 +43,8 @@ jobs:
 
     - name: Build Documentation for all branches
       run: |
-        # Get array of all branches
-        branches=($(git branch -a --format="%(refname:short)"))
+        # Get array of all branche names in origin
+        branches=($(git ls-remote --heads origin | sed 's?.*refs/heads/??'))
 
         # iterate over all branches
         for branch in "${branches[@]}"; do
