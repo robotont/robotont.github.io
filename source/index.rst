@@ -1,15 +1,13 @@
+.. raw:: html
 
-#################
-Table of Contents
-#################
+  <h1>Choose ROS distribution</h1>
 
-.. toctree::
-   :maxdepth: 2
+.. image:: images/noetic.png
+  :alt: Noetic Image
+  :width: 200
+  :target: noetic/index.html
 
-   overview.rst
-   setup.rst
-   teleop.rst
-   sensors.rst
-   demo_robot.rst
-   demo_gazebo.rst
-   sandbox.rst
+.. image:: images/humble.png
+  :alt: Humble Image
+  :width: 200
+  :target: humble/index.html
