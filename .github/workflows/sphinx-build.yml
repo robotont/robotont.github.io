@@ -31,16 +31,6 @@ jobs:
         OUTPUT_FOLDER="docs/_build"
         echo "OUTPUT_FOLDER=${OUTPUT_FOLDER}" >> $GITHUB_ENV
 
-    - name: Download github-pages artefact
-      uses: actions/download-artifact@v3
-      with:
-        name: github-pages
-        path: ${{ env.OUTPUT_FOLDER }}
-
-    - name: Test artefact download
-      run: |
-        ls -lR ${{ env.OUTPUT_FOLDER }}
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -51,10 +41,34 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Build Documentation
+    - name: Build Documentation for all branches
       run: |
-        sphinx-build -b html source "${OUTPUT_FOLDER}"
+        # Get array of all branches
+        branches=($(git branch -a --format="%(refname:short)"))
+
+        # iterate over all branches
+        for branch in "${branches[@]}"; do
+          # Print branch name
+          echo "Building documentation for: $branch"
+
+          # Checkout branch
+          git checkout $branch
+
+          # main branch gets built in the root folder
+          if [ "$branch" == "main" ]; then
+            sphinx-build -b html source "${OUTPUT_FOLDER}"
+          else
+            # Every other branch gets built in a subfolder
+            mkdir -p "${OUTPUT_FOLDER}/$branch"
+            sphinx-build -b html source "${OUTPUT_FOLDER}/$branch"
+          fi
+        done
+
+        # Create .nojekyll file to prevent GitHub Pages from ignoring files/folders starting with an underscore
         touch "${OUTPUT_FOLDER}/.nojekyll"
+
+
+
       #  echo "::set-output name=docs_folder::${OUTPUT_FOLDER}"  # Set output for deploy job
     - name: Upload Pages Artifact
       uses: actions/upload-pages-artifact@v3
