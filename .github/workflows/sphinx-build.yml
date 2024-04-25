@@ -51,8 +51,9 @@ jobs:
           # Print branch name
           echo "Building documentation for: $branch"
 
-          # Checkout branch
-          git checkout origin $branch
+          # Fetch and checkout branch
+          git fetch origin $branch
+          git checkout $branch
 
           # main branch gets built in the root folder
           if [ "$branch" == "main" ]; then
