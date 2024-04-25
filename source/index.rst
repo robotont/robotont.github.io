@@ -1,6 +1,8 @@
+.. title:: Welcome
+
 .. raw:: html
 
-  <h1>Choose ROS distribution</h1>
+  <h1>Choose your ROS distribution</h1>
 
 .. image:: images/noetic.png
   :alt: Noetic Image
