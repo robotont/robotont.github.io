@@ -31,6 +31,16 @@ jobs:
         OUTPUT_FOLDER="docs/_build"
         echo "OUTPUT_FOLDER=${OUTPUT_FOLDER}" >> $GITHUB_ENV
 
+    - name: Download github-pages artefact
+      uses: actions/download-artifact@v3
+      with:
+        name: github-pages
+        path: ${{ env.OUTPUT_FOLDER }}
+
+    - name: Test artefact download
+      run: |
+        ls -lR ${{ env.OUTPUT_FOLDER }}
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -59,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      # Deploy to GitHub Pages while maintaining the branch-specific output folder
+      # Deploy to GitHub Pages while maintaining the previous deployment
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
