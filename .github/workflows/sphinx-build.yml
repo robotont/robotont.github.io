@@ -43,8 +43,8 @@ jobs:
 
     - name: Build Documentation for all branches
       run: |
-        # Get array of all branche names in origin
-        branches=($(git ls-remote --heads origin | sed 's?.*refs/heads/??'))
+        # Get array of all branches in origin
+        branches=($(git ls-remote --heads origin | cut -f2 | cut -d'/' -f3))
 
         # iterate over all branches
         for branch in "${branches[@]}"; do
@@ -52,7 +52,7 @@ jobs:
           echo "Building documentation for: $branch"
 
           # Checkout branch
-          git checkout $branch
+          git checkout origin $branch
 
           # main branch gets built in the root folder
           if [ "$branch" == "main" ]; then
