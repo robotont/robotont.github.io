@@ -3,7 +3,7 @@ name: Build Docs
 on:
   push:
     branches:
-      - main  # Adjust this branch name if needed
+      - '*'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
