@@ -21,7 +21,7 @@ Displaying the camera feed
 
 Click on Add and select Camera. In the Camera topic field, select /camera/color/image_raw. 
 
-   .. image:: /files/pictures/camera_view.png
+   .. image:: pictures/camera_view.png
       :width: 400
 
 Getting distances from objects
@@ -41,5 +41,5 @@ Laserscan_to_distance node provides distances from the closest object from the l
       
       rostopic echo /scan_to_distance
 
-   .. image:: /files/pictures/terminal.png
+   .. image:: pictures/terminal.png
       :width: 400

@@ -18,7 +18,7 @@ ROBOTONT currently includes the following out-of-the-box demos:
    * AR marker tracking, and
    * gesture-based human-robot interaction.
 
-   .. image:: /files/pictures/robotont_gen_2_3_multi_view.png
+   .. image:: pictures/robotont_gen_2_3_multi_view.png
       :width: 800
 
 Specification

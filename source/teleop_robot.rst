@@ -2,7 +2,7 @@
 Controlling the robot
 #####################
 
-   .. image:: /files/pictures/coord.png
+   .. image:: pictures/coord.png
       :width: 400
 
 #. The robot driver subscribes to a specific type of messages called *velocity commands*. The standard name for this topic is :code:`/cmd_vel`. 
@@ -39,7 +39,7 @@ Controlling the robot using teleop twist keyboard
 
 #. Use the following keys to move the robot:
 
-   .. image:: /files/pictures/twist_keys.png
+   .. image:: pictures/twist_keys.png
       :width: 400
 
 
@@ -66,12 +66,12 @@ Controlling the robot using a web interface
 
 You should see the following page:
 
-   .. image:: /files/pictures/webapp_ok_step.png
+   .. image:: pictures/webapp_ok_step.png
        :width: 400
 
 #. Click OK to close the connection status dialog
 
 #. Now you can teleoperate the robot using the touch joystick button as well as see the camera feed and depthcloud.
 
-   .. image:: /files/pictures/webapp3.png
+   .. image:: pictures/webapp3.png
        :width: 400

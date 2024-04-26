@@ -158,7 +158,7 @@ Setting 2D navigation goals
 
 #. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
  
-   .. image:: /files/pictures/poseestimatearrow.png
+   .. image:: pictures/poseestimatearrow.png
     :width: 400
 
 
@@ -166,7 +166,7 @@ Setting 2D navigation goals
     and drag the arrow to where you want the robot to go
     and which way does it have to face.
 
-   .. image:: /files/pictures/2dnavgoalarrow.png
+   .. image:: pictures/2dnavgoalarrow.png
     :width: 400
 
 
@@ -214,7 +214,7 @@ Running the demo
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
-  .. image:: /files/pictures/3dmap.png
+  .. image:: pictures/3dmap.png
     :width: 400
 
 AR tracking

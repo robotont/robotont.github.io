@@ -20,7 +20,7 @@ Setup
 
 #. Set the fixed frame to :code:`odom` in RViz
 
-   .. image:: /files/pictures/frame_odom_img.png
+   .. image:: pictures/frame_odom_img.png
        :width: 400
 
 Controlling the robot using teleop twist keyboard
@@ -36,7 +36,7 @@ Controlling the robot using teleop twist keyboard
 
 #. Use the following keys to move the robot:
 
-   .. image:: /files/pictures/twist_keys.png
+   .. image:: pictures/twist_keys.png
        :width: 400
 
    .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.

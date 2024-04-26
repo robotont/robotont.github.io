@@ -48,7 +48,7 @@ Worlds
 
 #. minimaze.world
 
-   .. image:: /files/pictures/maze.png
+   .. image:: pictures/maze.png
       :width: 400
 
    To run
@@ -59,7 +59,7 @@ Worlds
 
 #. bangbang.world
 
-   .. image:: /files/pictures/bangbang.png
+   .. image:: pictures/bangbang.png
       :width: 400
 
    To run 
@@ -70,7 +70,7 @@ Worlds
 
 #. between.world
 
-   .. image:: /files/pictures/between.png
+   .. image:: pictures/between.png
       :width: 400
 
    To run
@@ -81,7 +81,7 @@ Worlds
 
 #. colors.world
 
-   .. image:: /files/pictures/colors.png
+   .. image:: pictures/colors.png
       :width: 400
 
    To run
@@ -252,7 +252,7 @@ Setting 2D navigation goals
 
 #. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
  
-   .. image:: /files/pictures/poseestimatearrow.png
+   .. image:: pictures/poseestimatearrow.png
     :width: 400
 
 
@@ -260,7 +260,7 @@ Setting 2D navigation goals
     and drag the arrow to where you want the robot to go
     and which way does it have to face.
 
-   .. image:: /files/pictures/2dnavgoalarrow.png
+   .. image:: pictures/2dnavgoalarrow.png
     :width: 400
 
 3D mapping
@@ -313,7 +313,7 @@ Running the demo
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
-  .. image:: /files/pictures/3d_mapping_gazebo.png
+  .. image:: pictures/3d_mapping_gazebo.png
     :width: 400
 
 The robot identifies and tracks the pose of the provided AR tag and acts accordingly.

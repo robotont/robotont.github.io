@@ -100,12 +100,12 @@ This method allows for direct communication with the robot without needing an ex
 
 The topology of the network can be seen in the following image:
 
-  .. image:: /files/pictures/apconfig.png
+  .. image:: pictures/apconfig.png
     :width: 400
 
 You can achieve this by connecting the user PC to Robotont's network.
 
-  .. image:: /files/pictures/wifi_screen.png
+  .. image:: pictures/wifi_screen.png
     :width: 400
 
 Client connection
@@ -113,12 +113,12 @@ Client connection
 
 This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot's IP address or hostname.
 
-  .. image:: /files/pictures/ssh_graph.png
+  .. image:: pictures/ssh_graph.png
     :width: 400
 
 This approach can be used to have multiple Robotonts and PCs within the same network. That is particularly helpful when setting up a classroom with multiple Robotonts.
 
-  .. image:: /files/pictures/naming_router.png
+  .. image:: pictures/naming_router.png
     :width: 400
 
 
@@ -159,7 +159,7 @@ In the hostname based configuration, the robot and PC query each other via hostn
   192.168.200.1 robotont-1
 
 
-.. image:: /files/pictures/hostfile.png
+.. image:: pictures/hostfile.png
   :width: 400
 
 SSH 
@@ -182,7 +182,7 @@ If you set up the hosts file (change the X with the ID written on the robot):
       
       ssh peko@robotont-X
 
-  .. image:: /files/pictures/ssh_nt.png
+  .. image:: pictures/ssh_nt.png
     :width: 400
    
 Otherwise, use the IP address:
@@ -198,7 +198,7 @@ Otherwise, use the IP address:
 
 6. When logged in successfully, you can see that the terminal prompt has changed to peko@robotont-X. This will be an important reference when trying to figure out which terminal is connected to where.
 
-  .. image:: /files/pictures/ssh_nt2.png
+  .. image:: pictures/ssh_nt2.png
     :width: 400
 
 7. After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.
