@@ -9,7 +9,7 @@
   :width: 200
   :target: noetic/index.html
 
-.. image:: images/humble.png
-  :alt: Humble Image
+.. image:: images/jazzy.png
+  :alt: Jazzy Image
   :width: 200
-  :target: humble/index.html
+  :target: jazzy/index.html
