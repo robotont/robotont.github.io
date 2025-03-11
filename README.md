@@ -12,7 +12,7 @@ pip3 install --upgrade pip
 ##### Getting dependencies
 ```
 sudo apt install python3-sphinx
-pip3 install sphinx_rtd_theme
+pip3 install pydata-sphinx-theme
 ```
 
 * Make whatever changes you need to the docs files in `source/`
