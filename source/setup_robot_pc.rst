@@ -13,33 +13,32 @@ Setting up the PC
 Installing Ubuntu
 -----------------
 
-Download and install Ubuntu Linux on your PC from the following link: `Ubuntu 20.04.6 LTS (Focal Fossa) <https://releases.ubuntu.com/focal/>`__.
+#. Download Ubuntu image on your PC from the following link: `Ubuntu 24.04.2 (Noble Numbat) <https://releases.ubuntu.com/noble/>`__.
 
-The guide to install Ubuntu on your PC can be found `here <https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview>`__.
+#. For installing Ubuntu on your PC, follow the guide `Install Ubuntu Desktop <https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview>`__.
 
 Installing ROS
 --------------
 
-Install ROS Noetic by following the guide: `ROS Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`__.
+For installing ROS 2 Jazzy, follow the guide for `Ubuntu (deb packages) <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html>`__.
 
-
-Creating a catkin workspace
+Creating a colcon workspace
 ----------------------------
 
-Create a workspace for catkin as shown `here <http://wiki.ros.org/catkin/Tutorials/create_a_workspace>`__.
+Create a workspace for colcon as shown `here <https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html>`__.
 
 Cloning Robotont's packages
 -----------------------------
 
 All Robotont's packages can be accessed from `Robotont's GitHub <https://github.com/robotont>`__.
 
-Packages necessary to run the demos from PC's terminal are following:
+Packages necessary to run the demos from PC's Terminal are the following:
 
 #. `robotont_description <https://github.com/robotont/robotont_description>`__
 
 #. `robotont_nuc_description <https://github.com/robotont/robotont_nuc_description>`__
 
-#. `robotont_navigation <https://github.com/robotont/robotont_gazebo>`__
+#. `robotont_navigation <https://github.com/robotont/robotont_navigation>`__
 
 You can find the demos from the following repositories:
 
@@ -56,28 +55,28 @@ To clone the packages:
       
     git clone https://github.com/robotont/package_name.git
 
-Building the catkin workspace
+Building the colcon workspace
 ------------------------------
 
 .. code-block:: bash
       
-    cd catkin_ws
-    catkin build
+    cd colcon_ws
+    colcon build
 
 Sourcing the workspace
 -----------------------
 
-Make the workspace visible to ROS (must be done for every new terminal)
+Make the workspace visible to ROS 2 (must be done for every new Terminal session)
 
 .. code-block:: bash
 
-      source ~/catkin_ws/devel/setup.bash
+      source ~/colcon_ws/install/setup.bash
 
 For automatic sourcing:
 
 .. code-block:: bash
 
-      echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+      echo "source ~/colcon_ws/install/setup.bash" >> ~/.bashrc
 
 .. _connecting_remotely:
 
@@ -96,162 +95,219 @@ AP connection
 
 Access Point (AP) connection involves connecting directly to the robotont's own network.
 
-This method allows for direct communication with the robot without needing an external network infrastructure and is the easiest way to connect to the robot.
+This method allows for direct communication with the robot without needing an external network infrastructure and is the easiest way to connect.
 
 The topology of the network can be seen in the following image:
 
-  .. image:: /files/pictures/apconfig.png
-    :width: 400
+  .. image:: /pictures/apconfig.png
+    :width: 100%
 
 You can achieve this by connecting the user PC to Robotont's network.
 
-  .. image:: /files/pictures/wifi_screen.png
-    :width: 400
+  .. image:: /pictures/wifi_screen.png
+    :align: center
+    :width: 60%
 
 Client connection
 -----------------
 
 This method involves connecting the robot and the user PC to the same network. The user PC can then connect to the robot using the robot's IP address or hostname.
 
-  .. image:: /files/pictures/ssh_graph.png
-    :width: 400
+  .. image:: /pictures/ssh_graph.png
+    :width: 100%
 
 This approach can be used to have multiple Robotonts and PCs within the same network. That is particularly helpful when setting up a classroom with multiple Robotonts.
 
-  .. image:: /files/pictures/naming_router.png
-    :width: 400
-
-
-IP addresses and Hostnames
----------------------------
-
-Both AP and Client connection methods can be used with either an IP address or a hostname based setup.
-
-If you opt for an IP-address based setup, you can skip the hosts file setup. 
-
-In the following examples, we assume the Robotont and the PC having the following configuration:
-
-.. csv-table::
-  :header: "Machine", "Hostname", "IP-address","Netmask"
-  :widths: 40, 40, 40,40 
-
-  "Robotont", "robotont-1", "192.168.200.1", "255.255.255.0"
-  "PC", "laptop-1", "192.168.200.101","255.255.255.0"
-
-Hostname based setup 
-*********************
-
-In the hostname based configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other's names associated with IP addresses. These hostname <--> IP pairs are defined in the `/etc/hosts` file. Use your favorite text editor and make sure the following entries exist.
-
-**/etc/hosts on Robotont on-board computer:**
-
-.. code-block:: bash
-
-  127.0.1.1 robotont-1
-  192.168.200.101 laptop-1
-
-
-**/etc/hosts on PC:**
-
-.. code-block:: bash
-
-  127.0.1.1 laptop-1
-  192.168.200.1 robotont-1
-
-
-.. image:: /files/pictures/hostfile.png
-  :width: 400
-
-SSH 
----
-SSH is a secure way to connect to the robot and run commands on it. It is a good way to check the status of the robot and to run commands on it.
-
-It can be done using the IP address of the robot or the hostname.
-
-You can achieve this by following the steps below:
-
-1. Open a new terminal window
-
-2. Connect the user PC to Robotont's network.
-
-3. Establish an ssh connection with either IP address or hostname.
-
-If you set up the hosts file (change the X with the ID written on the robot): 
-
-   .. code-block:: bash
-      
-      ssh peko@robotont-X
-
-  .. image:: /files/pictures/ssh_nt.png
-    :width: 400
-   
-Otherwise, use the IP address:
-
-  .. code-block:: bash
-      
-      ssh peko@ip_of_the_robot
-
-4. If a yes/no question is asked, enter yes
-
-5. Enter the password
-
-
-6. When logged in successfully, you can see that the terminal prompt has changed to peko@robotont-X. This will be an important reference when trying to figure out which terminal is connected to where.
-
-  .. image:: /files/pictures/ssh_nt2.png
-    :width: 400
-
-7. After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.
+  .. image:: /pictures/naming_router.png
+    :width: 100%
 
 .. _same_env:
 
-Distributed ROS
-----------------
+Distributed ROS 2
+-----------------
 
-The ROS environment can be distributed across multiple machines. This means that the ROS Master can be running on one machine, while the nodes are running on another. This is useful when the robot has limited computational resources and the user wants to run the nodes on a more powerful machine.
+ROS 2 is designed for distributed systems out of the box. Unlike ROS, it does not use a central ROS Master. Instead, nodes discover each other using `DDS <https://en.wikipedia.org/wiki/Data_Distribution_Service>`__.
 
-Hostname based approach 
-***************
+There are two options for setting up a distributed system, either using static IPs or defining hostnames on each of the devices.
 
-We need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named `ROS_MASTER_URI`, which by default points to localhost.
+.. note::
+   For consistent networking, assign static IP addresses or use DHCP reservation for both the robot and your PC
 
-**on PC**, open a terminal and enter:
+.. tabs::
 
-.. code-block:: bash
+   .. tab:: Use static IPs
 
-  export ROS_MASTER_URI=http://robotont-1:11311
+      **On Robotont (on-board computer):**
 
-Now all ROS nodes you run in this terminal will connect to the Master on the Robotont. Test it with e.g. `rosnode list`.
-Note that the environment variable has to be set for each terminal window! To make it automatic, you can add the line to the end of the `.bashrc` file in the home directory of the PC:
+      .. code-block:: bash
 
-.. code-block:: bash
+         export ROS_DOMAIN_ID=10
+         export ROS_IP=192.168.200.1
 
-  echo 'export ROS_MASTER_URI=http://robotont-1:11311' >> ~/.bashrc
+      **On PC:**
 
+      .. code-block:: bash
 
-IP address based approach
-*************************
+         export ROS_DOMAIN_ID=10
+         export ROS_IP=192.168.200.101
 
-To set up the ROS environment with an IP based setup, the `ROS_IP` environmental variable has to be set on both sides.
+      .. important::
+         Replace the IP addresses with the actual addresses of the devices
 
-**on Robotont on-board computer:**
+      To make these settings persistent, append them to the `.bashrc` file:
 
-Add the user PC's IP address to the `ROS_IP` environment variable.
+      .. code-block:: bash
 
-.. code-block:: bash
+         echo 'export ROS_DOMAIN_ID=10' >> ~/.bashrc
+         echo 'export ROS_IP=192.168.200.101' >> ~/.bashrc
+      
+      .. note::
+         The ``ROS_IP`` variable is helpful if you have multiple network interfaces or encounter issues with node discovery. In many typical setups, ROS 2 nodes will communicate without setting it
 
-  export ROS_IP=192.168.200.101
+   .. tab:: Define hostnames
 
+      On each device:
 
-**on PC:**
+      1. **Edit the `/etc/hosts` file**:
 
-Add the robot's IP address to the `ROS_IP` environment variable.
+         .. code-block:: bash
 
-.. code-block:: bash
+            sudo nano /etc/hosts
 
-  export ROS_MASTER_URI=http://192.168.200.1:11311
-  export ROS_IP=192.168.200.101
+      2. **Add entries like this**:
 
+         .. code-block:: text
 
-Similarly to the hostname based setup, append the commands to `.bashrc` to set the variables automatically.
+            192.168.200.1   robotont-1
+            192.168.200.101 laptop-1
+
+         .. important::
+            Replace the IP addresses with the actual addresses of the devices
+
+      3. **Save and exit**. You can now use hostnames in your ROS 2 setup. Test with:
+
+         .. code-block:: bash
+
+            ping robotont-1
+
+      If the ping succeeds, hostname resolution is working. ROS 2 nodes can communicate with no extra configuration beyond being on the same subnet.
+
+      .. admonition:: Optional
+
+         On both devices, set common DDS domain:
+
+         .. code-block:: bash
+
+            export ROS_DOMAIN_ID=10
+
+         To make this persistent:
+
+         .. code-block:: bash
+
+            echo 'export ROS_DOMAIN_ID=10' >> ~/.bashrc
+
+.. _verifying_communication:
+
+Verifying Communication
+------------------------
+
+1. On the Robotont, start a ROS 2 publisher:
+
+   .. code-block:: bash
+
+      ros2 run demo_nodes_cpp talker
+
+2. On the PC, start a ROS 2 subscriber:
+
+   .. code-block:: bash
+
+      ros2 run demo_nodes_cpp listener
+
+If setup correctly, the PC should receive messages from the Robotont.
+
+.. _ssh:
+
+SSH
+---
+`SSH <https://en.wikipedia.org/wiki/Secure_Shell>`__ provides a safe and reliable way to remotely connect to the robot, allowing you to check its status and execute commands from your PC.
+
+You can connect to the robot using either its IP address or hostname (if defined in the source machine's `/etc/hosts` file).
+
+Follow these steps:
+
+1. Open a new Terminal window on your PC
+
+2. Connect your PC to Robotont’s network
+
+3. Start the SSH connection using either the robot’s hostname or IP address:
+
+.. tabs::
+
+      .. tab:: Using the hostname
+
+         .. code-block:: bash
+
+            ssh <username>@<target_hostname>
+
+         .. hint::
+            Replace *<username>* with an user registered on the target machine and *<target_hostname>* with the robot's hostname, e.g
+
+            .. code-block:: bash
+
+               ssh peko@robotont-3
+
+         .. image:: /pictures/ssh_nt.png
+           :width: 100%
+
+      .. tab:: Using the IP address
+
+         .. code-block:: bash
+
+            ssh <username>@<target_ip_address>
+
+         .. hint::
+            Replace *<username>* with an user registered on the target machine and *<target_ip_address>* with the robot's IP address, e.g
+
+            .. code-block:: bash
+
+               ssh peko@192.168.1.200
+
+4. If prompted with a “yes/no” question about authenticity, type ``yes`` and press **Enter**.
+
+5. **Enter the password** when prompted
+
+6. Verify the login:
+
+   When logged in, the terminal prompt will change to ``peko@robotont-X`` (or similar), indicating you are connected to the robot. This helps you identify which terminal is connected remotely.
+
+   .. image:: /pictures/ssh_nt2.png
+     :width: 100%
+
+7. ROS environment setup:
+
+   The robot should automatically source its ROS environment on login. To check which workspaces are being sourced, you can run:
+
+   .. code-block:: bash
+
+      tail ~/.bashrc
+
+.. tip::
+
+   If you have connection issues, double-check the robot’s network settings and ensure you are using the correct hostname or IP address
+
+Troubleshooting Tips
+--------------------
+
+- Make sure both devices are on the same network/subnet.
+- Check that firewalls allow multicast UDP traffic.
+- Use the same ``ROS_DOMAIN_ID`` on all machines.
+- If communication issues persist:
+
+  - Try a different DDS implementation (e.g., Cyclone DDS or Fast DDS).
+  - Explicitly set the middleware with:
+
+    .. code-block:: bash
+
+       export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
 

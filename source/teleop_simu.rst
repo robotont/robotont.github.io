@@ -1,5 +1,5 @@
 ########################################
-Controlling the simulated robot on RViz
+Controlling the simulated robot in RViz
 ########################################
 
 Setup
@@ -10,35 +10,35 @@ Setup
    .. code-block:: bash
       
       sudo apt update
-      sudo apt install ros-noetic-teleop-twist-keyboard
+      sudo apt install ros2-jazzy-teleop-twist-keyboard
 
 #. Start the driver
 
    .. code-block:: bash
       
-      roslaunch robotont_driver fake_driver.launch
+      ros2 launch robotont_driver fake_driver.launch.py
 
 #. Set the fixed frame to :code:`odom` in RViz
 
-   .. image:: /files/pictures/frame_odom_img.png
-       :width: 400
+   .. image:: /pictures/frame_odom_img.png
+       :width: 60%
 
 Controlling the robot using teleop twist keyboard
 -------------------------------------------------
 
-#. Open a new terminal window
+#. Open a new Terminal window
 
 #. Run the following command:
 
    .. code-block:: bash
       
-         rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+         ros2 run teleop_twist_keyboard teleop_twist_keyboard.py
 
 #. Use the following keys to move the robot:
 
-   .. image:: /files/pictures/twist_keys.png
-       :width: 400
+   .. image:: /pictures/twist_keys.png
+       :width: 60%
 
-   .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.
+   .. hint:: Note that teleop only receives keypresses when the terminal window is active (in focus).
 
    .. tip:: Use :code:`CTRL + C` to stop the node.
