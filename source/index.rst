@@ -1,11 +1,7 @@
 
 ######################
-ROS2 CONSTRUCTION ZONE
+Robotont documentation
 ######################
-
-.. warning::
-
-    This documentation is a work in progress.  It is not yet complete.
 
 #################
 Table of Contents
