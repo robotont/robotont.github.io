@@ -89,7 +89,7 @@ After building and sourcing your workspace, you can spawn the robot in a gazebo 
 
    ros2 launch robotont_gazebo gazebo.launch.py world:=colors.sdf
 
-.. image:: /pictures/colors_gazebo.png
-  :width: 60%
+.. image:: /pictures/colors_world_example.png
+  :width: 100%
 
 Refer to individual demo package READMEs for more details on launching specific demos.

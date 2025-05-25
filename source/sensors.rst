@@ -11,9 +11,8 @@ Setup
 
    .. code-block:: bash
 
-      cd ~/colcon_ws/src
-      git clone https://github.com/ros-perception/depthimage_to_laserscan
-      git checkout -b ros2 && git fetch
+      cd ~/<your_colcon_workspace_name>/src
+      git clone https://github.com/ros-perception/depthimage_to_laserscan.git --branch ros2
       colcon build
 
 #. Setup distributed ROS 2 as shown here: :ref:`same_env`
@@ -34,7 +33,7 @@ Displaying the camera feed
 #. Click on **Add** and select **Camera**. In the Camera **Image Topic** field, select */camera/color/image_raw*.
 
    .. image:: /pictures/camera_view.png
-      :width: 60%
+      :width: 100%
 
 Getting distances from objects
 ------------------------------
@@ -86,4 +85,4 @@ The `depthimage_to_laserscan` node converts the RealSense camera's depth image i
 
       * The messages are of type :code:`sensor_msgs/LaserScan` — see its structure on the `ROS 2 sensor_msgs/LaserScan documentation <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/LaserScan.html>`__
          .. image:: /pictures/laserscan_terminal.png
-            :width: 60%
+            :width: 100%
