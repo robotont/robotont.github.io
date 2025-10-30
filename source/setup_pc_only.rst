@@ -10,19 +10,19 @@ This setup tutorial will guide you through setting up your PC to run the simulat
 Installing Ubuntu
 -----------------
 
-Download and install Ubuntu Linux on your PC from the following link: `Ubuntu 20.04.6 LTS (Focal Fossa) <https://releases.ubuntu.com/focal/>`__.
+#. Download Ubuntu image on your PC from the following link: `Ubuntu 24.04.2 (Noble Numbat) <https://releases.ubuntu.com/noble/>`__.
 
-The guide to install Ubuntu on your PC can be found `here <https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview>`__.
+#. For installing Ubuntu on your PC, follow the guide `Install Ubuntu Desktop <https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview>`__.
 
 Installing ROS
 --------------
 
-Install ROS Noetic by following the guide: `ROS Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`__.
+For installing ROS 2 Jazzy, follow the guide for `Ubuntu (deb packages) <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html>`__.
 
-Creating a catkin workspace
+Creating a colcon workspace
 ----------------------------
 
-Create a workspace for catkin as shown `here <http://wiki.ros.org/catkin/Tutorials/create_a_workspace>`__.
+Create a workspace for colcon as shown `here <https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html>`__.
 
 Cloning Robotont's packages
 -----------------------------
@@ -37,7 +37,7 @@ Packages necessary to run the Gazebo simulation with Robotont's demos are follow
 
 #. `robotont_gazebo <https://github.com/robotont/robotont_gazebo>`__
 
-#. `robotont_navigation <https://github.com/robotont/robotont_gazebo>`__
+#. `robotont_navigation <https://github.com/robotont/robotont_navigation>`__
 
 #. `robotont_msgs <https://github.com/robotont/robotont_msgs.git>`__
 
@@ -56,28 +56,40 @@ To clone the packages, for example, robotont_description:
       
     git clone https://github.com/robotont/robotont_description.git
 
-Building the catkin workspace
+Building the colcon workspace
 ------------------------------
 
 .. code-block:: bash
       
-    cd catkin_ws
-    catkin build
+    cd colcon_ws
+    colcon build
 
 Sourcing the workspace
 -----------------------
 
-Make the workspace visible to ROS (must be done for every new terminal)
+Make the workspace visible to ROS 2 (must be done for every new terminal)
 
 .. code-block:: bash
 
-      source ~/catkin_ws/devel/setup.bash
+      source ~/colcon_ws/install/setup.bash
 
 For automatic sourcing:
 
 .. code-block:: bash
 
-      echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+      echo "source ~/colcon_ws/install/setup.bash" >> ~/.bashrc
 
 
+Running the Simulation
+---------------------
 
+After building and sourcing your workspace, you can spawn the robot in a gazebo world, for example:
+
+.. code-block:: bash
+
+   ros2 launch robotont_gazebo gazebo.launch.py world:=colors.sdf
+
+.. image:: /pictures/colors_world_example.png
+  :width: 100%
+
+Refer to individual demo package READMEs for more details on launching specific demos.

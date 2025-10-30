@@ -20,14 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Robotont'
-copyright = u'2023, University of Tartu, Licensed under CC BY-NC'
+copyright = u'2025, University of Tartu, Licensed under CC BY-NC'
 author = u'Veiko Vunder'
 
 # The short X.Y version
 version = u''
 # The full version, including alpha/beta/rc tags
 release = u'0.0.1'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -40,6 +39,9 @@ release = u'0.0.1'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx_copybutton',
+    'sphinx_design',
+    'sphinx_tabs.tabs'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,7 +61,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -68,7 +70,6 @@ exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -86,7 +87,7 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['nstatic']
+html_static_path = []
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -103,7 +104,6 @@ html_static_path = ['nstatic']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Robotontdoc'
-
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -133,7 +133,6 @@ latex_documents = [
      u'M', 'manual'),
 ]
 
-
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -142,7 +141,6 @@ man_pages = [
     (master_doc, 'robotont', u'Robotont Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -154,7 +152,6 @@ texinfo_documents = [
      author, 'Robotont', 'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 # -- Options for Epub output -------------------------------------------------
 
@@ -172,6 +169,5 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
-
 
 # -- Extension configuration -------------------------------------------------

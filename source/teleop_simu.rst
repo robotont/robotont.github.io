@@ -1,44 +1,71 @@
 ########################################
-Controlling the simulated robot on RViz
+Controlling the simulated robot in RViz2
 ########################################
 
 Setup
 ------
 
-#. Install teleop twist keyboard
+.. hint::
+
+   Before installing any packages from apt, make sure existing packages are up-to-date:
+
+   .. code-block:: bash
+
+      sudo apt update && sudo apt upgrade -y
+
+.. hint::
+
+   ROS packages installed from apt are only available **in terminals where the ROS environment has been sourced**.
+   To use these packages, you must first source the general ROS 2 environment:
+
+   .. code-block:: bash
+
+      source /opt/ros/jazzy/setup.bash
+
+#. Install teleop twist keyboard from apt:
+
+   .. code-block:: bash
+
+      sudo apt install ros-jazzy-teleop-twist-keyboard
+
+#. Navigate to your colcon workspace:
+
+   .. code-block:: bash
+
+      cd ~/<your_colcon_workspace>/src
+
+#. Clone the ``robotont_driver`` package:
+
+   .. code-block:: bash
+
+      git clone https://github.com/robotont/robotont_driver.git
+
+#. Build the package:
+
+   .. code-block:: bash
+
+      colcon build --packages-select robotont_driver
+
+#. Start the driver:
 
    .. code-block:: bash
       
-      sudo apt update
-      sudo apt install ros-noetic-teleop-twist-keyboard
-
-#. Start the driver
-
-   .. code-block:: bash
-      
-      roslaunch robotont_driver fake_driver.launch
-
-#. Set the fixed frame to :code:`odom` in RViz
-
-   .. image:: /files/pictures/frame_odom_img.png
-       :width: 400
+      ros2 launch robotont_driver fake_driver_launch.py
 
 Controlling the robot using teleop twist keyboard
 -------------------------------------------------
 
-#. Open a new terminal window
-
-#. Run the following command:
+#. Start the ``teleop_twist_keyboard`` node:
 
    .. code-block:: bash
       
-         rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+         ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 #. Use the following keys to move the robot:
 
-   .. image:: /files/pictures/twist_keys.png
-       :width: 400
+   .. image:: /pictures/teleop_twist_terminal.png
+       :width: 100%
 
-   .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.
+   .. hint:: Note that teleop only receives keypresses when the terminal window is active (in focus).
 
    .. tip:: Use :code:`CTRL + C` to stop the node.

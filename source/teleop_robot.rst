@@ -1,77 +1,225 @@
-#####################
-Controlling the robot
-#####################
+###########################
+Controlling the real robot
+###########################
 
-   .. image:: /files/pictures/coord.png
-      :width: 400
+You can control Robotont using either your keyboard, a gamepad or a web-based interface. This section explains how to send movement commands to the robot and interact using both methods.
 
-#. The robot driver subscribes to a specific type of messages called *velocity commands*. The standard name for this topic is :code:`/cmd_vel`. 
+   .. image:: /pictures/coord.png
+      :width: 100%
 
-#. The message is of type :code:`geometry_msgs/Twist` and it's structure can be found from `ROS wiki <https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html>`__.
+* The robot driver subscribes to a specific type of messages called *velocity commands*. The standard name for this topic is :code:`/cmd_vel`.
 
-#. To set and control the robot speed, the velocity commands need to be published continuously.
+* The message is of type :code:`geometry_msgs/Twist` — see its structure on the `ROS 2 geometry_msgs/Twist documentation <https://docs.ros.org/en/jazzy/p/geometry_msgs/msg/Twist.html>`__.
 
+* To set and control the robot speed, the velocity commands need to be published continuously.
 
 Controlling the robot using teleop twist keyboard
 -------------------------------------------------
-#. If teleop twist keyboard is not installed
+
+Setup
+~~~~~~
+
+.. hint::
+
+   Before installing any packages from apt, make sure existing packages are up-to-date:
 
    .. code-block:: bash
-      
-      sudo apt update
-      sudo apt install ros-noetic-teleop-twist-keyboard
 
-#. Open a new terminal window
+      sudo apt update && sudo apt upgrade -y
 
-#. Get the robot and PC into the same ROS environment as shown here: :ref:`same_env`.
+.. hint::
 
-#. **On ROBOTONT on-board computer** or on **on PC** run the following command:
+   ROS packages installed from apt are only available **in terminals where the ROS environment has been sourced**.
+   To use these packages, you must first source the general ROS 2 environment:
 
    .. code-block:: bash
-      
-         rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
-   or
+      source /opt/ros/jazzy/setup.bash
+
+#. Install teleop twist keyboard from apt:
 
    .. code-block:: bash
-      
-         roslaunch demo_teleop teleop_keyboard.launch
+
+      sudo apt install ros-jazzy-teleop-twist-keyboard
+
+#. (Optional) Connect the robot and PC with the same subnet (see :ref:`same_env`).
+
+Controlling the robot
+~~~~~~~~~~~~~~~~~~~~~~
+
+#. **In Terminal** (on the robot's on-board computer or another PC, if distributed ROS is set up):
+
+   .. code-block:: bash
+
+      ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 #. Use the following keys to move the robot:
 
-   .. image:: /files/pictures/twist_keys.png
-      :width: 400
+   .. image:: /pictures/teleop_twist_terminal.png
+      :width: 100%
 
+   .. warning::
 
-   .. warning:: From this point beyond, you are able to drive the robot with a keyboard. Should you loose control over the robot, do one of the following
+       From this point beyond, you are able to drive the robot with a keyboard. Should you lose control over the robot, do one of the following:
                  
-       * PRESS "k" TO STOP THE ROBOT!
-       * PRESS THE EMERGENCY SWITCH ON THE ROBOT.
+       * Press "k" to stop the robot
+       * Press the emergency stop button on the robot
    
-   .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.
+   .. hint:: Note that teleop only receives keypresses when the terminal window is active (in focus).
    
    .. tip:: Use :code:`CTRL + C` to stop the node.
 
+Controlling the robot using a gamepad
+--------------------------------------
+
+Setup
+~~~~~~
+
+Connecting a controller
+***********************
+
+.. hint::
+
+   Before installing any packages from apt, make sure existing packages are up-to-date:
+
+   .. code-block:: bash
+
+      sudo apt update && sudo apt upgrade -y
+
+#. Install ``bluetooth``, ``bluez`` and ``bluez-tools`` from apt
+
+   .. code-block:: bash
+
+      sudo apt install bluetooth bluez bluez-tools
+
+#. Put your controller into pairing mode
+
+   .. note::
+
+      ``demo_teleop`` package includes the configuration file for `DualSense® <https://www.playstation.com/en-us/accessories/dualsense-wireless-controller/>`__ controller.
+
+      To put the DualSense controller into pairing mode:
+
+      * Hold the **PS** button and the **Create** button down for a few seconds
+      * The light bar will start **rapidly flashing blue**, which indicates, that the controller is in pairing mode
+
+#. **In Terminal**, start the Bluetooth CLI tool:
+
+   .. code-block:: bash
+
+      bluetoothctl
+
+#. Turn on the Bluetooth agent and scanning:
+
+   .. code-block:: bash
+
+      power on
+      agent on
+      scan on
+
+#. Wait for your controller to appear
+
+   .. note::
+
+      It should look something like: ``Device XX:XX:XX:XX:XX:XX Wireless Controller``
+
+#. Pair and connect the controller:
+
+   Replace ``XX:XX:XX:XX:XX:XX`` with your controller's MAC address:
+
+   .. code-block:: bash
+
+      pair XX:XX:XX:XX:XX:XX
+      connect XX:XX:XX:XX:XX:XX
+      trust XX:XX:XX:XX:XX:XX
+
+#. Stop scanning and exit the tool:
+
+   .. code-block:: bash
+
+      scan off
+      exit
+
+Dependencies
+************
+
+.. hint::
+
+   ROS packages installed from apt are only available **in terminals where the ROS environment has been sourced**.
+   To use these packages, you must first source the general ROS 2 environment:
+
+   .. code-block:: bash
+
+      source /opt/ros/jazzy/setup.bash
+
+#. Install ``joy`` from apt:
+
+   .. code-block:: bash
+
+      sudo apt install ros-jazzy-joy
+
+#. Navigate to your colcon workspace:
+
+   .. code-block:: bash
+
+      cd ~/<your_colcon_workspace>/src
+
+#. Clone the ``demo_teleop`` package:
+
+   .. code-block:: bash
+
+      git clone https://github.com/robotont-demos/demo_teleop.git
+
+#. Build the package:
+
+   .. code-block:: bash
+
+      colcon build --packages-select demo_teleop
+
+#. (Optional) Connect the robot and PC with the same subnet (see :ref:`same_env`).
+
+Controlling the robot
+~~~~~~~~~~~~~~~~~~~~~~
+
+#. **In Terminal** (on the robot's on-board computer or another PC, if distributed ROS is set up):
+
+   .. code-block:: bash
+
+      ros2 launch demo_teleop teleop_joy.launch.py
+
+#. The robot can be controlled using the joysticks:
+
+   .. image:: /pictures/dualsense_conf.png
+      :width: 100%
+
+.. warning::
+
+   From this point beyond, you are able to drive the robot with a controller. Should you lose control over the robot, do one of the following:
+
+   * Use :code:`CTRL + C` to stop the node.
+   * Press the emergency stop button on the robot
 
 Controlling the robot using a web interface
 -------------------------------------------
 
-#. Make sure that the user device and Robot device are connected to the same wifi router
+.. important::
 
-#. Open the following URL in the user device browser, replacing the IP address with the robot's IP address:
+   Make sure that the user's device and the robot are connected to the same subnet and are visible to one another (see :ref:`verifying_communication`).
+
+#. Open the following URL in your web browser (replace `<ip-of-the-robot>` with the actual IP address of your robot):
 
    .. code-block:: bash
       
-     http://Robot-IP:3000/
+     http://<ip-of-the-robot>:3000/
 
-You should see the following page:
+   You should see the following page:
 
-   .. image:: /files/pictures/webapp_ok_step.png
-       :width: 400
+      .. image:: /pictures/webapp_ok_step.png
+          :width: 100%
 
 #. Click OK to close the connection status dialog
 
-#. Now you can teleoperate the robot using the touch joystick button as well as see the camera feed and depthcloud.
+#. You can now control the robot using the on-screen joystick and view both the camera feed and depth cloud in your browser.
 
-   .. image:: /files/pictures/webapp3.png
-       :width: 400
+   .. image:: /pictures/webapp3.png
+       :width: 100%

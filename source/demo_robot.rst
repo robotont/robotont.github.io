@@ -1,311 +1,173 @@
-.. _demos_on_robot:
+.. _demos_on_robotont:
 
-#################
+##################
 Demos on Robotont
-#################
+##################
 
-Before running the demos it is necessary to get acquinted with the setup section of the documentation.
-
-Before running the demos on the robot read the following instructions: 
+Before running the demos it is necessary to get acquainted with the setup section of the documentation.
+Make sure you check:
 
 * :ref:`setting_up_pc`
 * :ref:`connecting_remotely`
 
-Note that some of the commands will run on Robotont on-board computer and some on user PC.
-
 2D Mapping and Localization
 ----------------------------
 
-The following are needed to run the 2D mapping demo:
+Setup
+~~~~~~~~~~~~~
+
+.. hint::
+
+   Before installing any packages from apt, make sure existing packages are up-to-date:
 
    .. code-block:: bash
-      
-      sudo apt update
-      sudo apt install ros-noetic-depthimage-to-laserscan
-      sudo apt install ros-noetic-move-base
 
-To run the 2D mapping demo, you need to clone the base package:
+      sudo apt update && sudo apt upgrade -y
 
-   .. code-block:: bash
-      
-      git clone https://github.com/robotont-demos/demo_slam.git
+.. hint::
 
-and choose a mapping method from the following:
-
-   1. Cartographer 
-   2. Gmapping
-   3. Hector SLAM
-
-Gmapping and AMCL
-~~~~~~~~~~~~~~~~~~
-
-Installation
-************
-
-You can clone the package for the Gmapping method from `this repository. <https://github.com/robotont-demos/demo_slam_gmapping>`__
-
-To clone the packages:
+   ROS packages installed from apt are only available **in terminals where the ROS environment has been sourced**.
+   To use these packages, you must first source the general ROS 2 environment:
 
    .. code-block:: bash
-      
-      git clone https://github.com/robotont-demos/demo_slam_gmapping.git
-      git clone https://github.com/robotont-demos/demo_teleop.git
 
+      source /opt/ros/jazzy/setup.bash
+
+#. Install Nav2 from apt:
+
+   .. code-block:: bash
+
+      sudo apt install ros-jazzy-navigation2
+
+#. Navigate to your colcon workspace
+
+   .. code-block:: bash
+
+      cd ~/<your_colcon_workspace>/src
+
+#. Clone the ``depthimage_to_laserscan`` package
+
+   .. code-block:: bash
+
+      git clone https://github.com/ros-perception/depthimage_to_laserscan.git --branch ros2
+
+#. Build the package:
+
+   .. code-block:: bash
+
+      colcon build --packages-select depthimage_to_laserscan
+
+The demo for 2D slam based navigation is available from `this repository <https://github.com/robotont-demos/2d_slam>`__.
+
+#. Navigate to your colcon workspace
+
+   .. code-block:: bash
+
+      cd ~/<your_colcon_workspace>/src
+
+#. Clone the ``2d_slam`` package
+
+   .. code-block:: bash
+
+      git clone https://github.com/robotont-demos/2d_slam.git
+
+#. Build the package:
+
+   .. code-block:: bash
+
+      colcon build --packages-select 2d_slam
 
 Running the demo
-****************
+~~~~~~~~~~~~~~~~~
 
-#. **On Robotont on-board computer or on PC** launch 2d_slam.launch
+The demo can be run on a Robotont featuring either a LIDAR or the standard Realsense D435i camera
 
-   .. code-block:: bash
-      
-      roslaunch demo_slam_gmapping 2d_slam.launch
+.. tabs::
 
-#. **On PC** launch 2d_slam_display.launch to visualize the result
+   .. tab:: Robotont with LIDAR
 
-   .. code-block:: bash
-      
-      roslaunch demo_slam 2d_slam_display.launch
+      #. Launch the navigation stack and slam
 
-#. To move the robot open another terminal window **on robotont on-board computer or on the PC** and run teleop twist keyboard (TBA)
+         .. code-block:: bash
 
-   .. code-block:: bash
-      
-      roslaunch demo_teleop teleop_keyboard.launch 
+            ros2 launch 2d_slam nav2_lidar_slam.launch.py
 
-   .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
+      #. (Optional) Visualize costmaps and the robot's model in Rviz2
 
-Cartographer
-~~~~~~~~~~~~
+         .. code-block:: bash
 
-Installation
-************
+            ros2 launch 2d_slam rviz2_visualize_costmaps.launch.py
 
-You can clone the package for the Cartographer method from `this repository. <https://github.com/robotont-demos/demo_slam_cartographer>`__
+   .. tab:: Robotont with Realsense D435i
 
-To clone the packages:
+      #. Launch the navigation stack and slam
 
-   .. code-block:: bash
-      
-      git clone https://github.com/robotont-demos/demo_slam_cartographer.git
-      git clone https://github.com/robotont-demos/demo_teleop.git
+         .. code-block:: bash
 
-Running the demo
-****************
+            ros2 launch 2d_slam nav2_realsense_slam.launch.py
 
-#. **On Robotont on-board computer or on PC** launch 2d_slam.launch
+      #. (Optional) Visualize costmaps and the robot's model in Rviz2
 
-   .. code-block:: bash
-      
-      roslaunch demo_slam_cartographer 2d_slam.launch
+         .. code-block:: bash
 
-#. **On PC** launch 2d_slam_display.launch to visualize the result
-   
-      .. code-block:: bash
-         
-         roslaunch demo_slam 2d_slam_display.launch
-
-#. To move the robot open another terminal window **on robotont on-board computer or on the PC** and run teleop twist keyboard (TBA)
-
-   .. code-block:: bash
-      
-      roslaunch demo_teleop teleop_keyboard.launch 
-
-   .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
-
-Hector SLAM
-~~~~~~~~~~~~
-
-Installation
-************
-
-You can clone the package for the Hector SLAM method from `this repository. <https://github.com/robotont-demos/demo_slam_hector>`__
-
-To clone the packages:
-
-   .. code-block:: bash
-      
-      git clone https://github.com/robotont-demos/demo_slam_hector.git
-      git clone https://github.com/robotont-demos/demo_teleop.git
-
-Running the demo
-****************
-
-#. **On Robotont on-board computer or on PC** launch 2d_slam.launch
-
-   .. code-block:: bash
-      
-      roslaunch demo_slam_hector 2d_slam.launch
-
-#. **On PC** launch 2d_slam_display.launch to visualize the result
-
-   .. code-block:: bash
-      
-      roslaunch demo_slam 2d_slam_display.launch
-
-#. To move the robot open another terminal window **on robotont on-board computer or on the PC** and run teleop twist keyboard.
-
-   .. code-block:: bash
-      
-      roslaunch demo_teleop teleop_keyboard.launch 
-
-   .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
+            ros2 launch 2d_slam rviz2_visualize_costmaps.launch.py
 
 Setting 2D navigation goals
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.
+Using ROS Navigation to make the robot move autonomously is straightforward. In RViz, you have two main GUI buttons: one to set the robot’s current location (if it doesn’t localize itself accurately at startup), and one to set its navigation goal.
 
-#. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
- 
-   .. image:: /files/pictures/poseestimatearrow.png
-    :width: 400
+#. **To set the initial pose**:
+
+   Click on **“2D Pose Estimate”** in the RViz toolbar, then click and drag the arrow to indicate where the robot is located and which way it is facing.
+
+   .. image:: /pictures/pose_estimate.gif
+    :width: 100%
 
 
-#.  To tell the robot where to go, click on 2D Nav Goal
-    and drag the arrow to where you want the robot to go
-    and which way does it have to face.
+#. **To set a navigation goal**:
 
-   .. image:: /files/pictures/2dnavgoalarrow.png
-    :width: 400
+   Click on **“2D Goal Pose”** in the RViz toolbar, then click and drag the arrow to the desired destination and orientation for the robot.
 
+   .. image:: /pictures/nav_goal.gif
+    :width: 100%
 
 3D mapping
 ----------
+.. dropdown::
 
-Creates a 3D map of the robot's surroundings.
+   Creates a 3D map of the robot's surroundings.
 
-Installation
-~~~~~~~~~~~~
+   .. image:: /pictures/wip.gif
+    :width: 200
 
-#. For 3D mapping:
-
-   .. code-block:: bash
-      
-      sudo apt install ros-noetic-rtabmap-ros
-
-and clone the following packages: 
-      
-   .. code-block:: bash
-      
-      git clone https://github.com/robotont-demos/demo_mapping_3d.git
-      git clone https://github.com/robotont-demos/demo_teleop.git
-
-Running the demo
-~~~~~~~~~~~~~~~~
-
-#. **On Robotont on-board computer or on PC** launch mapping_3d.launch
-
-   .. code-block:: bash
-      
-      roslaunch demo_mapping_3d mapping_3d.launch
-
-#. **On PC** launch mapping_3d_display.launch to visualize the result
-
-   .. code-block:: bash
-      
-      roslaunch demo_mapping_3d mapping_3d_display.launch
-
-#. To move the robot open another terminal window **on robotont on-board computer or on user PC** and run teleop twist keyboard
- 
-   .. code-block:: bash
-      
-      rosrun demo_teleop teleop_keyboard.launch 
-
-   .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
-
-  .. image:: /files/pictures/3dmap.png
-    :width: 400
-
-AR tracking
------------
-
-The robot identifies and tracks the pose of the provided AR tag and acts accordingly.
 
 Follow the leader
-~~~~~~~~~~~~~~~~~
+-----------------
 
-The follow the leader demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.
+.. dropdown::
 
-Installation
-************
+   The follow the leader demo shows the capabilities of the Robotont platform to detect and follow the AR Tag.
 
-#. For AR tracking:
-
-   .. code-block:: bash
-      
-      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
-      git clone https://github.com/robotont-demos/demo_ar_follow_the_leader.git
-
-Running the demo
-****************
-
-#. **On Robotont on-board computer or on PC** launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)
-
-   .. code-block:: bash
-      
-      roslaunch demo_ar_follow_the_leader ar_follow_the_leader.launch marker_id:=tag_nr
-
-#. **On PC** launch ar_marker_display.launch to visualize the result
-
-   .. code-block:: bash
-      
-      roslaunch demo_ar_follow_the_leader ar_marker_display.launch
+   .. image:: /pictures/wip.gif
+    :width: 200
 
 AR steering
-~~~~~~~~~~~
+-----------
 
-The AR steering demo showing the capabilities of the Robotont platform to detect and follow the AR Tag.
+.. dropdown::
 
-Installation
-************
+   The AR steering demo shows the capabilities of the Robotont platform to detect and follow the AR Tag.
 
-#. For AR tracking:
+   .. image:: /pictures/wip.gif
+    :width: 200
 
-   .. code-block:: bash
-      
-      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
-      git clone https://github.com/robotont-demos/demo_ar_steering.git
+AR maze
+-------
 
-Running the demo
-****************
+.. dropdown::
 
-#. **On Robotont on-board computer or on PC** launch ar_steering.launch (change tag_nr with your AR tag number)
+   The AR maze demo shows the capabilities of the Robotont platform to detect and follow the AR Tag.
 
-   .. code-block:: bash
-      
-      roslaunch demo_ar_steering ar_steering.launch marker_id:=tag_nr
-
-#. **On PC** launch ar_marker_display.launch to visualize the result
-   
-      .. code-block:: bash
-         
-         roslaunch demo_ar_steering ar_marker_display.launch
-
-
-AR Maze 
-~~~~~~~
-
-The AR maze demo showing the capabilities of the Robotont platform to detect and follow the AR Tag and navigate through the maze.
-
-Installation
-************
-
-#. For AR tracking:
-
-   .. code-block:: bash
-      
-      git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
-      git clone https://github.com/robotont-demos/demo_ar_maze.git
-
-Running the demo
-****************
-
-#. **On Robotont on-board computer or on PC** launch ar_maze.launch
-
-   .. code-block:: bash
-      
-      roslaunch demo_ar_maze ar_maze.launch
-
-   .. hint:: Make sure to modify the list with ar tags for maze navigation in 8th line of ar_maze.launch:  
-         roslaunch demo_ar_maze ar_maze.launch marker_ids:="4,10,5"
+   .. image:: /pictures/wip.gif
+    :width: 200

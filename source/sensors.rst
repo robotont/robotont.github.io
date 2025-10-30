@@ -2,44 +2,87 @@
 Sensors
 #######
 
-Robotont uses a Realsense D435i 3D camera, which provides a regular camera feed and a depth sensor. 
+The Robotont platform includes an Intel RealSense D435i 3D camera, capable of streaming both regular color images and depth data. These camera feeds are available automatically as soon as the robot is turned on.
 
-The camera feed is launched automatically when the robot is turned on.
+Setup
+-----
+
+#. Clone the `depthimage_to_laserscan <https://github.com/ros-perception/depthimage_to_laserscan/>`__ package into your workspace and build:
+
+   .. code-block:: bash
+
+      cd ~/<your_colcon_workspace_name>/src
+      git clone https://github.com/ros-perception/depthimage_to_laserscan.git --branch ros2
+      colcon build
+
+#. Setup distributed ROS 2 as shown here: :ref:`same_env`
+#. Establish an SSH connection between the robot and the PC as shown here: :ref:`ssh`
+
+
 
 Displaying the camera feed
 --------------------------
 
-#. Establish an ssh connection between the robot and the PC as shown here: :ref:`setting_up_pc`
-
-
-#. **On the PC** display the feed on RViz
+#. **In Terminal**, on the PC, start Rviz2:
 
 
    .. code-block:: bash
       
-      roslaunch rviz rviz 
+      rviz2
 
-Click on Add and select Camera. In the Camera topic field, select /camera/color/image_raw. 
+#. Click on **Add** and select **Camera**. In the Camera **Image Topic** field, select */camera/color/image_raw*.
 
-   .. image:: /files/pictures/camera_view.png
-      :width: 400
+   .. image:: /pictures/camera_view.png
+      :width: 100%
 
 Getting distances from objects
 ------------------------------
 
-Laserscan_to_distance node provides distances from the closest object from the left, the right and the middle.
+The `depthimage_to_laserscan` node converts the RealSense camera's depth image into a 2D LaserScan message, which you can use to estimate distances to objects directly in front of the robot.
 
-#. To run laserscan_to_distance node **on Robotont on-board computer**
-
-   .. code-block:: bash
-      
-      roslaunch robotont_laserscan_to_distance distance_from_depth_image.launch
-
-#. To display the distances either **on PC** or **on Robotont on-board computer**
+#. **Launch the depthimage_to_laserscan node** on the Robotont or your PC:
 
    .. code-block:: bash
-      
-      rostopic echo /scan_to_distance
 
-   .. image:: /files/pictures/terminal.png
-      :width: 400
+      ros2 run depthimage_to_laserscan depthimage_to_laserscan_node
+
+   .. hint::
+      Make sure the parameters for the depth image topic and camera info match your camera's output, e.g.:
+
+      .. code-block:: bash
+
+         ros2 run depthimage_to_laserscan depthimage_to_laserscan_node \
+            --ros-args \
+            --remap depth:=/camera/depth/image_raw \
+            --remap depth_camera_info:=/camera/color/camera_info
+
+#. **Visualize and analyze the LaserScan data**:
+
+   .. admonition:: Option 1: Rviz2
+
+      * Click on **Add** and select **LaserScan**. In the LaserScan **Topic** field, select */scan*
+
+      .. list-table::
+         :widths: 50 50
+         :header-rows: 0
+
+         * - Gazebo simulation
+
+             .. image:: /pictures/laserscan_gazebo.png
+               :width: 100%
+           - Rviz2 LaserScan visualization
+
+             .. image:: /pictures/laserscan_rviz.png
+               :width: 100%
+
+   .. admonition:: Option 2: View raw data
+
+      * **In Terminal**:
+
+         .. code-block:: bash
+
+            ros2 topic echo /scan
+
+      * The messages are of type :code:`sensor_msgs/LaserScan` — see its structure on the `ROS 2 sensor_msgs/LaserScan documentation <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/LaserScan.html>`__
+         .. image:: /pictures/laserscan_terminal.png
+            :width: 100%
