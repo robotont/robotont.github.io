@@ -3,7 +3,7 @@
 Overview
 #############
 
-ROBOTONT is an mobile ground robot with omnidirectional wheels to enable rapid movement in any direction at a desired heading. 
+BROBOTONT is an mobile ground robot with omnidirectional wheels to enable rapid movement in any direction at a desired heading. 
 The sensor system includes a depth camera which allows it to see like humans and map the entire environment in 3D. 
 The powerful on-board computer facilitates running high performance algorithms and libraries. 
 The software stack is open-source and based on ROS (Robot Operating System). 

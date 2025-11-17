@@ -12,6 +12,7 @@ Table of Contents
 
    overview.rst
    setup.rst
+   simple_simulator.rst
    teleop.rst
    sensors.rst
    demo_robot.rst
