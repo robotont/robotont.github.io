@@ -1,7 +1,7 @@
 .. _setup_pc_only:
 
 ##############################
-Using only the simulated robot
+Gazebo simulator
 ##############################
 
 This setup tutorial will guide you through setting up your PC to run the simulated robot with the demos.

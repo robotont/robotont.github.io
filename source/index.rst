@@ -11,9 +11,9 @@ Table of Contents
    :maxdepth: 2
 
    overview.rst
-   setup.rst
+   using_real_robot.rst
    simple_simulator.rst
-   teleop.rst
+   gazebo_simulator.rst
    sensors.rst
    demo_robot.rst
    demo_gazebo.rst
