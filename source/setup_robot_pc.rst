@@ -1,11 +1,10 @@
+.. _setup_robot_pc:
 ##############################
 Using the robot with a user PC
 ##############################
 
 
 This setup tutorial will guide you through setting up your PC to use it with Robotont.
-
-.. _setting_up_pc:
 
 Setting up the PC
 ======================

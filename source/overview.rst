@@ -3,7 +3,7 @@
 Overview
 #############
 
-BROBOTONT is an mobile ground robot with omnidirectional wheels to enable rapid movement in any direction at a desired heading. 
+ROBOTONT is an mobile ground robot with omnidirectional wheels to enable rapid movement in any direction at a desired heading. 
 The sensor system includes a depth camera which allows it to see like humans and map the entire environment in 3D. 
 The powerful on-board computer facilitates running high performance algorithms and libraries. 
 The software stack is open-source and based on ROS (Robot Operating System). 
@@ -105,6 +105,50 @@ Specification
 
 
 
+Simulations
+-------------
+Robotont provides two simulation options that allow you to test and develop your software without using the physical robot.
+
+.. tabs::
+
+   .. tab:: Simple Simulator
+
+      :ref:`simple_simulator`
+
+      A fast and lightweight 2D/3D visualization tool designed for quick testing of Robotont’s motion and navigation.
+      It mirrors the basic interface of the real robot (same topics, same commands) and includes a simple driver and a minimal navigation controller.
+
+      Use this simulator if you need:
+
+      * Quick startup and easy testing
+
+      * Teleoperation and basic goal-based navigation
+
+      * A simple environment to prototype algorithms
+
+      Note: It uses simplified physics and limited sensor simulation.
+
+      .. image:: /pictures/simple_driver_launch.png
+         :width: 100%
+
+   .. tab:: Gazebo Simulator
+
+      :ref:`gazebo_simulator`
+
+      A full-featured physics-based environment using Gazebo.
+      It simulates Robotont with realistic dynamics, collisions, sensors, and is compatible with the official demos (SLAM, AR steering, etc.).
+
+      Use this simulator if you need:
+
+      * Realistic physics
+
+      * Accurate sensor data
+
+      * Full navigation stack testing
+
+      * Running the demo packages
+      .. image:: /pictures/colors_world_example.png
+         :width: 100%
 
 
 

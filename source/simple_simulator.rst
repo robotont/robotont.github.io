@@ -1,4 +1,4 @@
-
+.. _Simple_simulator:
 ===================================
 Simple Simulator
 ===================================
@@ -26,8 +26,7 @@ The limitations of this simulator:
 Prerequisites
 ============
 
-- ROS2 Jazzy
-- Colcon build tools
+Make sure you check: :ref:`prerequisites`.
 
 .. hint::
 

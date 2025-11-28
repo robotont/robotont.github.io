@@ -13,6 +13,8 @@ Table of Contents
    overview.rst
    prerequisites.rst
    using_real_robot.rst
+      setup_robot_pc
+      controlling_real_robot
    simple_simulator.rst
    gazebo_simulator.rst
    sensors.rst

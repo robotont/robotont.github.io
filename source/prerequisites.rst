@@ -3,9 +3,6 @@
 Prerequisites
 ===================================
 
-Introduction
-============
-
 In order to be able to use the Robotont (the real on or in simulation), there are a few mandatory prerequisites:
 
 Installing Ubuntu

@@ -1,4 +1,4 @@
-.. _setup_pc_only:
+.. _gazebo_simulator:
 
 ##############################
 Gazebo simulator

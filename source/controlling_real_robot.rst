@@ -1,3 +1,4 @@
+.. _controlling_real_robot:
 ###########################
 Controlling the real robot
 ###########################
