@@ -11,6 +11,7 @@ Table of Contents
    :maxdepth: 2
 
    overview.rst
+   prerequisites.rst
    using_real_robot.rst
    simple_simulator.rst
    gazebo_simulator.rst

@@ -183,18 +183,8 @@ Simple Driver
 
 The simulator is composed of three main parts:
 
-* **teleop_twist_keyboard**  
-
-Publishes velocity commands on ``/cmd_vel`` based on key presses.
-
-.. code-block:: bash
-
-   /teleop_twist_keyboard
-      Subscribers:
-
-      Publishers:
-         /cmd_vel: geometry_msgs/msg/Twist
-
+* **robotont_description**  
+  Provides the URDF model of Robotont.  
 
 
 * **simple_driver**  
@@ -214,8 +204,20 @@ Publishes on 2 topics:
          /tf: tf2_msgs/msg/TFMessage
 
 
-* **robotont_description**  
-  Provides the URDF model of Robotont.  
+* **teleop_twist_keyboard**  
+
+Publishes velocity commands on ``/cmd_vel`` based on key presses.
+
+.. code-block:: bash
+
+   /teleop_twist_keyboard
+      Subscribers:
+
+      Publishers:
+         /cmd_vel: geometry_msgs/msg/Twist
+
+
+
 
 Simple Navigator
 -----------
@@ -258,18 +260,16 @@ The navigator outputs velocity commands toward the goal. These are sent to the `
          /cmd_vel: geometry_msgs/msg/Twist
 
 
+* **robotont_description**  
+  Provides the URDF model of Robotont.  
+
+
 The diagram below shows how keyboard teleoperation, the simple navigation controller, and the simple driver connect to each other, and how their outputs are visualized in RViz.
 Each node has a specific role: teleop sends motion commands, simple_driver simulates robot movement, simple_navigator computes goal-directed velocities, and RViz displays the robot using TF and odometry.
 
    .. image:: /pictures/robotont_schematic.png
     :width: 100%
 
-
-Resources
-=========
-
-- Robotont GitHub Organization: https://github.com/robotont
-- Robotont Documentation: https://robotont.github.io/jazzy/
 
 
 
