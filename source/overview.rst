@@ -68,6 +68,8 @@ Specification
       - **Operating range**: ~0.3 - 3 meters
       - **Connection**: USB 3.1 Type-C
 
+      You can find the detailed items description here: `Replication Package GitHub Gen2 <https://github.com/robotont/robotont-hardware-x-2023-replication-package>`__
+
    .. tab:: Generation 3.0
 
       .. image:: /pictures/robotont_gen3.jpg
@@ -103,9 +105,11 @@ Specification
       - **Operating range**: ~0.3 - 3 meters
       - **Connection**: USB 3.1 Type-C
 
+      You can find the detailed items description here: `Replication Package GitHub Gen3 <https://github.com/robotont/robotont-frobt-2024-replication-package>`__
 
 
-Simulations
+
+Simulators
 -------------
 Robotont provides two simulation options that allow you to test and develop your software without using the physical robot.
 
@@ -147,7 +151,7 @@ Robotont provides two simulation options that allow you to test and develop your
       * Full navigation stack testing
 
       * Running the demo packages
-      .. image:: /pictures/colors_world_example.png
+      .. image:: /pictures/minimaze_ar_world_example.png
          :width: 100%
 
 

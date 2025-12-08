@@ -1,6 +1,6 @@
 .. _setup_robot_pc:
 ##############################
-Using the robot with a user PC
+Setting up the user PC
 ##############################
 
 

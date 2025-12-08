@@ -28,22 +28,21 @@ Prerequisites
 
 Make sure you check: :ref:`prerequisites`.
 
-.. hint::
+robotont_description package
+-----------
+In order to use Simple Simulator package, you need to have robotont_description package too. If you don't already have it:
 
-   Before installing any packages from apt, make sure existing packages are up-to-date:
+Navigate to your ROS2 workspace src directory:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      sudo apt update && sudo apt upgrade -y
+   cd ~/your_workspace/src
 
-.. hint::
+Clone the repository:
 
-   ROS packages installed from apt are only available **in terminals where the ROS environment has been sourced**.
-   To use these packages, you must first source the general ROS 2 environment:
+.. code-block:: bash
 
-   .. code-block:: bash
-
-      source /opt/ros/jazzy/setup.bash
+   git clone https://github.com/robotont/robotont_description.git
 
 
 Clone and Build

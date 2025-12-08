@@ -11,10 +11,9 @@ Table of Contents
    :maxdepth: 2
 
    overview.rst
-   prerequisites.rst
-   using_real_robot.rst
-      setup_robot_pc
-      controlling_real_robot
+   working_on_the_real_robot.rst
+   initialize.rst
+   controlling_real_robot
    simple_simulator.rst
    gazebo_simulator.rst
    sensors.rst
