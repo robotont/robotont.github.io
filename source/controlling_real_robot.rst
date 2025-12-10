@@ -18,6 +18,8 @@ You can control Robotont using your keyboard. This section explains how to send 
 Setup
 -------------------------------------------------
 
+Before starting make sure of having followed the instructions of :ref:`prerequisites` and having correctly set up you user PC as described in :ref:`setup_robot_pc`.
+
 .. hint::
 
    Before installing any packages from apt, make sure existing packages are up-to-date:

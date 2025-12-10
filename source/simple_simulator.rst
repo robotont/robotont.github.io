@@ -26,7 +26,7 @@ The limitations of this simulator:
 Prerequisites
 ============
 
-Make sure you check: :ref:`prerequisites`.
+Make sure you check :ref:`prerequisites` and tested the environment following the instructionspresented in :ref:`visualize`.
 
 robotont_description package
 -----------

@@ -11,7 +11,7 @@ Table of Contents
    :maxdepth: 2
 
    overview.rst
-   working_on_the_real_robot.rst
+   working_on_the_real_robot_no_ROS.rst
    initialize_ROS.rst
    controlling_real_robot
    simple_simulator.rst
