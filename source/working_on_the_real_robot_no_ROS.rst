@@ -1,6 +1,6 @@
 .. _working_on_the_real_robot:
 ###########################
-Teleoperating the robot without user PC
+Teleoperating the robot
 ###########################
 
 You can control Robotont using either a gamepad or a web-based interface. This section explains how to send movement commands to the robot and interact using both methods.

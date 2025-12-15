@@ -1,7 +1,7 @@
 .. _gazebo_simulator:
 
 ##############################
-Gazebo simulator
+Gazebo Simulator
 ##############################
 
 This setup tutorial will guide you through setting up your PC to run the simulated robot with the demos.

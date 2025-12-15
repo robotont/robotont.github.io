@@ -26,24 +26,7 @@ The limitations of this simulator:
 Prerequisites
 ============
 
-Make sure you check :ref:`prerequisites` and tested the environment following the instructionspresented in :ref:`visualize`.
-
-robotont_description package
------------
-In order to use Simple Simulator package, you need to have robotont_description package too. If you don't already have it:
-
-Navigate to your ROS2 workspace src directory:
-
-.. code-block:: bash
-
-   cd ~/your_workspace/src
-
-Clone the repository:
-
-.. code-block:: bash
-
-   git clone https://github.com/robotont/robotont_description.git
-
+Make sure you check :ref:`prerequisites` and tested the environment following the instructions presented in :ref:`visualize`.
 
 Clone and Build
 -----------

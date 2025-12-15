@@ -1,43 +1,15 @@
 .. _setup_robot_pc:
 ##############################
-Setting up the user PC
+Connecting to the Robot
 ##############################
 
 
-This setup tutorial will guide you through setting up your PC to use it with Robotont.
+This setup tutorial will guide you through connecting your PC to use it with Robotont.
 
 Setting up the PC
 ======================
 
 Make sure you check: :ref:`prerequisites`.
-
-Cloning Robotont's packages
------------------------------
-
-All Robotont's packages can be accessed from `Robotont's GitHub <https://github.com/robotont>`__.
-
-Packages necessary to run the demos from PC's Terminal are the following:
-
-#. `robotont_description <https://github.com/robotont/robotont_description>`__
-
-#. `robotont_nuc_description <https://github.com/robotont/robotont_nuc_description>`__
-
-#. `robotont_navigation <https://github.com/robotont/robotont_navigation>`__
-
-You can find the demos from the following repositories:
-
-#. `AR Demo Follow-the-leader <https://github.com/robotont-demos/ar_follow_the_leader.git>`__
-#. `AR Steering <https://github.com/robotont-demos/ar_steering.git>`__
-#. `Slam 2D <https://github.com/robotont-demos/demo_slam>`__
-#. `Mapping 3D <https://github.com/robotont-demos/demo_mapping_3d.git>`__
-
-See the :ref:`demos_on_robot` for more information about the demos.
-
-To clone the packages:
-
-.. code-block:: bash
-      
-    git clone https://github.com/robotont/package_name.git
 
 Building the colcon workspace
 ------------------------------
