@@ -5,97 +5,19 @@ Demos on Gazebo
 ###############
 
 Before running the demos it is necessary to get acquainted with the setup section of the documentation.
-Make sure you check: :ref:`setup_pc_only`
+Make sure you check: :ref:`prerequisites`.
+
+You can find the demos from the following repositories:
+
+#. `AR Demo Follow-the-leader <https://github.com/robotont-demos/ar_follow_the_leader.git>`__
+#. `AR Steering <https://github.com/robotont-demos/ar_steering.git>`__
+#. `Slam 2D <https://github.com/robotont-demos/demo_slam>`__
+#. `Mapping 3D <https://github.com/robotont-demos/demo_mapping_3d.git>`__
 
 Launching the Simulation
 ------------------------
-#. Clone the ``robotont_gazebo`` package into your workspace:
 
-   .. code-block:: bash
-
-      git clone https://github.com/robotont/robotont_gazebo.git
-
-#. Build and source the newly added package:
-
-   .. code-block:: bash
-
-     colcon build --packages-select robotont_gazebo
-     source install/setup.bash
-
-#. Launch the simulator using the launch file:
-
-   .. code-block:: bash
-      
-      ros2 launch robotont_gazebo gazebo.launch.py
-
-
-Launch file arguments
----------------------
-
-.. list-table::
-   :header-rows: 1
-
-   * - Name
-     - Description
-     - Options
-   * - ``generation``
-     - Specify the generation of robotont model that is to be loaded
-     - 2.1, 3 (default)
-   * - ``model``
-     - Specify the model that is to be loaded into the world
-     - robotont_gazebo_basic, robotont_gazebo_lidar, robotont_gazebo_nuc (default)
-   * - ``world``
-     - Specify world the robot is spawned in
-     - bangbang.sdf, between.sdf, colors.sdf, mapping.sdf, maze.sdf, minimaze.sdf, minimaze_ar.sdf, empty_world.sdf (default)
-   * - ``x``, ``y``, ``z``
-     - Specify the robot's spawn pose
-     - Number, 0 (default)
-
-.. tip::
-
-   For example, loading the generation 3 model in colors.sdf world at pose (-2, 1, 0):
-
-   .. code-block:: bash
-
-      ros2 launch robotont_gazebo gazebo.launch.py world:=colors.sdf x:=-2 y:=1
-
-Worlds
-------
-
-.. list-table::
-   :header-rows: 1
-
-   * - World
-     - Example
-     - Launch Command
-   * - minimaze.sdf
-     - .. image:: /pictures/minimaze_world_example.png
-          :width: 200px
-     - ``ros2 launch robotont_gazebo gazebo.launch.py world:=minimaze.sdf``
-   * - bangbang.sdf
-     - .. image:: /pictures/bangbang_world_example.png
-          :width: 200px
-     - ``ros2 launch robotont_gazebo gazebo.launch.py world:=bangbang.sdf``
-   * - between.sdf
-     - .. image:: /pictures/between_world_example.png
-          :width: 200px
-     - ``ros2 launch robotont_gazebo gazebo.launch.py world:=between.sdf``
-   * - colors.sdf
-     - .. image:: /pictures/colors_world_example.png
-          :width: 200px
-     - ``ros2 launch robotont_gazebo gazebo.launch.py world:=colors.sdf``
-   * - mapping.sdf
-     - .. image:: /pictures/mapping_world_example.png
-          :width: 200px
-     - ``ros2 launch robotont_gazebo gazebo.launch.py world:=mapping.sdf``
-   * - maze.sdf
-     - .. image:: /pictures/maze_world_example.png
-          :width: 200px
-     - ``ros2 launch robotont_gazebo gazebo.launch.py world:=maze.sdf``
-   * - minimaze_ar.sdf
-     - .. image:: /pictures/minimaze_ar_world_example.png
-          :width: 200px
-     - ``ros2 launch robotont_gazebo gazebo.launch.py world:=minimaze_ar.sdf``
+Make sure you have already set up the simulation following the steps described in :ref:`gazebo_simulator`.
 
 
 2D Mapping and Localization
