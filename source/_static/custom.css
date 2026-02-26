@@ -83,3 +83,12 @@ table.bom-table tbody td:nth-child(6),
 table.bom-table thead th:nth-child(6) {
     width: 20%;
 }
+
+/* Hide BOM table until DataTables has initialized to prevent FOUC */
+table.sphinx-datatable {
+    visibility: hidden;
+}
+
+table.sphinx-datatable.dataTable {
+    visibility: visible;
+}
