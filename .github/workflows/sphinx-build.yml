@@ -55,6 +55,9 @@ jobs:
           git fetch origin $branch
           git checkout $branch
 
+          # Reinstall dependencies for each branch
+          pip install -r requirements.txt
+
           # main branch gets built in the root folder
           if [ "$branch" == "main" ]; then
             sphinx-build -b html source "${OUTPUT_FOLDER}"
