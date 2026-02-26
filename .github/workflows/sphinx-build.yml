@@ -32,7 +32,7 @@ jobs:
         echo "OUTPUT_FOLDER=${OUTPUT_FOLDER}" >> $GITHUB_ENV
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: 3.12
 
@@ -43,34 +43,53 @@ jobs:
 
     - name: Build Documentation for all branches
       run: |
-        # Get array of all branches in origin
+        OUTPUT_FOLDER="docs/_build"
+        failed_branches=()
+
         branches=($(git ls-remote --heads origin | cut -f2 | cut -d'/' -f3))
 
-        # iterate over all branches
         for branch in "${branches[@]}"; do
-          # Print branch name
           echo "Building documentation for: $branch"
+          git fetch origin "$branch"
+          git checkout "$branch"
 
-          # Fetch and checkout branch
-          git fetch origin $branch
-          git checkout $branch
-
-          # Reinstall dependencies for each branch
+          python -m venv ".venv-${branch}"
+          source ".venv-${branch}/bin/activate"
+          pip install --upgrade pip
           pip install -r requirements.txt
+          deactivate
 
-          # main branch gets built in the root folder
           if [ "$branch" == "main" ]; then
-            sphinx-build -b html source "${OUTPUT_FOLDER}"
+            target="${OUTPUT_FOLDER}"
           else
-            # Every other branch gets built in a subfolder
-            mkdir -p "${OUTPUT_FOLDER}/$branch"
-            sphinx-build -b html source "${OUTPUT_FOLDER}/$branch"
+            target="${OUTPUT_FOLDER}/${branch}"
+            mkdir -p "$target"
+          fi
+
+          # Run sphinx but don't let it kill the loop
+          if ! ".venv-${branch}/bin/sphinx-build" -b html source "$target"; then
+            echo "::warning::Documentation build failed for branch: $branch"
+            failed_branches+=("$branch")
+            # Clean up partial output so a broken build isn't deployed
+            rm -rf "$target"
           fi
         done
 
-        # Create .nojekyll file to prevent GitHub Pages from ignoring files/folders starting with an underscore
         touch "${OUTPUT_FOLDER}/.nojekyll"
 
+        # Fail the step after all branches are attempted, but only
+        # if the *current* branch (the one that triggered this run) failed
+        for branch in "${failed_branches[@]}"; do
+          if [ "$branch" == "${{ github.ref_name }}" ]; then
+            echo "::error::The triggering branch '$branch' failed to build."
+            exit 1
+          fi
+        done
+
+        # Warn about other failures but don't block deployment
+        if [ ${#failed_branches[@]} -gt 0 ]; then
+          echo "::warning::Some branches failed to build: ${failed_branches[*]}"
+        fi
 
 
       #  echo "::set-output name=docs_folder::${OUTPUT_FOLDER}"  # Set output for deploy job
@@ -83,7 +102,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.build.outputs.url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
