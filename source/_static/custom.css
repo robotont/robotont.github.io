@@ -1,0 +1,80 @@
+:root {
+    --sd-color-tabs-label-active: #1D5C87;
+    --sd-color-tabs-label-hover: #1D5C87;
+    --sd-color-tabs-underline-active: #a0b3bf;
+    --sd-color-tabs-underline-hover: #a0b3bf;
+    --sd-color-tabs-underline-inactive: transparent;
+    --sd-color-tabs-overline: #a0b3bf;
+    --sd-color-tabs-underline: #a0b3bf;
+    --sd-color-tabs-label-inactive: #1D5C87;
+}
+
+.sd-tab-set > label {
+    border-bottom: 1px solid transparent !important;
+    border-top: 1px solid transparent !important;
+    border-left: 1px solid transparent !important;
+    border-right: 1px solid transparent !important;
+    border-radius: 5px 5px 0 0 !important;
+    padding: 1rem 1.5rem !important;
+    font-weight: 400 !important;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif !important;
+    line-height: 24px !important;
+}
+
+.sd-tab-set > input:checked + label {
+    border-top: 1px solid #a0b3bf !important;
+    border-left: 1px solid #a0b3bf !important;
+    border-right: 1px solid #a0b3bf !important;
+    border-bottom: 1px solid white !important;
+    border-radius: 5px 5px 0 0 !important;
+    font-weight: 700 !important;
+    background-color: white !important;
+    margin-bottom: -1px !important;
+    z-index: 2 !important;
+    overflow-anchor: none;
+}
+
+.sd-tab-content {
+    border: 1px solid #a0b3bf !important;
+    border-radius: 0 0 5px 5px !important;
+    box-shadow: none !important;
+    padding: 1rem !important;
+    background: white !important;
+}
+
+table.bom-table {
+    width: 100% !important;
+    table-layout: fixed;
+}
+
+table.bom-table th,
+table.bom-table td {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+table.bom-table tbody td:nth-child(1),
+table.bom-table thead th:nth-child(1) {
+    width: 30%;
+}
+
+table.bom-table tbody td:nth-child(2),
+table.bom-table thead th:nth-child(2) {
+    width: 10%;
+}
+
+table.bom-table tbody td:nth-child(3),
+table.bom-table thead th:nth-child(3) {
+    width: 15%;
+}
+
+table.bom-table tbody td:nth-child(4),
+table.bom-table thead th:nth-child(4) {
+    width: 20%;
+}
+
+table.bom-table tbody td:nth-child(5),
+table.bom-table thead th:nth-child(5) {
+    width: 25%;
+}

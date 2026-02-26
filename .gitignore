@@ -2,3 +2,4 @@ source/_build/
 html/*
 doctrees/*
 .vscode/
+venv

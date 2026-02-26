@@ -41,7 +41,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx_copybutton',
     'sphinx_design',
-    'sphinx_tabs.tabs'
+    "sphinxcontrib.jquery",
+    "sphinx_datatables",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,6 +72,19 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
+# Global DataTables options.
+# The 'buttons' extension adds the CSV download button.
+# The CDN urls below load the required Buttons + HTML5 export plugin.
+datatables_options = {
+    "paging": False,
+    "rowGroup": {"dataSrc": 0},
+    "columnDefs": [{"visible": False, "targets": 0}],
+    "orderFixed": [[0, "asc"]],
+    "autoWidth": False,
+    "order": [],
+}
+
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -87,7 +101,17 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ['_static']
+
+html_js_files = [
+    "https://cdn.datatables.net/rowgroup/1.5.0/js/dataTables.rowGroup.min.js",
+]
+
+html_css_files = [
+    "https://cdn.datatables.net/rowgroup/1.5.0/css/rowGroup.dataTables.min.css",
+    "custom.css",
+]
+
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

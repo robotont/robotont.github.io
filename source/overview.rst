@@ -23,9 +23,10 @@ ROBOTONT currently includes the following out-of-the-box demos:
 
 Specification
 -------------
-.. tabs::
+.. tab-set::
 
-   .. tab:: Generation 2.1
+   .. tab-item:: Generation 2
+      :sync: gen2
 
       .. image:: /pictures/robotont_gen2.jpg
          :align: center
@@ -70,7 +71,8 @@ Specification
 
       You can find the detailed items description here: `Replication Package GitHub Gen2 <https://github.com/robotont/robotont-hardware-x-2023-replication-package>`__
 
-   .. tab:: Generation 3.0
+   .. tab-item:: Generation 3
+      :sync: gen3
 
       .. image:: /pictures/robotont_gen3.jpg
          :align: center
@@ -107,15 +109,83 @@ Specification
 
       You can find the detailed items description here: `Replication Package GitHub Gen3 <https://github.com/robotont/robotont-frobt-2024-replication-package>`__
 
+   .. tab-item:: Generation 3 Lite
+      :sync: gen3-lite
+      :selected:
+
+      .. image:: /pictures/robotont_gen3_lite.jpg
+         :align: center
+         :width: 60%
+
+      **On-board computer** – `Raspberry Pi 5 <https://www.raspberrypi.com/products/raspberry-pi-5/>`__
+      
+      - **Processor**: Broadcom BCM2712 2.4GHz quad-core 64-bit Arm Cortex-A76 (cryptography extensions, 512KB L2/core, 2MB L3)
+      - **RAM**: LPDDR4X-4267 SDRAM (1GB, 2GB, 4GB, 8GB, 16GB)
+      - **GPU**: VideoCore VII, OpenGL ES 3.1, Vulkan 1.3
+      - **Storage**: microSD (SDR104), PCIe 2.0 x1 (M.2 HAT required)
+      - **Network**: Dual-band 802.11ac Wi-Fi, Bluetooth 5.0/BLE, Gigabit Ethernet (PoE+ via HAT)
+      - **Peripherals**: 2x USB 3.0, 2x USB 2.0, dual 4Kp60 HDMI (HDR), 2x MIPI, 40-pin GPIO, RTC, USB-C 5V/5A
+
+      **Motors** – `Pololu 1442 <https://www.pololu.com/product/4751>`__
+
+      - **Voltage**: 12 V
+      - **Stall current**: 5500 mA
+      - **Max rpm**: 530
+      - **Max torque**: 0.83 Nm
+      - **Gear Ratio**: 18.75:1
+      - **Encoder (motor)**: 64 counts/rev
+      - **Encoder (gearbox)**: 1200 counts/rev
+
+      **Camera** – `Raspberry Pi AI Camera <https://www.raspberrypi.com/products/ai-camera/>`__
+
+      - **Sensor**: 12.3 MP Sony IMX500 with neural network accelerator
+      - **Resolution**: 4056×3040 @ 10fps / 2028×1520 @ 30fps (10-bit)
+      - **Video**: 1080p30
+      - **FoV**: 78.3° (±3°), F1.79, manual focus
+      - **Pixel size**: 1.55 × 1.55 μm (7.857 mm sensor)
+      - **Connection**: Standard Raspberry Pi camera connector
+      - **Dimensions**: 25 × 24 × 11.9 mm
+
+      .. You can find the detailed items description here: `Replication Package GitHub Gen3 <https://github.com/robotont/robotont-frobt-2024-replication-package>`__
+
+Build Instructions Summary
+--------------------------
+.. tab-set::
+
+   .. tab-item:: Generation 2
+      :sync: gen2
+
+      Please refer to the: `Replication Package GitHub Gen2 <https://github.com/robotont/robotont-hardware-x-2023-replication-package>`__
+
+   .. tab-item:: Generation 3
+      :sync: gen3
+
+      Please refer to the `Replication Package GitHub Gen3 <https://github.com/robotont/robotont-frobt-2024-replication-package>`__
+
+   .. tab-item:: Generation 3 Lite
+      :sync: gen3-lite
+      :selected:
+      
+      - 3D print the chassis parts: link to robotont-mechanics repo gen3.0-lite branch https://github.com/robotont/robotont-mechanics/tree/gen3.0-lite
+      - Order the custom PCBs:
+         - mainboard PCB: https://github.com/robotont/robotont-electronics-mainboard/tree/main?tab=readme-ov-file#ordering-the-pcb
+         - battery adapter PCB https://github.com/robotont/robotont-electronics-battery-adapter
+      - Order the custom parts: link to robotont-mechanics repo gen3.0-lite branch
+      - Follow Build instructions to assemble the robot: https://docs.google.com/presentation/d/1YWSu-py7kQrC_d8vRf8YeuWFiek9ASoksZRC4oyD7V0/edit?usp=sharing
+      - For the full bill of materials, see :ref:`bom_gen3_lite`.
+
+
+
+
 
 
 Simulators
 -------------
 Robotont provides two simulation options that allow you to test and develop your software without using the physical robot.
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Simple Simulator
+   .. tab-item:: Simple Simulator
 
       :ref:`simple_simulator`
 
@@ -135,7 +205,7 @@ Robotont provides two simulation options that allow you to test and develop your
       .. image:: /pictures/simple_driver_launch.png
          :width: 100%
 
-   .. tab:: Gazebo Simulator
+   .. tab-item:: Gazebo Simulator
 
       :ref:`gazebo_simulator`
 
@@ -151,32 +221,6 @@ Robotont provides two simulation options that allow you to test and develop your
       * Full navigation stack testing
 
       * Running the demo packages
+      
       .. image:: /pictures/minimaze_ar_world_example.png
          :width: 100%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
