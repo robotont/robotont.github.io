@@ -165,15 +165,33 @@ Build Instructions Summary
    .. tab-item:: Generation 3 Lite
       :sync: gen3-lite
       :selected:
-      
-      - 3D print the chassis parts: link to robotont-mechanics repo gen3.0-lite branch https://github.com/robotont/robotont-mechanics/tree/gen3.0-lite
-      - Order the custom PCBs:
-         - mainboard PCB: https://github.com/robotont/robotont-electronics-mainboard/tree/main?tab=readme-ov-file#ordering-the-pcb
-         - battery adapter PCB https://github.com/robotont/robotont-electronics-battery-adapter
-      - Order the custom parts: link to robotont-mechanics repo gen3.0-lite branch
-      - Follow Build instructions to assemble the robot: https://docs.google.com/presentation/d/1YWSu-py7kQrC_d8vRf8YeuWFiek9ASoksZRC4oyD7V0/edit?usp=sharing
-      - For the full bill of materials, see :ref:`bom_gen3_lite`.
 
+      **1. Mechanical Parts**
+
+      **3D Print the Chassis**
+
+      Print all chassis and custom mechanical parts from the `robotont-mechanics repo, gen3.0-lite branch <https://github.com/robotont/robotont-mechanics/tree/gen3.0-lite>`__.
+
+      Full bill of materials that are needed for the robot assembly are listed here :ref:`bom_gen3_lite`.
+
+      **2. Electronics**
+
+      **Order Custom PCBs**
+
+      The robotont is built around two custom PCBs, which production files are available in the following repositories:
+
+      - **Mainboard PCB** — `robotont-electronics-mainboard <https://github.com/robotont/robotont-electronics-mainboard/tree/main?tab=readme-ov-file#ordering-the-pcb>`__
+      - **Battery Adapter PCB** — `robotont-electronics-battery-adapter <https://github.com/robotont/robotont-electronics-battery-adapter>`__
+
+      **3. Assembly**
+
+      Follow the step-by-step build instructions in the `Assembly Guide <https://docs.google.com/presentation/d/1YWSu-py7kQrC_d8vRf8YeuWFiek9ASoksZRC4oyD7V0/edit?usp=sharing>`__.
+
+      **4. Software Setup**
+
+      The robotont software is based on the standard Ubuntu Desktop image.
+
+      Automated setup scripts that take you from a fresh Ubuntu installation to a fully working robot are available in the `robotont-setup repository, jazzy-rpi branch <https://github.com/robotont/robotont-setup/tree/jazzy-rpi>`__.
 
 
 
