@@ -76,5 +76,10 @@ table.bom-table thead th:nth-child(4) {
 
 table.bom-table tbody td:nth-child(5),
 table.bom-table thead th:nth-child(5) {
-    width: 25%;
+    width: 5%;
+}
+
+table.bom-table tbody td:nth-child(6),
+table.bom-table thead th:nth-child(6) {
+    width: 20%;
 }

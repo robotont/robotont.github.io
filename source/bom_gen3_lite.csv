@@ -1,54 +1,59 @@
-Category,Component,Qty,Supplier,Part Number,URL
-PREASSEMBLED PCB,robotont-electronics-mainboard pcb assembly from jlcpcb,1,JLCPCB,,https://jlcpcb.com
-MANUALLY ASSEMBLED TO PCB,DC power connector 15A (male) MR30PW-M,2,TME,MR30PW-M,https://www.tme.eu/en/details/mr30pw-m/dc-power-connectors/amass/
-MANUALLY ASSEMBLED TO PCB,JST_PH_S6B-PH-K_1x06_P2.00mm_Horizontal,2,TME,S6B-PH-K-S,https://www.tme.eu/ee/details/s6b-ph-k-s/
-MANUALLY ASSEMBLED TO PCB,Molex_Micro-Fit_3.0_43045-0212_2x01_P3.00mm_Vertical,1,TME,MX-43045-0212,https://www.tme.eu/ee/details/mx-43045-0212
-MANUALLY ASSEMBLED TO PCB,Molex_Micro-Fit_3.0_43045-0612_2x03_P3.00mm_Vertical,2,TME,MX-43045-0612,https://www.tme.eu/ee/details/mx-43045-0612
-MANUALLY ASSEMBLED TO PCB,PinSocket_1x04_P2.54mm_Vertical,1,TME,ZL262-4SG,https://www.tme.eu/ee/details/zl262-4sg
-MANUALLY ASSEMBLED TO PCB,PinSocket_1x15_P2.54mm_Vertical,2,TME,ZL305-15,https://www.tme.eu/ee/details/zl305-15
-MANUALLY ASSEMBLED TO PCB,PinSocket_2x08_P2.54mm_Vertical,1,TME,ZL262-16DG,https://www.tme.eu/ee/details/zl262-16dg
-MANUALLY ASSEMBLED TO PCB,PinHeader_1x03_P2.54mm_Vertical,5,TME,ZL201-03G,https://www.tme.eu/ee/details/zl201-03g
-MANUALLY ASSEMBLED TO PCB,PinHeader_1x04_P2.54mm_Horizontal,2,TME,DS1022-1X4RDF14,https://www.tme.eu/ee/en/details/ds1022-1x4rdf14
-MANUALLY ASSEMBLED TO PCB,PinHeader_1x06_P2.54mm_Horizontal,3,TME,826947-6,https://www.tme.eu/ee/en/details/826947-6
-MANUALLY ASSEMBLED TO PCB,PinHeader_2x03_P2.54mm_Horizontal,1,TME,826634-3,https://www.tme.eu/ee/details/826634-3
-MANUALLY ASSEMBLED TO PCB,PinHeader_2x05_P2.54mm_Horizontal,1,TME,MX-90122-0765,https://www.tme.eu/ee/details/mx-90122-0765
-MANUALLY ASSEMBLED TO PCB,Socket MikroBUS 16 THT (or 2x 1x08 PinSocket P2.54),1,TME,MIKROE-4247,https://www.tme.eu/ee/en/details/mikroe-4247/development-kits-accessories/mikroe/socket-mikrobus-16-tht/
-MANUALLY ASSEMBLED TO PCB,Rotary Encoder with Switch,1,TME,EC11E20-20P20C-SW,https://www.tme.eu/ee/details/ec11e20-20p20c-sw
-MANUALLY ASSEMBLED TO PCB,Push Button 6x6mm H20mm,1,AliExpress,,https://www.aliexpress.com/item/32912263133.html
-MANUALLY ASSEMBLED TO PCB,SSD1306 0.96 OLED module (pin order: GND VCC SCL SDA),1,AliExpress,,https://www.aliexpress.com/item/1005001861762328.html
-CABLING & CONNECTORS,Molex_Micro-Fit_3.0_2x01_Female,1,TME,MX-43025-0200,https://www.tme.eu/ee/details/mx-43025-0200
-CABLING & CONNECTORS,Molex_Micro-Fit_3.0_2x03_Female,2,TME,MX-43025-0600,https://www.tme.eu/ee/details/mx-43025-0600
-CABLING & CONNECTORS,Micro-Fit Crimp Terminal,14,TME,MX-43030-0001/C,https://www.tme.eu/ee/details/mx-43030-0001_c
-CABLING & CONNECTORS,DC connector 5.5x2.5x11mm + 20cm 0.5mm² cable,1,TME,DC.CAB.4201.0020,https://www.tme.eu/ee/details/dc.cab.4201.0020/toitekaablid-dc/bq-cable/
-CABLING & CONNECTORS,USB3.1 Type-C male to right angle Type-C male data cable 30cm,2,AliExpress,,https://www.aliexpress.com/item/4000078385173.html
-CABLING & CONNECTORS,JST_PH_1x06_P2.00mm Female housing PHR-6,2,TME,PHR-6,https://www.tme.eu/ee/details/phr-6/signaaliuhendused-raster-2-00mm/jst/
-CABLING & CONNECTORS,JST PH crimp contact female 0.05-0.22mm²,12,TME,SPH-002T-P0.5S,https://www.tme.eu/ee/details/sph-002t-p0.5s/signaaliuhendused-raster-2-00mm/jst/
-CABLING & CONNECTORS,Wire SiF 1.5mm² silicone red (per meter),2,TME,SIF1.50-R,https://www.tme.eu/ee/en/details/sif1.50-r/silicone-cables-single-core/helukabel/23602/
-CABLING & CONNECTORS,Wire SiF 1.5mm² silicone black (per meter),2,TME,SIF1.50-B,https://www.tme.eu/ee/en/details/sif1.50-b/silicone-cables-single-core/helukabel/23601/
-CABLING & CONNECTORS,Wire SiF 0.75mm² silicone blue (per meter),5,TME,SIF0.75-BL,https://www.tme.eu/ee/en/details/sif0.75-bl/silicone-cables-single-core/helukabel/23403/
-OTHER COMPONENTS,16mm Stop button two-color common positive + wiring (no resistor),1,AliExpress,,https://www.aliexpress.com/item/4000395340007.html
-OTHER COMPONENTS,DC Motor 37Dx68L 19:1 12V 530RPM + encoder CPR64 (Pololu 4751 equiv.),3,Ebmia,89926107550,https://www.ebmia.pl/silniki-dc-z-przekladnia/217071-silnik-z-przekladnia-37dx68l-19-1-12v-530rpm-enkoder-cpr-64-zamiennik-pololu-4751.html
-ONBOARD COMPUTER,Raspberry Pi 5 Case Black,1,TME,SC1160,https://www.tme.eu/ee/details/sc1160/raspberry-pi-tarvikud/raspberry-pi/raspberry-pi-case-for-pi-5-black/
-ONBOARD COMPUTER,Raspberry Pi 5 16GB RAM,1,TME,SC1113,https://www.tme.eu/ee/details/sc1113/raspberry-pi-miniarvutid/raspberry-pi/raspberry-pi-5-16gb-ram/
-ONBOARD COMPUTER,Raspberry Pi AI Camera,1,TME,SC1174,https://www.tme.eu/ee/details/sc1174/raspberry-pi-tarvikud/raspberry-pi/raspberry-pi-ai-camera/
-ONBOARD COMPUTER,Raspberry Pi 5V 5A USB-C power supply,1,TME,SC1408,https://www.tme.eu/ee/details/sc1408/raspberry-pi-tarvikud/raspberry-pi/rpi-27w-usb-c-power-supply-black-eu/
-BATTERY AND LOCKING MECHANISM,Battery charger Makita DC18RC,1,Makserv,195585-0,https://www.makserv.ee/toode/makita-kiirlaadija-dc18rc-72-18-v/
-BATTERY AND LOCKING MECHANISM,Battery Makita BL1850B 18V 5Ah,2,Makserv,196673-6,https://www.makserv.ee/toode/bl1850b/
-BATTERY AND LOCKING MECHANISM,PCB for locking mechanism,1,JLCPCB,,https://jlcpcb.com
-BATTERY AND LOCKING MECHANISM,Spring loaded connector,1,Mouser,652-70AAJ-6-M0G,https://www.mouser.ee/ProductDetail/Bourns/70AAJ-6-M0G?qs=nS9uH9%252BmxhxEMX64nt74%252Bw%3D%3D
-BATTERY AND LOCKING MECHANISM,JST PH right angle male S6B-PH-K-S,1,JLCPCB,C157920,https://jlcpcb.com/partdetail/Jst_SalesAmerica-S6B_PH_K_S_LF_SN/C157920
-BATTERY AND LOCKING MECHANISM,DC power connector 15A (female) MR30-FB,2,TME,MR30-FB,https://www.tme.eu/en/details/mr30-fb/dc-power-connectors/amass/
-BATTERY AND LOCKING MECHANISM,Battery contacts sheet metal strip 11x105mm,1,Local hardware store,,
-CHASSIS,Spacer FF M3 x 40mm,16,TME,TFF-M3X40/DR123,https://www.tme.eu/ee/details/tff-m3x40_dr123
-CHASSIS,Spacer MF M3 x 15mm,12,TME,TFM-M3X15/DR223,https://www.tme.eu/ee/details/tfm-m3x15_dr223
-CHASSIS,Spacer MF M3 x 6mm,4,TME,B3X6/BN3318,https://www.tme.eu/ee/details/b3x6_bn3318
-CHASSIS,Bolt Torx-10 Countersunk M3 x 8mm,62,TME,B3X8/BN3803,https://www.tme.eu/ee/details/b3x8_bn3803
-CHASSIS,Bolt Torx-10 Countersunk M3 x 16mm,4,TME,B3X16/BN3803,https://www.tme.eu/ee/details/b3x16_bn3803
-CHASSIS,Nut M3,14,TME,B3/BN117,https://www.tme.eu/ee/details/b3_bn117
-CHASSIS,Insert M3 x 5.9mm,10,TME,DR11M3,https://www.tme.eu/ee/details/dr11m3/keermestatud-sisestused/dremec/11m3/
-CHASSIS,Filament PLA 650g,0.65,Prusa,,https://www.prusa3d.com/product/prusament-pla-prusa-galaxy-black-1kg/
-CHASSIS,Filament PETG 150g,0.15,Prusa,,https://www.prusa3d.com/product/prusament-petg-matte-black-1kg/
-WHEELS,2.75″ Double-Roller Omni-Directional Wheels (2-pack),1.5,VEX,276-1902,https://www.vexrobotics.com/wheels.html
-SENSORS & CONTROL,LiDAR RPLIDAR A2M12,1,Husarion,,https://store.husarion.com/products/rplidar-a2m12
-SENSORS & CONTROL,BT5.0 Gamepad IPEGA PG-9156,1,Arvutitark,PG-9156 BLACK,https://arvutitark.ee/arvutid-ja-lisad/lisaseadmed/mangupuldid-ja-roolid/ipega-pg-9156-juhtmevaba-mangukontroller-must-1438479
-OPTIONAL ACCESSORIES,Arduino Nano v3,1,TME,A000005,https://www.tme.eu/ee/details/a000005
+Category,Component,Qty,Supplier,Part Number,Req.,URL
+PREASSEMBLED PCB,robotont-electronics-mainboard pcb assembly from jlcpcb,1,JLCPCB,,,https://jlcpcb.com
+MANUALLY ASSEMBLED TO PCB,DC power connector 15A (male) MR30PW-M,2,TME,MR30PW-M,Y,https://www.tme.eu/en/details/mr30pw-m/dc-power-connectors/amass/
+MANUALLY ASSEMBLED TO PCB,JST_PH_S6B-PH-K_1x06_P2.00mm_Horizontal,2,TME,S6B-PH-K-S,Y,https://www.tme.eu/ee/details/s6b-ph-k-s/
+MANUALLY ASSEMBLED TO PCB,Molex_Micro-Fit_3.0_43045-0212_2x01_P3.00mm_Vertical,1,TME,MX-43045-0212,Y,https://www.tme.eu/ee/details/mx-43045-0212
+MANUALLY ASSEMBLED TO PCB,Molex_Micro-Fit_3.0_43045-0612_2x03_P3.00mm_Vertical,2,TME,MX-43045-0612,Y,https://www.tme.eu/ee/details/mx-43045-0612
+MANUALLY ASSEMBLED TO PCB,PinSocket_1x04_P2.54mm_Vertical_16mm,1,TME,DS1023-05-1X10B816,Y,https://www.tme.eu/en/details/ds1023-05-1x10b816/pin-headers/connfly/ds1023-05-1-10b8-a16-0-b6-8/
+MANUALLY ASSEMBLED TO PCB,PinSocket_1x15_P2.54mm_Vertical,2,TME,ZL305-15,N,https://www.tme.eu/ee/details/zl305-15
+MANUALLY ASSEMBLED TO PCB,PinSocket_2x08_P2.54mm_Vertical,1,TME,ZL262-16DG,N,https://www.tme.eu/ee/details/zl262-16dg
+MANUALLY ASSEMBLED TO PCB,PinHeader_1x03_P2.54mm_Vertical,2,TME,ZL201-03G,N,https://www.tme.eu/ee/details/zl201-03g
+MANUALLY ASSEMBLED TO PCB,PinHeader_1x04_P2.54mm_Horizontal,2,TME,DS1022-1X4RDF14,N,https://www.tme.eu/ee/en/details/ds1022-1x4rdf14
+MANUALLY ASSEMBLED TO PCB,PinHeader_1x06_P2.54mm_Horizontal,3,TME,826947-6,Y,https://www.tme.eu/ee/en/details/826947-6
+MANUALLY ASSEMBLED TO PCB,PinHeader_2x03_P2.54mm_Horizontal,1,TME,826634-3,Y,https://www.tme.eu/ee/details/826634-3
+MANUALLY ASSEMBLED TO PCB,PinHeader_2x05_P2.54mm_Horizontal,1,TME,MX-90122-0765,Y,https://www.tme.eu/ee/details/mx-90122-0765
+MANUALLY ASSEMBLED TO PCB,Socket MikroBUS 16 THT (or 2x 1x08 PinSocket P2.54),1,TME,MIKROE-4247,N,https://www.tme.eu/ee/en/details/mikroe-4247/development-kits-accessories/mikroe/socket-mikrobus-16-tht/
+MANUALLY ASSEMBLED TO PCB,Rotary Encoder with Switch,1,TME,EC11E20-20P20C-SW,Y,https://www.tme.eu/ee/details/ec11e20-20p20c-sw
+MANUALLY ASSEMBLED TO PCB,Push Button 6x6mm H20mm,1,AliExpress,,Y,https://www.aliexpress.com/item/32912263133.html
+MANUALLY ASSEMBLED TO PCB,SSD1306 0.96 OLED module (pin order: GND VCC SCL SDA),1,AliExpress,,Y,https://www.aliexpress.com/item/1005001861762328.html
+CABLING & CONNECTORS,Molex_Micro-Fit_3.0_2x01_Female,1,TME,MX-43025-0200,Y,https://www.tme.eu/ee/details/mx-43025-0200
+CABLING & CONNECTORS,Molex_Micro-Fit_3.0_2x03_Female,2,TME,MX-43025-0600,Y,https://www.tme.eu/ee/details/mx-43025-0600
+CABLING & CONNECTORS,Micro-Fit Crimp Terminal,14,TME,MX-43030-0001/C,Y,https://www.tme.eu/ee/details/mx-43030-0001_c
+CABLING & CONNECTORS,JST_PH_1x06_P2.00mm Female housing PHR-6,2,TME,PHR-6,N,https://www.tme.eu/ee/details/phr-6/signaaliuhendused-raster-2-00mm/jst/
+CABLING & CONNECTORS,JST PH crimp contact female 0.05-0.22mm²,12,TME,SPH-002T-P0.5S,N,https://www.tme.eu/ee/details/sph-002t-p0.5s/signaaliuhendused-raster-2-00mm/jst/
+CABLING & CONNECTORS,Wire SiF 1.5mm² silicone red (per meter),2,TME,SIF1.50-R,Y,https://www.tme.eu/ee/en/details/sif1.50-r/silicone-cables-single-core/helukabel/23602/
+CABLING & CONNECTORS,Wire SiF 1.5mm² silicone black (per meter),2,TME,SIF1.50-B,Y,https://www.tme.eu/ee/en/details/sif1.50-b/silicone-cables-single-core/helukabel/23601/
+CABLING & CONNECTORS,Wire SiF 0.75mm² silicone blue (per meter),1,TME,SIF0.75-BL,N,https://www.tme.eu/ee/en/details/sif0.75-bl/silicone-cables-single-core/helukabel/23403/
+CABLING & CONNECTORS,Wire 0.14mm² dark blue (per meter),2,TME,LIY0.14-DB,N,https://www.tme.eu/en/details/liy0.14-db/single-core-cable-strand/helukabel/26417/
+CABLING & CONNECTORS,DC supply socket male 5A straight 5.5mm,1,TME,FC681492,Y,https://www.tme.eu/en/details/fc681492/dc-power-connectors/cliff/
+CABLING & CONNECTORS,USB-C power cable 30cm,1,TME,AK-SC-38,Y,https://www.tme.eu/ee/en/details/ak-sc-38/usb-cables-and-adapters/akyga/
+CABLING & CONNECTORS,USB A - micro USB cable 10cm,1,TME,QOLTEC-50520,Y,https://www.tme.eu/en/details/qoltec-50520/usb-cables-and-adapters/qoltec/50520/
+CABLING & CONNECTORS,USB A - USB C cable 25cm,1,TME,QOLTEC-50496,Y,https://www.tme.eu/en/details/qoltec-50496/usb-cables-and-adapters/qoltec/50496/
+OTHER COMPONENTS,16mm Stop button two-color common positive + wiring set (order without resistor in the button!),1,AliExpress,,Y,https://www.aliexpress.com/item/4000395340007.html
+OTHER COMPONENTS,DC Motor 37Dx68L 19:1 12V 530RPM + encoder CPR64 (Pololu 4751 equiv.),3,Ebmia,89926107550,Y,https://www.ebmia.pl/silniki-dc-z-przekladnia/217071-silnik-z-przekladnia-37dx68l-19-1-12v-530rpm-enkoder-cpr-64-zamiennik-pololu-4751.html
+ONBOARD COMPUTER,DC-DC converter 5V 3A,1,TME,DF-DFR1015,Y,"https://www.tme.eu/en/details/df-dfr1015/converter-modules/dfrobot/dfr1015/ "
+ONBOARD COMPUTER,Raspberry Pi 5 Case Black,1,TME,SC1160,Y,https://www.tme.eu/ee/details/sc1160/raspberry-pi-tarvikud/raspberry-pi/raspberry-pi-case-for-pi-5-black/
+ONBOARD COMPUTER,Raspberry Pi 5 16GB RAM,1,TME,SC1113,Y,https://www.tme.eu/ee/details/sc1113/raspberry-pi-miniarvutid/raspberry-pi/raspberry-pi-5-16gb-ram/
+ONBOARD COMPUTER,Raspberry Pi AI Camera,1,TME,SC1174,Y,https://www.tme.eu/ee/details/sc1174/raspberry-pi-tarvikud/raspberry-pi/raspberry-pi-ai-camera/
+ONBOARD COMPUTER,microSDXC Card at least 64GB with at least UHS Class 3 speed rating,1,Arvutitark,SDSQXAA-128G-GN6MA,Y,https://arvutitark.ee/foto-ja-videokaamerad/malukaardid/memory-micro-sdxc-128gb-uhs-iwa-sdsqxaa-128g-gn6ma-sandisk-1137122
+BATTERY AND LOCKING MECHANISM,PCB for locking mechanism,1,JLCPCB,,N,https://jlcpcb.com
+BATTERY AND LOCKING MECHANISM,JST PH right angle male S6B-PH-K-S,1,JLCPCB,C157920,N,https://jlcpcb.com/partdetail/Jst_SalesAmerica-S6B_PH_K_S_LF_SN/C157920
+BATTERY AND LOCKING MECHANISM,Battery charger Makita DC18RC,1,Makserv,195585-0,Y,https://www.makserv.ee/toode/makita-kiirlaadija-dc18rc-72-18-v/
+BATTERY AND LOCKING MECHANISM,Battery Makita BL1850B 18V 5Ah,2,Makserv,196673-6,Y,https://www.makserv.ee/toode/bl1850b/
+BATTERY AND LOCKING MECHANISM,DC power connector 15A (female) MR30-FB,2,TME,MR30-FB,Y,https://www.tme.eu/en/details/mr30-fb/dc-power-connectors/amass/
+BATTERY AND LOCKING MECHANISM,Battery contacts sheet metal strip 11x105mm,1,Local hardware store,,Y,
+CHASSIS,Spacer FF M3 x 40mm,16,TME,TFF-M3X40/DR123,Y,https://www.tme.eu/ee/details/tff-m3x40_dr123
+CHASSIS,Spacer MF M3 x 15mm,12,TME,TFM-M3X15/DR223,Y,https://www.tme.eu/ee/details/tfm-m3x15_dr223
+CHASSIS,Spacer MF M3 x 6mm,4,TME,B3X6/BN3318,Y,https://www.tme.eu/ee/details/b3x6_bn3318
+CHASSIS,Bolt Torx-10 Countersunk M3 x 8mm,62,TME,B3X8/BN3803,Y,https://www.tme.eu/ee/details/b3x8_bn3803
+CHASSIS,Bolt Torx-10 Countersunk M3 x 16mm,4,TME,B3X16/BN3803,Y,https://www.tme.eu/ee/details/b3x16_bn3803
+CHASSIS,Nut M3,14,TME,B3/BN117,Y,https://www.tme.eu/ee/details/b3_bn117
+CHASSIS,Insert M2.5 x 4.1mm,4,TME,KVT-002M2.5,Y,https://www.tme.eu/ee/details/kvt-002m2.5/keermestatud-sisestused/tappex/300113365/
+CHASSIS,Insert M3 x 5.9mm,10,TME,DR11M3,Y,https://www.tme.eu/ee/details/dr11m3/keermestatud-sisestused/dremec/11m3/
+CHASSIS,Filament PLA 650g,0.65,Prusa,,Y,https://www.prusa3d.com/product/prusament-pla-prusa-galaxy-black-1kg/
+CHASSIS,Filament PETG 150g,0.15,Prusa,,Y,https://www.prusa3d.com/product/prusament-petg-matte-black-1kg/
+WHEELS,2.75″ (220mm Travel) Omni-Directional AntiStatic Wheel (2-Pack),1.5,VEX,276-8106,Y,https://www.vexrobotics.com/wheels.html
+SENSORS & CONTROL,Slamtec RPLIDAR S2M1-R2L,1,Husarion,S2M1-R2L,Y,https://store.husarion.com/products/rplidar-s2m1
+SENSORS & CONTROL,BT5.0 Gamepad IPEGA PG-9156,1,Arvutitark,PG-9156 BLACK,N,https://arvutitark.ee/arvutid-ja-lisad/lisaseadmed/mangupuldid-ja-roolid/ipega-pg-9156-juhtmevaba-mangukontroller-must-1438479
+OPTIONAL ACCESSORIES,Arduino Nano v3,1,TME,A000005,N,https://www.tme.eu/ee/details/a000005
+OPTIONAL ACCESSORIES,Raspberry Pi 5V 5A USB-C power supply,1,TME,SC1408,N,https://www.tme.eu/ee/details/sc1408/raspberry-pi-tarvikud/raspberry-pi/rpi-27w-usb-c-power-supply-black-eu/
