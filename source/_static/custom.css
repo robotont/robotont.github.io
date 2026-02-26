@@ -92,3 +92,11 @@ table.sphinx-datatable {
 table.sphinx-datatable.dataTable {
     visibility: visible;
 }
+
+/* Reduce paragraph spacing everywhere including tab content */
+.rst-content p,
+.sd-tab-content p,
+[role="tabpanel"] p {
+    margin-bottom: 6px !important;
+    margin-top: 6px !important;
+}
