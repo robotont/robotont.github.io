@@ -1,3 +1,5 @@
+:orphan:
+
 .. _bom_gen3_lite:
 
 Bill of Materials – Generation 3 Lite

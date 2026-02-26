@@ -7,7 +7,7 @@ Demos on Robotont
 Before running the demos it is necessary to get acquainted with the setup section of the documentation.
 Make sure you check:
 
-* :ref:`setting_up_pc`
+* :ref:`setup_robot_pc`
 * :ref:`connecting_remotely`
 
 2D Mapping and Localization
