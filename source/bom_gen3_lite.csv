@@ -47,11 +47,12 @@ BATTERY AND LOCKING MECHANISM,Battery contacts sheet metal strip 11x105mm,1,Loca
 CHASSIS,Spacer FF M3 x 40mm,16,TME,TFF-M3X40/DR123,Y,https://www.tme.eu/ee/details/tff-m3x40_dr123
 CHASSIS,Spacer MF M3 x 15mm,12,TME,TFM-M3X15/DR223,Y,https://www.tme.eu/ee/details/tfm-m3x15_dr223
 CHASSIS,Spacer MF M3 x 6mm,4,TME,B3X6/BN3318,Y,https://www.tme.eu/ee/details/b3x6_bn3318
-CHASSIS,Bolt Torx-10 Countersunk M3 x 8mm,62,TME,B3X8/BN3803,Y,https://www.tme.eu/ee/details/b3x8_bn3803
-CHASSIS,Bolt Torx-10 Countersunk M3 x 16mm,4,TME,B3X16/BN3803,Y,https://www.tme.eu/ee/details/b3x16_bn3803
-CHASSIS,Nut M3,14,TME,B3/BN117,Y,https://www.tme.eu/ee/details/b3_bn117
+CHASSIS,Bolt Hex-2 Cheesehead M2.5 x 12 mm,4,TME,B2.5X12/BN610,Y,https://www.tme.eu/ee/details/b2.5x12_bn610
+CHASSIS,Bolt Torx-10 Countersunk M3 x 8mm,75,TME,B3X8/BN3803,Y,https://www.tme.eu/ee/details/b3x8_bn3803
+CHASSIS,Bolt Torx-10 Countersunk M3 x 12mm,2,TME,B3X12/BN4851,Y,https://www.tme.eu/ee/details/b3x12_bn4851
+CHASSIS,Nut M3,12,TME,B3/BN117,Y,https://www.tme.eu/ee/details/b3_bn117
 CHASSIS,Insert M2.5 x 4.1mm,4,TME,KVT-002M2.5,Y,https://www.tme.eu/ee/details/kvt-002m2.5/keermestatud-sisestused/tappex/300113365/
-CHASSIS,Insert M3 x 5.9mm,10,TME,DR11M3,Y,https://www.tme.eu/ee/details/dr11m3/keermestatud-sisestused/dremec/11m3/
+CHASSIS,Insert M3 x 5.9mm,13,TME,DR11M3,Y,https://www.tme.eu/ee/details/dr11m3/keermestatud-sisestused/dremec/11m3/
 CHASSIS,Filament PLA 650g,0.65,Prusa,,Y,https://www.prusa3d.com/product/prusament-pla-prusa-galaxy-black-1kg/
 CHASSIS,Filament PETG 150g,0.15,Prusa,,Y,https://www.prusa3d.com/product/prusament-petg-matte-black-1kg/
 WHEELS,2.75″ (220mm Travel) Omni-Directional AntiStatic Wheel (2-Pack),1.5,VEX,276-8106,Y,https://www.vexrobotics.com/wheels.html
