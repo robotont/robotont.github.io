@@ -1,4 +1,5 @@
 .. _setup_robot_pc:
+
 ##############################
 Connecting to the Robot
 ##############################
@@ -89,9 +90,11 @@ There are two options for setting up a distributed system, either using static I
 .. note::
    For consistent networking, assign static IP addresses or use DHCP reservation for both the robot and your PC
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Use static IPs
+   .. tab-item:: Use static IPs
+      :sync: ip
+
 
       **On Robotont (on-board computer):**
 
@@ -120,7 +123,9 @@ There are two options for setting up a distributed system, either using static I
       .. note::
          The ``ROS_IP`` variable is helpful if you have multiple network interfaces or encounter issues with node discovery. In many typical setups, ROS 2 nodes will communicate without setting it
 
-   .. tab:: Define hostnames
+   .. tab-item:: Define hostnames
+      :sync: hostname
+
 
       On each device:
 
@@ -197,9 +202,11 @@ Follow these steps:
 
 3. Start the SSH connection using either the robot’s hostname or IP address:
 
-.. tabs::
+.. tab-set::
 
-      .. tab:: Using the hostname
+      .. tab-item:: Using the hostname
+         :sync: hostname
+
 
          .. code-block:: bash
 
@@ -215,7 +222,9 @@ Follow these steps:
          .. image:: /pictures/ssh_nt.png
            :width: 100%
 
-      .. tab:: Using the IP address
+      .. tab-item:: Using the IP address
+         :sync: ip
+
 
          .. code-block:: bash
 

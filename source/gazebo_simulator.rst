@@ -48,7 +48,7 @@ After cloning the Robotont and `gz_planar_move` repositories into your workspace
 
 
 Building and sourcing the colcon workspace
-=======================
+==========================================
 .. code-block:: bash
       
     cd colcon_ws

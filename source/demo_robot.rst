@@ -82,9 +82,11 @@ Running the demo
 
 The demo can be run on a Robotont featuring either a LIDAR or the standard Realsense D435i camera
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Robotont with LIDAR
+   .. tab-item:: Robotont with LIDAR
+      :sync: lidar
+
 
       #. Launch the navigation stack and slam
 
@@ -98,7 +100,9 @@ The demo can be run on a Robotont featuring either a LIDAR or the standard Reals
 
             ros2 launch 2d_slam rviz2_visualize_costmaps.launch.py
 
-   .. tab:: Robotont with Realsense D435i
+   .. tab-item:: Robotont with Realsense D435i
+      :sync: realsense
+
 
       #. Launch the navigation stack and slam
 

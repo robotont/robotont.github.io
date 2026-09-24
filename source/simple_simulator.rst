@@ -1,4 +1,5 @@
 .. _Simple_simulator:
+
 ===================================
 Simple Simulator
 ===================================
@@ -24,12 +25,12 @@ The limitations of this simulator:
 - Not suitable for high-fidelity robotics research
 
 Prerequisites
-============
+=============
 
 Make sure you check :ref:`prerequisites` and tested the environment following the instructions presented in :ref:`visualize`.
 
 Clone and Build
------------
+---------------
 Navigate to your ROS2 workspace src directory:
 
 .. code-block:: bash
@@ -75,7 +76,7 @@ Source the workspace:
    source install/setup.bash
 
 Teleoperation with Simple Driver
-============
+================================
 
 Launch the simple driver:
 
@@ -106,7 +107,7 @@ By pressing different keys in this terminal, you’ll see the robot move in RViz
 
 
 Navigation with Simple Navigator
-============
+================================
 
 Launch the simple navigator:
 
@@ -160,7 +161,7 @@ How it works
 =======================
 
 Simple Driver
------------
+-------------
 
 The simulator is composed of three main parts:
 
@@ -201,7 +202,7 @@ Publishes velocity commands on ``/cmd_vel`` based on key presses.
 
 
 Simple Navigator
------------
+----------------
 
 The simple navigator is a minimal controller that drives the robot toward a goal pose.
 It receives a navigation goal, computes a velocity command, and sends it to the

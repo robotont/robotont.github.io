@@ -1,7 +1,8 @@
 .. _controlling_real_robot:
-###########################
+
+#########################################
 Teleoperating the real robot with user PC
-###########################
+#########################################
 
 You can control Robotont using your keyboard. This section explains how to send movement commands to the robot and interact using both methods.
 

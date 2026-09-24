@@ -1,6 +1,6 @@
 
 Controlling the robot using an Android device app
-----------------------------------------------
+-------------------------------------------------
 
 #. Turn on robotont
 

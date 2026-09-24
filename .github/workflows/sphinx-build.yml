@@ -66,8 +66,14 @@ jobs:
             mkdir -p "$target"
           fi
 
+          # Warnings are fatal only for the triggering branch, so legacy branches still deploy
+          strict=()
+          if [ "$branch" == "${{ github.ref_name }}" ]; then
+            strict=(-W --keep-going)
+          fi
+
           # Run sphinx but don't let it kill the loop
-          if ! ".venv-${branch}/bin/sphinx-build" -b html source "$target"; then
+          if ! ".venv-${branch}/bin/sphinx-build" "${strict[@]}" -b html source "$target"; then
             echo "::warning::Documentation build failed for branch: $branch"
             failed_branches+=("$branch")
             # Clean up partial output so a broken build isn't deployed
